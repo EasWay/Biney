@@ -49,13 +49,15 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
           >
             <Suspense fallback={<div className="size-full animate-pulse bg-slate-100" />}>
               <ParallaxSection zoom offset={100} className="size-full">
-                <div className="size-full cursor-grab active:cursor-grabbing">
-                  {isMounted && (
-                    <Spline 
-                      key="home-spline"
-                      scene="https://prod.spline.design/MPahsWaY76fSaIYP/scene.splinecode" 
-                    />
-                  )}
+                <div className="relative size-full cursor-grab active:cursor-grabbing">
+                  <div className="absolute -inset-x-0 -top-0 -bottom-12 sm:-bottom-20">
+                    {isMounted && (
+                      <Spline 
+                        key="home-spline"
+                        scene="https://prod.spline.design/MPahsWaY76fSaIYP/scene.splinecode" 
+                      />
+                    )}
+                  </div>
                 </div>
               </ParallaxSection>
             </Suspense>

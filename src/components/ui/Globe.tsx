@@ -18,7 +18,7 @@ const MAJOR_CITY_ROUTES = [
   { id: "new-york", label: "New York", location: [40.7128, -74.006] },
   { id: "dubai", label: "Dubai", location: [25.2048, 55.2708] },
   { id: "johannesburg", label: "Johannesburg", location: [-26.2041, 28.0473] },
-  { id: "lagos", label: "Lagos", location: [6.5244, 3.3792] },
+  { id: "tema", label: "Tema", location: TEMA },
   { id: "nairobi", label: "Nairobi", location: [-1.2921, 36.8219] },
   { id: "mumbai", label: "Mumbai", location: [19.076, 72.8777] },
   { id: "sao-paulo", label: "Sao Paulo", location: [-23.5505, -46.6333] },
@@ -59,14 +59,14 @@ const GLOBE_CONFIG: COBEOptions = {
       size: 0.04,
       color: PRIMARY_MARKER_COLOR,
     },
-    ...MAJOR_CITY_ROUTES.map(({ id, location }) => ({
+    ...MAJOR_CITY_ROUTES.filter(city => city.id !== "tema").map(({ id, location }) => ({
       id,
       location,
       size: 0.02,
       color: CITY_MARKER_COLOR,
     })),
   ],
-  arcs: MAJOR_CITY_ROUTES.map(({ id, location }) => ({
+  arcs: MAJOR_CITY_ROUTES.filter(city => city.id !== "tema").map(({ id, location }) => ({
     id: `${id}-to-tema`,
     from: location,
     to: TEMA,
