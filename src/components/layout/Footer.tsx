@@ -1,51 +1,142 @@
+import { Activity, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { BINEY, serviceHighlights } from '../../data/biney';
+
 const Footer = () => {
   return (
-    <footer className="bg-transparent text-slate-400 py-16 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-10 grid md:grid-cols-3 gap-16">
-        <div>
-          <h4 className="text-[10px] uppercase tracking-widest text-sky-600 font-bold mb-6">Visit Our Centre</h4>
-          <p className="text-sm text-slate-500 leading-relaxed mb-6">
-            Italian Flats, Community 2,<br />
-            Tema, Greater Accra, Ghana
-          </p>
-          <div className="flex items-center gap-4">
-            <div className="w-8 h-8 rounded bg-white border border-slate-200 p-1 shadow-sm flex items-center justify-center text-[8px] text-sky-600 font-bold">BINEY</div>
-            <span className="text-xs text-slate-400 uppercase font-bold tracking-widest">Est. Quality Care</span>
+    <footer className="w-full bg-transparent pb-16 pt-32 font-manrope edge-dotted-top">
+      <div className="mx-auto max-w-[1440px] px-10 md:px-margin-page">
+        {/* Desktop Footer */}
+        <div className="mb-24 hidden grid-cols-1 gap-16 md:grid md:grid-cols-4">
+          <div className="md:col-span-1">
+            <Link to="/" className="mb-8 flex items-center gap-3 group">
+              <div className="flex size-10 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
+                <Activity className="size-6" />
+              </div>
+              <span className="text-xl font-bold uppercase tracking-tight text-on-surface">{BINEY.name}</span>
+            </Link>
+            <p className="mb-8 text-sm leading-relaxed text-on-surface-variant opacity-70">
+              Private primary hospital care in Tema, designed around clear access, patient guidance, and practical next steps.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="mb-8 text-xs font-bold uppercase tracking-[0.2em] text-primary">Navigation</h4>
+            <ul className="space-y-4">
+              {['Home', 'About', 'Services', 'Insurance', 'Contact'].map((item) => (
+                <li key={item}>
+                  <Link to={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} className="text-sm text-on-surface-variant transition-colors hover:text-primary">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="mb-8 text-xs font-bold uppercase tracking-[0.2em] text-primary">Care Areas</h4>
+            <ul className="space-y-4">
+              {serviceHighlights.map((item) => (
+                <li key={item.title}>
+                  <Link to="/services" className="text-sm text-on-surface-variant transition-colors hover:text-primary">
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="mb-8 text-xs font-bold uppercase tracking-[0.2em] text-primary">Contact</h4>
+            <ul className="space-y-6">
+              <li className="flex items-start gap-4">
+                <MapPin className="size-5 shrink-0 text-primary" />
+                <span className="text-sm text-on-surface-variant opacity-70">{BINEY.address}</span>
+              </li>
+              {BINEY.phoneNumbers.map((phone) => (
+                <li key={phone.label} className="flex items-center gap-4">
+                  <Phone className="size-5 shrink-0 text-primary" />
+                  <a href={phone.href} className="text-sm text-on-surface-variant opacity-70 transition-colors hover:text-primary">
+                    {phone.label}
+                  </a>
+                </li>
+              ))}
+              <li className="flex items-start gap-4">
+                <ShieldCheck className="size-5 shrink-0 text-primary" />
+                <span className="text-sm text-on-surface-variant opacity-70">{BINEY.acceptedInsurance.join(' and ')}</span>
+              </li>
+            </ul>
           </div>
         </div>
-        
-        <div>
-          <h4 className="text-[10px] uppercase tracking-widest text-sky-600 font-bold mb-6">Operating Hours</h4>
-          <div className="grid grid-cols-2 gap-y-3 text-sm">
-            <span className="text-slate-500">Main Facility</span>
-            <span className="text-slate-900 font-mono text-xs text-right font-bold">Open 24/7</span>
-            <span className="text-slate-500">Emergency</span>
-            <span className="text-sky-600 font-mono text-xs text-right italic font-bold">Always On Call</span>
+
+        {/* Mobile Footer (Divided into two) */}
+        <div className="mb-16 grid grid-cols-2 gap-8 md:hidden">
+          <div className="space-y-8">
+            <div>
+              <h4 className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Menu</h4>
+              <ul className="space-y-3">
+                {[
+                  { name: 'Home', icon: Activity },
+                  { name: 'About', icon: ShieldCheck },
+                  { name: 'Services', icon: Activity },
+                  { name: 'Insurance', icon: ShieldCheck },
+                  { name: 'Contact', icon: MapPin }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link to={`/${item.name.toLowerCase() === 'home' ? '' : item.name.toLowerCase()}`} className="flex items-center gap-2 text-xs text-on-surface-variant transition-colors hover:text-primary">
+                      <item.icon className="size-3.5 opacity-50" />
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-        
-        <div>
-          <h4 className="text-[10px] uppercase tracking-widest text-sky-600 font-bold mb-6">Clinical Staff</h4>
-          <div className="flex items-center gap-4 p-6 bg-white/40 backdrop-blur-[100px] rounded-[2rem] border border-white/60 shadow-sm relative overflow-hidden group">
-            <div className="absolute inset-0 bg-sky-100 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div className="w-12 h-12 rounded-full bg-sky-50 border border-sky-100 flex items-center justify-center text-sm font-bold text-sky-600 shadow-sm ring-1 ring-sky-50 relative z-10">AB</div>
-            <div className="relative z-10">
-              <p className="text-sm font-bold leading-tight text-slate-900">Dr. Alexander Biney</p>
-              <p className="text-[10px] text-slate-500 uppercase font-bold mt-1 tracking-wider">Medical Director</p>
+
+          <div className="space-y-8">
+            <div>
+              <h4 className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Care</h4>
+              <ul className="space-y-3">
+                {serviceHighlights.map((item) => (
+                  <li key={item.title}>
+                    <Link to="/services" className="flex items-center gap-2 text-xs text-on-surface-variant transition-colors hover:text-primary">
+                      <Activity className="size-3.5 opacity-50" />
+                      <span className="truncate">{item.title.split(' ')[0]}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Reach</h4>
+              <ul className="space-y-3">
+                {BINEY.phoneNumbers.slice(0, 1).map((phone) => (
+                  <li key={phone.label}>
+                    <a href={phone.href} className="flex items-center gap-2 text-xs text-on-surface-variant transition-colors hover:text-primary">
+                      <Phone className="size-3.5 opacity-50" />
+                      {phone.label}
+                    </a>
+                  </li>
+                ))}
+                <li>
+                  <Link to="/contact" className="flex items-center gap-2 text-xs text-on-surface-variant transition-colors hover:text-primary">
+                    <MapPin className="size-3.5 opacity-50" />
+                    Find Us
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-      
-      <div className="max-w-7xl mx-auto px-10 pt-10 mt-10 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-[10px] uppercase tracking-widest font-bold">
-        <p>© {new Date().getFullYear()} Biney Medical Centre.</p>
-        <div className="flex gap-8 text-neutral-500">
-          <a href="#" className="hover:text-sky-600 transition-colors">Privacy</a>
-          <a href="#" className="hover:text-sky-600 transition-colors">Compliance</a>
-          <a href="#" className="hover:text-sky-600 transition-colors">NHIS Policy</a>
+
+        <div className="flex flex-col items-center justify-between gap-6 border-t border-outline-variant pt-12 md:flex-row">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant opacity-40">
+            © {new Date().getFullYear()} {BINEY.name}. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
+
   );
 };
 

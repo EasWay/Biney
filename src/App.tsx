@@ -61,14 +61,6 @@ export default function App() {
         </main>
         <Footer />
         
-        {/* Scroll to Top Button */}
-        <button 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-8 right-8 bg-sky-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all z-40 hidden md:block"
-        >
-          <ChevronDown className="w-6 h-6 rotate-180" />
-        </button>
-
         <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
       </div>
     </Router>

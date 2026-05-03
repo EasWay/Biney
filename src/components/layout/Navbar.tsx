@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight, Activity } from 'lucide-react';
+import { BINEY } from '../../data/biney';
 
 const Navbar = ({ onBookClick }: { onBookClick: () => void }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,87 +27,91 @@ const Navbar = ({ onBookClick }: { onBookClick: () => void }) => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled || location.pathname !== '/' ? 'bg-white/40 backdrop-blur-[100px] shadow-sm py-3 border-b border-white/60' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-sky-600 rounded flex items-center justify-center border border-white/40">
-              <div className="w-4 h-4 border-2 border-white"></div>
-            </div>
-            <span className={`text-xl font-bold tracking-tight text-slate-900`}>
-              BINEY <span className="text-sky-600">MEDICAL</span>
-            </span>
-          </Link>
-          
-          <div className="hidden md:flex items-center gap-8">
-            <nav className="flex gap-8 text-sm font-medium text-slate-500">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className={`transition-colors hover:text-sky-600 ${isActive(link.href) ? 'text-sky-600 font-bold' : ''}`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
-            <div className="w-[1px] h-6 bg-slate-200 hidden lg:block"></div>
-            <div className="hidden lg:flex items-center gap-4">
-              <div className="text-right">
-                <p className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Emergency Line</p>
-                <p className="text-sm font-bold text-slate-900">+233 30 320 4368</p>
-              </div>
-              <button
-                onClick={onBookClick}
-                className="bg-sky-600 text-white px-5 py-2 rounded text-sm font-bold hover:bg-sky-700 transition-colors shadow-sm"
-              >
-                Book Consultation
-              </button>
-            </div>
+    <nav 
+      className={`fixed left-1/2 top-3 z-50 w-[94%] max-w-6xl -translate-x-1/2 rounded-2xl font-manrope text-xs font-medium tracking-tight transition-all duration-500 sm:top-6 sm:rounded-full sm:text-sm ${
+        scrolled 
+          ? 'border border-white/50 bg-white/85 px-3 py-2 shadow-[0_12px_32px_rgba(0,0,0,0.05)] backdrop-blur-[20px] sm:px-8 sm:py-3' 
+          : 'border border-white/20 bg-white/50 px-3 py-2.5 backdrop-blur-[10px] sm:px-10 sm:py-4'
+      }`}
+    >
+      <div className="flex justify-between items-center w-full">
+        <Link to="/" className="flex min-w-0 items-center gap-2 text-sm font-bold tracking-tight text-on-surface group sm:text-lg">
+          <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-primary text-white shadow-lg transition-transform md:group-hover:scale-110 sm:size-8">
+            <Activity className="size-4 sm:size-5" />
           </div>
+          <span className="max-w-[150px] truncate text-[9px] font-bold uppercase tracking-[0.16em] text-on-surface sm:max-w-none sm:text-[11px] sm:tracking-[0.2em]">{BINEY.name}</span>
+        </Link>
 
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-slate-900 p-2">
-              {isOpen ? <X /> : <Menu />}
-            </button>
-          </div>
+        {/* Desktop Links */}
+        <div className="hidden md:flex gap-8 items-center bg-white/30 backdrop-blur-md px-6 py-2 rounded-full border border-white/40">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.href}
+              className={`transition-all duration-300 hover:text-primary ${
+                isActive(link.href) 
+                  ? 'text-primary font-bold' 
+                  : 'text-on-surface-variant'
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
+
+        {/* CTA Button */}
+        <div className="hidden md:flex items-center gap-4">
+          <button
+            onClick={onBookClick}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white hover:bg-slate-800 transition-all duration-300 shadow-lg shadow-primary/20 active:scale-95"
+          >
+            <span className="text-xs font-bold uppercase tracking-wider">Book Appointment</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button 
+          onClick={() => setIsOpen(!isOpen)} 
+          className="p-1.5 text-on-surface md:hidden"
+          aria-label="Toggle navigation"
+        >
+          {isOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+        </button>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/80 backdrop-blur-[100px] border-t border-slate-100"
+            initial={{ opacity: 0, scale: 0.95, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 10 }}
+            className="absolute left-0 top-[calc(100%+8px)] w-full overflow-hidden rounded-2xl border border-white/60 bg-white/95 shadow-2xl backdrop-blur-xl md:hidden"
           >
-            <div className="px-4 pt-2 pb-6 space-y-1">
+            <div className="flex flex-col gap-1.5 p-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-4 text-base font-medium rounded-lg transition-colors ${
-                    isActive(link.href) 
-                      ? 'bg-sky-50 text-sky-600' 
-                      : 'text-slate-600 hover:bg-slate-50 hover:text-sky-600'
+                  className={`rounded-xl px-3 py-2 text-sm font-medium transition-colors ${
+                    isActive(link.href) ? 'bg-primary/5 text-primary' : 'text-on-surface-variant'
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-slate-100">
-                <button
-                  onClick={() => {
-                    setIsOpen(false);
-                    onBookClick();
-                  }}
-                  className="w-full bg-sky-600 text-white py-4 rounded-xl font-bold uppercase tracking-widest shadow-lg shadow-sky-100"
-                >
-                  Book Consultation
-                </button>
-              </div>
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  onBookClick();
+                }}
+                className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-xs font-bold text-white shadow-xl shadow-primary/20 transition-all active:scale-95"
+              >
+                <span>Book Appointment</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </div>
           </motion.div>
         )}

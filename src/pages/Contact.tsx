@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Phone, Clock, CheckCircle2, ChevronRight } from 'lucide-react';
+import { CheckCircle2, ChevronRight, Clock, MapPin, Phone } from 'lucide-react';
+import { BINEY } from '../data/biney';
+import { DottedMap } from '../components/ui/DottedMap';
 
 const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -9,183 +11,184 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 1200));
     setIsSubmitting(false);
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
-    <section className="py-24 bg-transparent pt-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+    <section className="bg-transparent px-4 py-14 pt-28 sm:px-10 sm:py-24 sm:pt-32">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid items-start gap-8 sm:gap-16 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-sky-600 font-bold tracking-widest uppercase text-sm mb-4">Contact Us</h2>
-            <h3 className="text-4xl font-bold text-slate-900 mb-8 tracking-tight italic">Visit Us or Get in Touch</h3>
-            <p className="text-lg text-slate-500 mb-8">
-              For any inquiries, appointments, or emergency guidance, please reach out to us using the details below or visit us directly at our Tema centre.
+            <h2 className="mb-2 text-[8px] font-bold uppercase tracking-[0.22em] text-primary sm:mb-4 sm:text-sm sm:tracking-widest">Contact</h2>
+            <h3 className="mb-4 text-2xl font-bold italic tracking-tight text-slate-900 sm:mb-8 sm:text-4xl">{BINEY.name}</h3>
+            <p className="mb-5 text-xs leading-relaxed text-slate-500 sm:mb-8 sm:text-lg">
+              We are located in Tema and ready to help patients find the right next step before they arrive.
             </p>
 
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <motion.button
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.97 }}
               onClick={onBookClick}
-              className="mb-12 inline-flex items-center gap-3 bg-sky-600 text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-sky-700 transition-all shadow-lg shadow-sky-100 group border border-white/20"
+              className="mb-6 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow-lg shadow-primary/10 transition-all sm:mb-12 sm:gap-3 sm:px-8 sm:py-4 sm:text-sm sm:tracking-widest"
             >
-              <Clock className="w-5 h-5" />
-              Book an Appointment
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Clock className="size-4 sm:size-5" />
+              Request Appointment
+              <ChevronRight className="size-4" />
             </motion.button>
-            
-            <div className="space-y-8">
+
+            <div className="space-y-3 sm:space-y-8">
               {[
-                { icon: MapPin, title: 'Our Location', content: 'Italian Flats, Community 2,\nTema, Greater Accra, Ghana.' },
-                { icon: Phone, title: 'Phone Numbers', content: <><a href="tel:+233303204368" className="hover:text-sky-600 transition-colors">+233 30 320 4368</a><br /><a href="tel:+233303202201" className="hover:text-sky-600 transition-colors">+233 30 320 2201</a></> },
-                { icon: Clock, title: 'Opening Hours', content: 'Mon – Sun: Open 24 Hours\n(Maternity and Emergency services available daily)' }
+                { icon: MapPin, title: 'Location', content: BINEY.address },
+                {
+                  icon: Phone,
+                  title: 'Phone Numbers',
+                  content: (
+                    <>
+                      {BINEY.phoneNumbers.map((phone) => (
+                        <React.Fragment key={phone.label}>
+                          <a href={phone.href} className="transition-colors hover:text-primary">{phone.label}</a>
+                          <br />
+                        </React.Fragment>
+                      ))}
+                    </>
+                  ),
+                },
+                { icon: Clock, title: 'Listed Hours', content: BINEY.hours },
               ].map((item, i) => (
-                <motion.div 
+                <motion.div
                   key={item.title}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  whileHover={{ x: 10 }}
-                  className="flex items-start gap-6 p-6 rounded-3xl bg-white/40 backdrop-blur-[100px] border border-white/60 hover:shadow-lg hover:shadow-sky-100/50 transition-all group"
+                  className="flex items-start gap-3 rounded-2xl border border-white/60 bg-white/40 p-4 shadow-sm backdrop-blur-xl transition-all sm:gap-6 sm:rounded-3xl sm:p-6"
                 >
-                  <div className="bg-sky-600 p-4 rounded-2xl text-white shadow-lg shadow-sky-100 group-hover:scale-110 transition-transform border border-white/20">
-                    <item.icon className="w-6 h-6" />
+                  <div className="rounded-xl bg-primary p-2.5 text-white shadow-lg shadow-primary/10 sm:rounded-2xl sm:p-4">
+                    <item.icon className="size-4 sm:size-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-1">{item.title}</h4>
-                    <div className="text-slate-500 leading-relaxed text-sm whitespace-pre-line">
-                      {item.content}
-                    </div>
+                    <h4 className="mb-1 text-sm font-bold text-slate-900 sm:text-lg">{item.title}</h4>
+                    <div className="whitespace-pre-line text-xs leading-relaxed text-slate-500 sm:text-sm">{item.content}</div>
                   </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white/40 backdrop-blur-[100px] p-8 md:p-12 rounded-[3.5rem] border border-white/60 shadow-xl shadow-sky-100/20 relative group overflow-hidden"
+            className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/40 p-4 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:rounded-[3rem] sm:p-8 md:p-12"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-sky-200/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none group-hover:bg-sky-200/40 transition-colors duration-700"></div>
-            
-            <div className="relative z-10">
-              <h4 className="text-3xl font-extrabold text-slate-900 mb-2 italic">Book an Appointment</h4>
-              <p className="text-slate-500 text-sm mb-10 leading-relaxed">
-                Schedule your clinical consultation directly. Our team will contact you within 60 minutes to confirm your slot.
-              </p>
+            <h4 className="mb-2 text-xl font-extrabold italic text-slate-900 sm:text-3xl">Appointment Request</h4>
+            <p className="mb-5 text-xs leading-relaxed text-slate-500 sm:mb-10 sm:text-sm">
+              Send a request and call our front desk to confirm availability for your preferred visit time.
+            </p>
 
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                {submitted ? (
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="py-16 text-center space-y-6"
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              {submitted ? (
+                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="space-y-4 py-10 text-center sm:space-y-6 sm:py-16">
+                  <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-green-50 text-green-600 shadow-xl shadow-green-100 ring-4 ring-white/10 sm:size-24">
+                    <CheckCircle2 className="size-8 sm:size-12" />
+                  </div>
+                  <div>
+                    <h4 className="mb-2 text-xl font-black italic text-slate-900 sm:text-3xl">Request Noted</h4>
+                    <p className="text-xs text-slate-500 sm:text-base">Please call {BINEY.phoneNumbers[0].label} to confirm your visit.</p>
+                  </div>
+                </motion.div>
+              ) : (
+                <>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <label className="mb-1.5 block text-[8px] font-bold uppercase tracking-[0.16em] text-slate-400 sm:text-[10px] sm:tracking-[0.2em]">Patient Full Name</label>
+                      <input required type="text" className="w-full rounded-xl border border-slate-200 bg-white/60 px-3.5 py-3 text-xs text-slate-900 outline-none transition-all focus:border-primary sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm" placeholder="Patient name" />
+                    </div>
+                    <div>
+                      <label className="mb-1.5 block text-[8px] font-bold uppercase tracking-[0.16em] text-slate-400 sm:text-[10px] sm:tracking-[0.2em]">Phone</label>
+                      <input required type="tel" className="w-full rounded-xl border border-slate-200 bg-white/60 px-3.5 py-3 text-xs text-slate-900 outline-none transition-all focus:border-primary sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm" placeholder="+233..." />
+                    </div>
+                  </div>
+
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <label className="mb-1.5 block text-[8px] font-bold uppercase tracking-[0.16em] text-slate-400 sm:text-[10px] sm:tracking-[0.2em]">Preferred Date</label>
+                      <input required type="date" className="w-full rounded-xl border border-slate-200 bg-white/60 px-3.5 py-3 text-xs text-slate-600 outline-none transition-all focus:border-primary sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm" />
+                    </div>
+                    <div>
+                      <label className="mb-1.5 block text-[8px] font-bold uppercase tracking-[0.16em] text-slate-400 sm:text-[10px] sm:tracking-[0.2em]">Listed Care Area</label>
+                      <select required className="w-full rounded-xl border border-slate-200 bg-white/60 px-3.5 py-3 text-xs text-slate-600 outline-none transition-all focus:border-primary sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm">
+                        <option value="">Select</option>
+                        {BINEY.listedServices.map((service) => (
+                          <option key={service}>{service}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <button
+                    disabled={isSubmitting || submitted}
+                    className={`flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow-xl shadow-primary/10 transition-all sm:gap-3 sm:rounded-2xl sm:py-5 sm:text-sm sm:tracking-widest ${isSubmitting || submitted ? 'cursor-not-allowed opacity-70' : 'md:hover:-translate-y-0.5'}`}
                   >
-                    <div className="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center mx-auto text-green-600 shadow-xl shadow-green-100 ring-4 ring-white/10">
-                      <CheckCircle2 className="w-12 h-12" />
-                    </div>
-                    <div>
-                      <h4 className="text-3xl font-black text-slate-900 mb-2 italic">Request Received!</h4>
-                      <p className="text-slate-500 text-base">We've reserved your interest and will call <br/> shortly to confirm details.</p>
-                    </div>
-                  </motion.div>
-                ) : (
-                  <>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-2">Patient Full Name</label>
-                        <input required type="text" className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:border-sky-600 focus:ring-4 focus:ring-sky-100/20 outline-none transition-all placeholder:text-slate-300 bg-white/50 backdrop-blur-3xl text-sm text-slate-900" placeholder="e.g. John Mensah" />
-                      </div>
-                      <div>
-                        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-2">WhatsApp / Phone</label>
-                        <input required type="tel" className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:border-sky-600 focus:ring-4 focus:ring-sky-100/20 outline-none transition-all placeholder:text-slate-300 bg-white/50 backdrop-blur-3xl text-sm text-slate-900" placeholder="+233..." />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-2">Preferred Date</label>
-                        <div className="relative">
-                          <input required type="date" className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:border-sky-600 focus:ring-4 focus:ring-sky-100/20 outline-none transition-all bg-white/50 backdrop-blur-3xl text-sm text-slate-600 appearance-none" />
-                          <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
-                            <Clock className="w-4 h-4" />
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-2">Service Type</label>
-                        <select required className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:border-sky-600 focus:ring-4 focus:ring-sky-100/20 outline-none transition-all bg-white/50 backdrop-blur-3xl text-sm text-slate-600 appearance-none">
-                          <option value="" className="bg-white">Select Department</option>
-                          <option className="bg-white">General Outpatient</option>
-                          <option className="bg-white">Maternity Care</option>
-                          <option className="bg-white">ENT Specialist</option>
-                          <option className="bg-white">Laboratory Services</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-2">Health Concern (Optional)</label>
-                      <textarea rows={3} className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:border-sky-600 focus:ring-4 focus:ring-sky-100/20 outline-none transition-all placeholder:text-slate-300 bg-white/50 backdrop-blur-3xl resize-none text-sm text-slate-900" placeholder="Briefly describe your reason for visit..."></textarea>
-                    </div>
-
-                    <button 
-                      disabled={isSubmitting || submitted}
-                      className={`w-full bg-sky-600 text-white rounded-2xl py-5 font-bold text-sm uppercase tracking-widest transition-all shadow-2xl shadow-sky-100 flex items-center justify-center gap-3 border border-white/20 ${isSubmitting || submitted ? 'opacity-70 cursor-not-allowed' : 'hover:bg-sky-700 hover:-translate-y-0.5'}`}
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <motion.div
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                            className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
-                          />
-                          Confirming Slot...
-                        </>
-                      ) : (
-                        <>
-                          Reserve Now
-                          <ChevronRight className="w-4 h-4" />
-                        </>
-                      )}
-                    </button>
-                    <p className="text-center text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-4">
-                      No upfront payment required for booking
-                    </p>
-                  </>
-                )}
-              </form>
-            </div>
+                    {isSubmitting ? 'Recording Request...' : 'Record Request'}
+                    {!isSubmitting && <ChevronRight className="size-4" />}
+                  </button>
+                </>
+              )}
+            </form>
           </motion.div>
         </div>
-        
-        <motion.div 
+
+        {/* Dotted Map Section */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 h-[400px] rounded-[3rem] overflow-hidden border border-slate-100 shadow-sm"
+          className="relative mt-8 h-[300px] overflow-hidden rounded-2xl border border-white/60 bg-white/45 p-4 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:mt-16 sm:h-[450px] sm:rounded-[3rem] sm:p-8"
         >
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.672522765872!2d-0.011888924024345262!3d5.615277794365778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf704259b1397b%3A0x6ec040510526e0e0!2sItaly%20Flats!5e0!3m2!1sen!2sgh!4v1714659000000!5m2!1sen!2sgh" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen={true} 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
+          <DottedMap
+            width={180}
+            height={90}
+            mapSamples={16000}
+            dotRadius={0.19}
+            dotColor="rgba(15, 23, 42, 0.65)"
+            markerColor="#0f172a"
+            pulse
+            markers={[
+              { lat: 5.6667, lng: -0.0167, size: 0.9, pulse: true },
+            ]}
+            className="absolute inset-0 size-full"
+            aria-label={`${BINEY.name} location map`}
+          />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/60 to-transparent" />
+        </motion.div>
+
+        {/* Real Map Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative mt-8 h-[400px] overflow-hidden rounded-2xl border border-white/60 bg-white/45 p-2 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:mt-16 sm:h-[500px] sm:rounded-[3rem] sm:p-4"
+        >
+          <iframe
             title="Biney Medical Centre Location"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.665971434316!2d-0.0192!3d5.6667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1020790000000001%3A0x0!2zNcKwNDAnMDAuMSJOIDDCsDAxJzA5LjEiVw!5e0!3m2!1sen!2sgh!4v1714750000000!5m2!1sen!2sgh"
+            className="rounded-xl grayscale-[0.2] transition-all hover:grayscale-0 sm:rounded-[2rem]"
           />
         </motion.div>
       </div>

@@ -1,43 +1,39 @@
 import { motion } from 'motion/react';
-import { Stethoscope, Baby, Ear, FlaskConical, ChevronRight } from 'lucide-react';
+import { Baby, ChevronRight, Ear, Stethoscope } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { BINEY, serviceHighlights } from '../data/biney';
 
 const SERVICES = [
   {
-    title: "General Outpatient",
-    description: "Primary diagnostics, wound care, and routine health screenings for all ages.",
-    icon: <Stethoscope className="w-8 h-8 text-sky-600" />,
+    title: 'General services',
+    description: serviceHighlights[0].description,
+    icon: <Stethoscope className="size-8 text-primary" />,
   },
   {
-    title: "Maternity & Child",
-    description: "Antenatal care, delivery support, and postnatal health for mothers and infants.",
-    icon: <Baby className="w-8 h-8 text-sky-600" />,
+    title: 'ENT Problems',
+    description: serviceHighlights[1].description,
+    icon: <Ear className="size-8 text-primary" />,
   },
   {
-    title: "ENT Care",
-    description: "Specialized treatment for ear, nose, and throat conditions by expert clinicians.",
-    icon: <Ear className="w-8 h-8 text-sky-600" />,
-  },
-  {
-    title: "Lab & Pharmacy",
-    description: "Full-service laboratory and dispensing pharmacy for immediate prescription care.",
-    icon: <FlaskConical className="w-8 h-8 text-sky-600" />,
+    title: 'Pregnancy',
+    description: serviceHighlights[2].description,
+    icon: <Baby className="size-8 text-primary" />,
   },
 ];
 
 const Services = () => {
   return (
-    <section className="py-24 bg-transparent pt-32">
-      <div className="max-w-7xl mx-auto px-10">
-        <div className="text-center mb-16">
-          <h2 className="text-sky-600 font-bold tracking-widest uppercase text-sm mb-4">Our Services</h2>
-          <h3 className="text-4xl font-bold text-slate-900 mb-6 tracking-tight">Comprehensive Medical Solutions</h3>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            We provide a diverse range of specialized and general medical services designed to meet your family's health needs with expertise and compassion.
+    <section className="bg-transparent px-4 py-14 pt-28 sm:px-10 sm:py-24 sm:pt-32">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-8 text-center sm:mb-16">
+          <h2 className="mb-2 text-[8px] font-bold uppercase tracking-[0.22em] text-primary sm:mb-4 sm:text-sm sm:tracking-widest">Our Services</h2>
+          <h3 className="mb-3 text-2xl font-bold tracking-tight text-slate-900 sm:mb-6 sm:text-4xl">Care that starts where patients are.</h3>
+          <p className="mx-auto max-w-2xl text-xs leading-relaxed text-slate-500 sm:text-lg">
+            We keep the patient journey direct: call, visit, get heard, and leave with a clearer next step.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div className="grid grid-cols-1 gap-3 sm:gap-6 md:grid-cols-3">
           {SERVICES.map((service, index) => (
             <motion.div
               key={service.title}
@@ -45,50 +41,25 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5, boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.05)" }}
-              className="service-card"
+              whileHover={{ y: 0 }}
+              className="rounded-xl border border-white/60 bg-white/45 p-4 text-left shadow-sm backdrop-blur-xl transition-transform md:hover:-translate-y-1 md:hover:shadow-xl sm:rounded-2xl sm:p-8"
             >
-              <div className="mb-4 text-sky-600">
-                {service.icon}
-              </div>
-              <h3 className="font-bold text-slate-900 text-lg mb-2">{service.title}</h3>
-              <p className="text-xs text-slate-500 leading-normal mb-4">{service.description}</p>
-              <Link to="/contact" className="text-[10px] font-bold text-sky-600 uppercase tracking-widest flex items-center gap-1 hover:gap-2 transition-all">
-                Details <ChevronRight className="w-3 h-3" />
+              <div className="mb-3 [&_svg]:size-5 sm:mb-5 sm:[&_svg]:size-8">{service.icon}</div>
+              <h3 className="mb-2 text-base font-bold text-slate-900 sm:mb-3 sm:text-lg">{service.title}</h3>
+              <p className="mb-4 text-xs leading-relaxed text-slate-500 sm:mb-6 sm:text-sm">{service.description}</p>
+              <Link to="/contact" className="flex items-center gap-1 text-[8px] font-bold uppercase tracking-[0.16em] text-primary transition-all md:hover:gap-2 sm:text-[10px] sm:tracking-widest">
+                Contact <ChevronRight className="size-3" />
               </Link>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-20 p-12 bg-white/40 backdrop-blur-[100px] rounded-[3.5rem] border border-white/60 flex flex-col md:flex-row items-center gap-12 shadow-xl shadow-sky-100/20">
-          <div className="flex-1">
-            <h4 className="text-2xl font-bold text-slate-900 mb-4">Emergency Support</h4>
-            <p className="text-slate-500 mb-6 leading-relaxed">
-              Our clinical staff is on call 24/7 for emergency guidance. If you are experiencing a life-threatening emergency, please call our direct hotline immediately.
-            </p>
-            <div className="flex items-center gap-4">
-              <a href="tel:+233303204368" className="bg-sky-600 text-white px-8 py-3 rounded-xl font-bold text-sm uppercase tracking-widest shadow-lg shadow-sky-100 hover:bg-sky-700 transition-colors">Call Now</a>
-              <p className="text-sm font-bold text-slate-900">+233 30 320 4368</p>
-            </div>
-          </div>
-          <div className="flex-1 grid grid-cols-2 gap-4">
-             <div className="bg-white/50 backdrop-blur-3xl p-6 rounded-2xl border border-white/80 shadow-sm">
-                <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Vaccinations</p>
-                <p className="text-sm font-bold text-slate-800">Routine immunizations for all ages.</p>
-             </div>
-             <div className="bg-white/50 backdrop-blur-3xl p-6 rounded-2xl border border-white/80 shadow-sm">
-                <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Minor Surgery</p>
-                <p className="text-sm font-bold text-slate-800">Wound care and basic surgical procedures.</p>
-             </div>
-             <div className="bg-white/50 backdrop-blur-3xl p-6 rounded-2xl border border-white/80 shadow-sm">
-                <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Pharmacy</p>
-                <p className="text-sm font-bold text-slate-800">Dispensing medications 24/7.</p>
-             </div>
-             <div className="bg-white/50 backdrop-blur-3xl p-6 rounded-2xl border border-white/80 shadow-sm">
-                <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2">Diagnostics</p>
-                <p className="text-sm font-bold text-slate-800">Laboratory testing on-site.</p>
-             </div>
-          </div>
+        <div className="mt-10 rounded-2xl border border-white/60 bg-white/40 p-5 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:mt-20 sm:rounded-[2rem] sm:p-10">
+          <h4 className="mb-3 text-lg font-bold text-slate-900 sm:mb-4 sm:text-2xl">A primary hospital for the community</h4>
+          <p className="mb-4 text-xs leading-relaxed text-slate-500 sm:mb-6 sm:text-base">
+            Biney Medical Centre is positioned as a private primary hospital in Tema. A full custom platform can expand these care areas into department pages, doctor profiles, patient education, insurance guidance, and direct appointment workflows.
+          </p>
+          <p className="text-sm font-bold text-slate-900">{BINEY.facilityType}</p>
         </div>
       </div>
     </section>
