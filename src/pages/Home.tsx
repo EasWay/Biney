@@ -25,13 +25,9 @@ import { BINEY, serviceHighlights } from '../data/biney';
 const serviceIcons = [Stethoscope, Ear, Baby];
 
 const Home = ({ onBookClick }: { onBookClick: () => void }) => {
-  const [isMounted, setIsMounted] = React.useState(false);
-
   useEffect(() => {
-    setIsMounted(true);
     (window as any).openBookingModal = onBookClick;
     return () => {
-      setIsMounted(false);
       delete (window as any).openBookingModal;
     };
   }, [onBookClick]);
@@ -51,12 +47,10 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
               <ParallaxSection zoom offset={100} className="size-full">
                 <div className="relative size-full cursor-grab active:cursor-grabbing">
                   <div className="absolute inset-0">
-                    {isMounted && (
-                      <Spline 
-                        key="home-spline"
-                        scene="https://prod.spline.design/MPahsWaY76fSaIYP/scene.splinecode" 
-                      />
-                    )}
+                    <Spline
+                      key="home-spline"
+                      scene="https://prod.spline.design/MPahsWaY76fSaIYP/scene.splinecode"
+                    />
                   </div>
 
                 </div>
