@@ -1,0 +1,5651 @@
+[
+  {
+    "patient_id": "BMC-2025-00001",
+    "personal_identifiers": {
+      "full_name": "Kwame Owusu",
+      "date_of_birth": "1973-05-13",
+      "age": 53,
+      "gender": "Male",
+      "phone": "+233 055 218 1960",
+      "email": "kwame.owusu@email.com",
+      "address": "16 Hospital Road, Community 7, Tema, Ghana",
+      "id_number": "GHA-3585650756-8",
+      "emergency_contact": {
+        "name": "Grace Owusu",
+        "relationship": "Child",
+        "phone": "+233 055 794 0265"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2025-00001-20240510",
+        "visit_date": "2024-05-10 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Kwame Biney",
+        "chief_complaint": "Reduced Fetal Movements",
+        "diagnosis": "Reduced Fetal Movements — Reassuring Scan",
+        "prescriptions": [
+          "Nifedipine 20mg",
+          "Labetalol 100mg",
+          "Magnesium Sulphate (IM)"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2024-05-22",
+        "notes": "Patient stable. Routine monitoring adequate."
+      },
+      {
+        "visit_id": "VST-BMC-2025-00001-20250127",
+        "visit_date": "2025-01-27 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Ama Biney",
+        "chief_complaint": "Routine Antenatal Care",
+        "diagnosis": "Routine Antenatal Care — 28 Weeks",
+        "prescriptions": [
+          "Metformin 500mg",
+          "Glimepiride 2mg",
+          "Aspirin 75mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Routine monitoring adequate."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2025-00001-20240510-1",
+        "test_date": "2024-05-10",
+        "test_name": "Abdominal Ultrasound",
+        "result": "Normal findings. No abnormalities detected.",
+        "reference_range": "N/A — Imaging",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00001-20250127-1",
+        "test_date": "2025-01-27",
+        "test_name": "Audiometry",
+        "result": "Mild conductive hearing loss (right ear)",
+        "reference_range": "0-25 dB HL across all frequencies",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00001-20250127-2",
+        "test_date": "2025-01-27",
+        "test_name": "Renal Function Test (RFT)",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Grace"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-05-10 00:00",
+        "blood_pressure": "125/89 mmHg",
+        "heart_rate": "89 bpm",
+        "respiratory_rate": "17 /min",
+        "temperature": "36.9 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 62.5,
+        "height_cm": 185,
+        "bmi": 29.7,
+        "doctor_notes": "Alert and oriented. No known drug allergies. No chronic conditions.",
+        "allergies": [],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      },
+      {
+        "recorded_at": "2025-01-27 00:00",
+        "blood_pressure": "159/101 mmHg",
+        "heart_rate": "96 bpm",
+        "respiratory_rate": "18 /min",
+        "temperature": "37.2 C",
+        "oxygen_saturation": "97%",
+        "weight_kg": 63.4,
+        "height_cm": 167,
+        "bmi": 30.0,
+        "doctor_notes": "Appears well-nourished. Allergic to penicillin — noted. No chronic conditions.",
+        "allergies": [
+          "Penicillin"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2025-00001-20240510",
+        "invoice_date": "2024-05-10",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 84,
+            "total": 84
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 22,
+            "total": 66
+          }
+        ],
+        "subtotal": 230,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 230,
+        "insurance_provider": "Metropolitan Health",
+        "insurance_claim_amount": 206,
+        "patient_copay": 24,
+        "payment_status": "Paid",
+        "payment_method": "Cash (GHS)",
+        "payment_date": "2024-05-10"
+      },
+      {
+        "invoice_id": "INV-BMC-2025-00001-20250127",
+        "invoice_date": "2025-01-27",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 150,
+            "total": 150
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 2,
+            "unit_price": 102,
+            "total": 204
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 15,
+            "total": 45
+          }
+        ],
+        "subtotal": 399,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 399,
+        "insurance_provider": "Acacia Health",
+        "insurance_claim_amount": 313,
+        "patient_copay": 86,
+        "payment_status": "Pending",
+        "payment_method": "MTN MoMo",
+        "payment_date": null
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2026-00002",
+    "personal_identifiers": {
+      "full_name": "Yaa Addo",
+      "date_of_birth": "1981-08-04",
+      "age": 44,
+      "gender": "Female",
+      "phone": "+233 025 161 5594",
+      "email": "yaa.addo@email.com",
+      "address": "414 Main Street, Ashaiman, Tema, Ghana",
+      "id_number": "GHA-3303082117-6",
+      "emergency_contact": {
+        "name": "Yaw Addo",
+        "relationship": "Sibling",
+        "phone": "+233 056 959 3103"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2026-00002-20240121",
+        "visit_date": "2024-01-21 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Abena Mensah",
+        "chief_complaint": "Routine Antenatal Care",
+        "diagnosis": "Routine Antenatal Care — 28 Weeks",
+        "prescriptions": [
+          "Amlodipine 5mg",
+          "Hydrochlorothiazide 12.5mg",
+          "Atorvastatin 20mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2024-02-10",
+        "notes": "Patient stable. Routine monitoring adequate."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00002-20250602",
+        "visit_date": "2025-06-02 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Kwame Biney",
+        "chief_complaint": "Patient presented with gestational diabetes screening",
+        "diagnosis": "Gestational Diabetes Screening",
+        "prescriptions": [
+          "Ciprofloxacin Ear Drops",
+          "Paracetamol 500mg",
+          "Antihistamine"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": null,
+        "notes": "Patient stable. Advised on medication adherence."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2026-00002-20240121-1",
+        "test_date": "2024-01-21",
+        "test_name": "Blood Group & Rhesus",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Abena Mensah",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00002-20240121-2",
+        "test_date": "2024-01-21",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Negative",
+        "reference_range": "Negative",
+        "status": "Final",
+        "ordered_by": "Dr. Abena Mensah",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00002-20250602-1",
+        "test_date": "2025-06-02",
+        "test_name": "Blood Group & Rhesus",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00002-20250602-2",
+        "test_date": "2025-06-02",
+        "test_name": "Liver Function Test (LFT)",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00002-20250602-3",
+        "test_date": "2025-06-02",
+        "test_name": "Chest X-Ray",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Patricia"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-01-21 00:00",
+        "blood_pressure": "141/90 mmHg",
+        "heart_rate": "84 bpm",
+        "respiratory_rate": "18 /min",
+        "temperature": "38.4 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 53.4,
+        "height_cm": 177,
+        "bmi": 29.7,
+        "doctor_notes": "Mild distress on presentation. No known drug allergies. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Penicillin",
+          "NSAIDs"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      },
+      {
+        "recorded_at": "2025-06-02 00:00",
+        "blood_pressure": "158/99 mmHg",
+        "heart_rate": "65 bpm",
+        "respiratory_rate": "16 /min",
+        "temperature": "38.2 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 83.8,
+        "height_cm": 173,
+        "bmi": 26.7,
+        "doctor_notes": "Appears well-nourished. No allergies documented. Chronic conditions: None.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2026-00002-20240121",
+        "invoice_date": "2024-01-21",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 2,
+            "unit_price": 112,
+            "total": 224
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 40,
+            "total": 120
+          }
+        ],
+        "subtotal": 424,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 424,
+        "insurance_provider": "NHIS",
+        "insurance_claim_amount": 291,
+        "patient_copay": 133,
+        "payment_status": "Pending",
+        "payment_method": "Vodafone Cash",
+        "payment_date": "2024-01-21"
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00002-20250602",
+        "invoice_date": "2025-06-02",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 100,
+            "total": 100
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 102,
+            "total": 306
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 21,
+            "total": 63
+          }
+        ],
+        "subtotal": 469,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 469,
+        "insurance_provider": "GLICO Healthcare",
+        "insurance_claim_amount": 422,
+        "patient_copay": 47,
+        "payment_status": "Paid",
+        "payment_method": "Vodafone Cash",
+        "payment_date": "2025-06-02"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2024-00003",
+    "personal_identifiers": {
+      "full_name": "Efua Boateng",
+      "date_of_birth": "1960-06-15",
+      "age": 65,
+      "gender": "Female",
+      "phone": "+233 050 475 2553",
+      "email": "efua.boateng@email.com",
+      "address": "344 Independence Avenue, Community 3, Tema, Ghana",
+      "id_number": "GHA-4131575764-2",
+      "emergency_contact": {
+        "name": "Richard Boateng",
+        "relationship": "Child",
+        "phone": "+233 059 835 0305"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2024-00003-20240111",
+        "visit_date": "2024-01-11 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Kwame Biney",
+        "chief_complaint": "Routine Antenatal Care",
+        "diagnosis": "Routine Antenatal Care — 36 Weeks",
+        "prescriptions": [
+          "Metformin 500mg",
+          "Glimepiride 2mg",
+          "Aspirin 75mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": null,
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00003-20240412",
+        "visit_date": "2024-04-12 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Abena Mensah",
+        "chief_complaint": "Patient presented with type 2 diabetes mellitus",
+        "diagnosis": "Type 2 Diabetes Mellitus",
+        "prescriptions": [
+          "Ciprofloxacin 500mg",
+          "Metronidazole 400mg",
+          "Loperamide 2mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00003-20240427",
+        "visit_date": "2024-04-27 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Ama Biney",
+        "chief_complaint": "Routine Antenatal Care",
+        "diagnosis": "Routine Antenatal Care — 36 Weeks",
+        "prescriptions": [
+          "Amlodipine 5mg",
+          "Hydrochlorothiazide 12.5mg",
+          "Atorvastatin 20mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2024-05-08",
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00003-20260220",
+        "visit_date": "2026-02-20 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Kofi Annan",
+        "chief_complaint": "Patient presented with mild anaemia",
+        "diagnosis": "Mild Anaemia",
+        "prescriptions": [
+          "Folic Acid 5mg",
+          "Iron Supplement",
+          "Calcium Carbonate 500mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": null,
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00003-20260305",
+        "visit_date": "2026-03-05 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Patient presented with anaemia in pregnancy",
+        "diagnosis": "Anaemia in Pregnancy",
+        "prescriptions": [
+          "Nifedipine 20mg",
+          "Labetalol 100mg",
+          "Magnesium Sulphate (IM)"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": null,
+        "notes": "Patient stable. Routine monitoring adequate."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2024-00003-20240111-1",
+        "test_date": "2024-01-11",
+        "test_name": "Pelvic Ultrasound",
+        "result": "Normal findings. No abnormalities detected.",
+        "reference_range": "N/A — Imaging",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20240111-2",
+        "test_date": "2024-01-11",
+        "test_name": "Urinalysis",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20240111-3",
+        "test_date": "2024-01-11",
+        "test_name": "Nasal Endoscopy",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20240412-1",
+        "test_date": "2024-04-12",
+        "test_name": "Lipid Profile",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Abena Mensah",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20240412-2",
+        "test_date": "2024-04-12",
+        "test_name": "Audiometry",
+        "result": "Mild conductive hearing loss (right ear)",
+        "reference_range": "0-25 dB HL across all frequencies",
+        "status": "Final",
+        "ordered_by": "Dr. Abena Mensah",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20240412-3",
+        "test_date": "2024-04-12",
+        "test_name": "Fasting Blood Glucose",
+        "result": "10.9 mmol/L",
+        "reference_range": "3.9 – 6.1 mmol/L (Fasting)",
+        "status": "Final",
+        "ordered_by": "Dr. Abena Mensah",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20240412-4",
+        "test_date": "2024-04-12",
+        "test_name": "Pelvic Ultrasound",
+        "result": "Small renal cyst (left kidney, 1.2cm). Benign appearance.",
+        "reference_range": "N/A — Imaging",
+        "status": "Final",
+        "ordered_by": "Dr. Abena Mensah",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20240427-1",
+        "test_date": "2024-04-27",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Negative",
+        "reference_range": "Negative",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20260220-1",
+        "test_date": "2026-02-20",
+        "test_name": "Chest X-Ray",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20260220-2",
+        "test_date": "2026-02-20",
+        "test_name": "Blood Group & Rhesus",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20260220-3",
+        "test_date": "2026-02-20",
+        "test_name": "Fasting Blood Glucose",
+        "result": "10.8 mmol/L",
+        "reference_range": "3.9 – 6.1 mmol/L (Fasting)",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20260220-4",
+        "test_date": "2026-02-20",
+        "test_name": "Pelvic Ultrasound",
+        "result": "Intrauterine pregnancy, 17 weeks gestation. Fetal heart activity present.",
+        "reference_range": "N/A — Imaging",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20260305-1",
+        "test_date": "2026-03-05",
+        "test_name": "Nasal Endoscopy",
+        "result": "Normal",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00003-20260305-2",
+        "test_date": "2026-03-05",
+        "test_name": "Renal Function Test (RFT)",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Patricia"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-01-11 00:00",
+        "blood_pressure": "132/79 mmHg",
+        "heart_rate": "95 bpm",
+        "respiratory_rate": "17 /min",
+        "temperature": "36.9 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 62.2,
+        "height_cm": 163,
+        "bmi": 21.6,
+        "doctor_notes": "Mild distress on presentation. No allergies documented. Chronic conditions: None.",
+        "allergies": [
+          "Penicillin",
+          "NSAIDs"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      },
+      {
+        "recorded_at": "2024-04-12 00:00",
+        "blood_pressure": "121/61 mmHg",
+        "heart_rate": "90 bpm",
+        "respiratory_rate": "13 /min",
+        "temperature": "38.1 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 72.1,
+        "height_cm": 173,
+        "bmi": 27.0,
+        "doctor_notes": "Patient cooperative. Allergic to penicillin — noted. Known hypertensive — on medication.",
+        "allergies": [
+          "Shellfish"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2024-04-27 00:00",
+        "blood_pressure": "134/82 mmHg",
+        "heart_rate": "79 bpm",
+        "respiratory_rate": "18 /min",
+        "temperature": "38.4 C",
+        "oxygen_saturation": "99%",
+        "weight_kg": 74.3,
+        "height_cm": 169,
+        "bmi": 19.6,
+        "doctor_notes": "Patient cooperative. Sulfa allergy — avoid Bactrim. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Shellfish"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2026-02-20 00:00",
+        "blood_pressure": "110/70 mmHg",
+        "heart_rate": "76 bpm",
+        "respiratory_rate": "17 /min",
+        "temperature": "36.4 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 88.9,
+        "height_cm": 181,
+        "bmi": 31.8,
+        "doctor_notes": "Appears well-nourished. Sulfa allergy — avoid Bactrim. Chronic conditions: None.",
+        "allergies": [
+          "Penicillin"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      },
+      {
+        "recorded_at": "2026-03-05 00:00",
+        "blood_pressure": "120/85 mmHg",
+        "heart_rate": "95 bpm",
+        "respiratory_rate": "13 /min",
+        "temperature": "36.5 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 70.3,
+        "height_cm": 174,
+        "bmi": 24.8,
+        "doctor_notes": "Patient cooperative. Allergic to penicillin — noted. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Penicillin",
+          "NSAIDs"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2024-00003-20240111",
+        "invoice_date": "2024-01-11",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 200,
+            "total": 200
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 63,
+            "total": 189
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 21,
+            "total": 63
+          }
+        ],
+        "subtotal": 452,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 452,
+        "insurance_provider": "Apex Health",
+        "insurance_claim_amount": 400,
+        "patient_copay": 52,
+        "payment_status": "Paid",
+        "payment_method": "Insurance Direct",
+        "payment_date": "2024-01-11"
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00003-20240412",
+        "invoice_date": "2024-04-12",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 71,
+            "total": 284
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 18,
+            "total": 54
+          }
+        ],
+        "subtotal": 418,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 418,
+        "insurance_provider": "Self-Pay (Mobile Money)",
+        "insurance_claim_amount": 0,
+        "patient_copay": 418,
+        "payment_status": "Pending",
+        "payment_method": "Insurance Direct",
+        "payment_date": "2024-04-12"
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00003-20240427",
+        "invoice_date": "2024-04-27",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 51,
+            "total": 51
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 22,
+            "total": 66
+          }
+        ],
+        "subtotal": 197,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 197,
+        "insurance_provider": "Corporate Retainer",
+        "insurance_claim_amount": 167,
+        "patient_copay": 30,
+        "payment_status": "Paid",
+        "payment_method": "Vodafone Cash",
+        "payment_date": "2024-04-27"
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00003-20260220",
+        "invoice_date": "2026-02-20",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 120,
+            "total": 120
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 119,
+            "total": 476
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 39,
+            "total": 117
+          }
+        ],
+        "subtotal": 713,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 713,
+        "insurance_provider": "Self-Pay (Cash)",
+        "insurance_claim_amount": 0,
+        "patient_copay": 713,
+        "payment_status": "Pending",
+        "payment_method": "Cash (GHS)",
+        "payment_date": "2026-02-20"
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00003-20260305",
+        "invoice_date": "2026-03-05",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 200,
+            "total": 200
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 2,
+            "unit_price": 98,
+            "total": 196
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 17,
+            "total": 51
+          }
+        ],
+        "subtotal": 447,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 447,
+        "insurance_provider": "Apex Health",
+        "insurance_claim_amount": 416,
+        "patient_copay": 31,
+        "payment_status": "Partially Paid",
+        "payment_method": "MTN MoMo",
+        "payment_date": null
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2025-00004",
+    "personal_identifiers": {
+      "full_name": "Dorothy Osei",
+      "date_of_birth": "1970-04-28",
+      "age": 56,
+      "gender": "Female",
+      "phone": "+233 026 537 6724",
+      "email": "dorothy.osei@email.com",
+      "address": "72 Liberation Road, Michel Camp, Tema, Ghana",
+      "id_number": "GHA-7609857128-9",
+      "emergency_contact": {
+        "name": "Stephen Osei",
+        "relationship": "Child",
+        "phone": "+233 020 328 7101"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2025-00004-20240116",
+        "visit_date": "2024-01-16 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Routine Antenatal Care",
+        "diagnosis": "Routine Antenatal Care — 28 Weeks",
+        "prescriptions": [
+          "Ciprofloxacin Ear Drops",
+          "Paracetamol 500mg",
+          "Antihistamine"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": "2024-02-22",
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2025-00004-20240312",
+        "visit_date": "2024-03-12 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Patient presented with nasal polyps",
+        "diagnosis": "Nasal Polyps",
+        "prescriptions": [
+          "Nifedipine 20mg",
+          "Labetalol 100mg",
+          "Magnesium Sulphate (IM)"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2024-04-06",
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2025-00004-20250716",
+        "visit_date": "2025-07-16 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Patient presented with type 2 diabetes mellitus",
+        "diagnosis": "Type 2 Diabetes Mellitus",
+        "prescriptions": [
+          "Nifedipine 20mg",
+          "Labetalol 100mg",
+          "Magnesium Sulphate (IM)"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2025-07-24",
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2025-00004-20240116-1",
+        "test_date": "2024-01-16",
+        "test_name": "Pap Smear",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00004-20240116-2",
+        "test_date": "2024-01-16",
+        "test_name": "Audiometry",
+        "result": "Mild conductive hearing loss (right ear)",
+        "reference_range": "0-25 dB HL across all frequencies",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00004-20240312-1",
+        "test_date": "2024-03-12",
+        "test_name": "Nasal Endoscopy",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00004-20240312-2",
+        "test_date": "2024-03-12",
+        "test_name": "Audiometry",
+        "result": "Mild conductive hearing loss (right ear)",
+        "reference_range": "0-25 dB HL across all frequencies",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00004-20240312-3",
+        "test_date": "2024-03-12",
+        "test_name": "Audiometry",
+        "result": "Moderate sensorineural loss (left ear)",
+        "reference_range": "0-25 dB HL across all frequencies",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00004-20240312-4",
+        "test_date": "2024-03-12",
+        "test_name": "HIV Rapid Test",
+        "result": "Non-Reactive",
+        "reference_range": "Non-Reactive",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00004-20250716-1",
+        "test_date": "2025-07-16",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Negative",
+        "reference_range": "Negative",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Grace"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-01-16 00:00",
+        "blood_pressure": "160/113 mmHg",
+        "heart_rate": "62 bpm",
+        "respiratory_rate": "13 /min",
+        "temperature": "36.7 C",
+        "oxygen_saturation": "100%",
+        "weight_kg": 91.4,
+        "height_cm": 162,
+        "bmi": 28.6,
+        "doctor_notes": "Appears well-nourished. No known drug allergies. Chronic conditions: None.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": [
+          "Hypertension"
+        ]
+      },
+      {
+        "recorded_at": "2024-03-12 00:00",
+        "blood_pressure": "119/62 mmHg",
+        "heart_rate": "86 bpm",
+        "respiratory_rate": "12 /min",
+        "temperature": "36.9 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 81.7,
+        "height_cm": 180,
+        "bmi": 23.6,
+        "doctor_notes": "Mild distress on presentation. Sulfa allergy — avoid Bactrim. Chronic conditions: None.",
+        "allergies": [
+          "Penicillin"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      },
+      {
+        "recorded_at": "2025-07-16 00:00",
+        "blood_pressure": "119/63 mmHg",
+        "heart_rate": "67 bpm",
+        "respiratory_rate": "19 /min",
+        "temperature": "38.4 C",
+        "oxygen_saturation": "100%",
+        "weight_kg": 87.4,
+        "height_cm": 170,
+        "bmi": 31.1,
+        "doctor_notes": "Alert and oriented. No allergies documented. No chronic conditions.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": [
+          "Hypertension",
+          "Type 2 Diabetes"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2025-00004-20240116",
+        "invoice_date": "2024-01-16",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 200,
+            "total": 200
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 2,
+            "unit_price": 78,
+            "total": 156
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 43,
+            "total": 129
+          }
+        ],
+        "subtotal": 485,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 485,
+        "insurance_provider": "NHIS",
+        "insurance_claim_amount": 297,
+        "patient_copay": 188,
+        "payment_status": "Paid",
+        "payment_method": "Vodafone Cash",
+        "payment_date": "2024-01-16"
+      },
+      {
+        "invoice_id": "INV-BMC-2025-00004-20240312",
+        "invoice_date": "2024-03-12",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 82,
+            "total": 328
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 42,
+            "total": 126
+          }
+        ],
+        "subtotal": 634,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 634,
+        "insurance_provider": "Metropolitan Health",
+        "insurance_claim_amount": 582,
+        "patient_copay": 52,
+        "payment_status": "Pending",
+        "payment_method": "Cash (GHS)",
+        "payment_date": null
+      },
+      {
+        "invoice_id": "INV-BMC-2025-00004-20250716",
+        "invoice_date": "2025-07-16",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 100,
+            "total": 100
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 98,
+            "total": 98
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 32,
+            "total": 96
+          }
+        ],
+        "subtotal": 294,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 294,
+        "insurance_provider": "Cosmopolitan Health",
+        "insurance_claim_amount": 234,
+        "patient_copay": 60,
+        "payment_status": "Partially Paid",
+        "payment_method": "Insurance Direct",
+        "payment_date": "2025-07-16"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2026-00005",
+    "personal_identifiers": {
+      "full_name": "Ebenezer Quaye",
+      "date_of_birth": "2004-11-25",
+      "age": 21,
+      "gender": "Male",
+      "phone": "+233 025 669 7848",
+      "email": "ebenezer.quaye@email.com",
+      "address": "441 Main Street, Community 4, Tema, Ghana",
+      "id_number": "GHA-8047877267-1",
+      "emergency_contact": {
+        "name": "Elizabeth Quaye",
+        "relationship": "Child",
+        "phone": "+233 054 704 8281"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2026-00005-20240402",
+        "visit_date": "2024-04-02 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Patient presented with acute otitis media",
+        "diagnosis": "Acute Otitis Media",
+        "prescriptions": [
+          "Chlorpheniramine 4mg",
+          "Saline Nasal Spray",
+          "Steam Inhalation Capsules"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00005-20250317",
+        "visit_date": "2025-03-17 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Kofi Annan",
+        "chief_complaint": "Patient presented with hypertension (stage 1)",
+        "diagnosis": "Hypertension (Stage 1)",
+        "prescriptions": [
+          "Ferrous Sulphate 200mg",
+          "Folic Acid 5mg",
+          "Vitamin B Complex"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": "2025-04-04",
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00005-20250802",
+        "visit_date": "2025-08-02 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Kofi Annan",
+        "chief_complaint": "Routine Antenatal Care",
+        "diagnosis": "Routine Antenatal Care — 12 Weeks",
+        "prescriptions": [
+          "Prenatal Vitamins",
+          "Ferrous Fumarate",
+          "Omega-3 Supplement"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": null,
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2026-00005-20240402-1",
+        "test_date": "2024-04-02",
+        "test_name": "Nasal Endoscopy",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00005-20240402-2",
+        "test_date": "2024-04-02",
+        "test_name": "Urinalysis",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00005-20250317-1",
+        "test_date": "2025-03-17",
+        "test_name": "Sickling Test",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00005-20250317-2",
+        "test_date": "2025-03-17",
+        "test_name": "Urinalysis",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00005-20250317-3",
+        "test_date": "2025-03-17",
+        "test_name": "Thyroid Function Test",
+        "result": "Normal",
+        "reference_range": "Refer to lab report",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00005-20250317-4",
+        "test_date": "2025-03-17",
+        "test_name": "Audiometry",
+        "result": "Normal hearing bilaterally",
+        "reference_range": "0-25 dB HL across all frequencies",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00005-20250802-1",
+        "test_date": "2025-08-02",
+        "test_name": "Blood Group & Rhesus",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00005-20250802-2",
+        "test_date": "2025-08-02",
+        "test_name": "Lipid Profile",
+        "result": "Normal",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00005-20250802-3",
+        "test_date": "2025-08-02",
+        "test_name": "Abdominal Ultrasound",
+        "result": "Gallbladder normal. No stones or wall thickening.",
+        "reference_range": "N/A — Imaging",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00005-20250802-4",
+        "test_date": "2025-08-02",
+        "test_name": "Widal Test (Typhoid)",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-04-02 00:00",
+        "blood_pressure": "144/107 mmHg",
+        "heart_rate": "64 bpm",
+        "respiratory_rate": "19 /min",
+        "temperature": "38.3 C",
+        "oxygen_saturation": "97%",
+        "weight_kg": 79.2,
+        "height_cm": 158,
+        "bmi": 20.4,
+        "doctor_notes": "Patient cooperative. No allergies documented. No chronic conditions.",
+        "allergies": [],
+        "chronic_conditions": []
+      },
+      {
+        "recorded_at": "2025-03-17 00:00",
+        "blood_pressure": "127/79 mmHg",
+        "heart_rate": "79 bpm",
+        "respiratory_rate": "18 /min",
+        "temperature": "37.8 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 88.0,
+        "height_cm": 161,
+        "bmi": 32.0,
+        "doctor_notes": "Appears well-nourished. No known drug allergies. Known hypertensive — on medication.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      },
+      {
+        "recorded_at": "2025-08-02 00:00",
+        "blood_pressure": "116/80 mmHg",
+        "heart_rate": "68 bpm",
+        "respiratory_rate": "20 /min",
+        "temperature": "38.2 C",
+        "oxygen_saturation": "97%",
+        "weight_kg": 73.9,
+        "height_cm": 184,
+        "bmi": 22.2,
+        "doctor_notes": "Mild distress on presentation. No allergies documented. No chronic conditions.",
+        "allergies": [
+          "Sulfa drugs"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2026-00005-20240402",
+        "invoice_date": "2024-04-02",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 100,
+            "total": 100
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 2,
+            "unit_price": 108,
+            "total": 216
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 19,
+            "total": 57
+          }
+        ],
+        "subtotal": 373,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 373,
+        "insurance_provider": "Acacia Health",
+        "insurance_claim_amount": 303,
+        "patient_copay": 70,
+        "payment_status": "Partially Paid",
+        "payment_method": "Card",
+        "payment_date": "2024-04-02"
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00005-20250317",
+        "invoice_date": "2025-03-17",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 120,
+            "total": 120
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 113,
+            "total": 452
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 24,
+            "total": 72
+          }
+        ],
+        "subtotal": 644,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 644,
+        "insurance_provider": "Premier Health",
+        "insurance_claim_amount": 454,
+        "patient_copay": 190,
+        "payment_status": "Pending",
+        "payment_method": "Vodafone Cash",
+        "payment_date": "2025-03-17"
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00005-20250802",
+        "invoice_date": "2025-08-02",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 99,
+            "total": 396
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 45,
+            "total": 135
+          }
+        ],
+        "subtotal": 611,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 611,
+        "insurance_provider": "Metropolitan Health",
+        "insurance_claim_amount": 449,
+        "patient_copay": 162,
+        "payment_status": "Paid",
+        "payment_method": "Card",
+        "payment_date": "2025-08-02"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2024-00006",
+    "personal_identifiers": {
+      "full_name": "Joyce Nyarko",
+      "date_of_birth": "1969-03-28",
+      "age": 57,
+      "gender": "Female",
+      "phone": "+233 054 528 8095",
+      "email": "joyce.nyarko@email.com",
+      "address": "251 Main Street, Community 4, Tema, Ghana",
+      "id_number": "GHA-9285415473-4",
+      "emergency_contact": {
+        "name": "Daniel Nyarko",
+        "relationship": "Spouse",
+        "phone": "+233 055 911 7182"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2024-00006-20240528",
+        "visit_date": "2024-05-28 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Patient presented with musculoskeletal back pain",
+        "diagnosis": "Musculoskeletal Back Pain",
+        "prescriptions": [
+          "Amoxicillin-Clavulanate 625mg",
+          "Paracetamol 500mg",
+          "Throat Lozenges"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": "2024-06-05",
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00006-20251101",
+        "visit_date": "2025-11-01 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Kofi Annan",
+        "chief_complaint": "Patient presented with mild anaemia",
+        "diagnosis": "Mild Anaemia",
+        "prescriptions": [
+          "Ferrous Sulphate 200mg",
+          "Folic Acid 5mg",
+          "Vitamin B Complex"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2025-12-01",
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00006-20251112",
+        "visit_date": "2025-11-12 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Abena Mensah",
+        "chief_complaint": "Patient presented with ear wax impaction",
+        "diagnosis": "Ear Wax Impaction",
+        "prescriptions": [
+          "Folic Acid 5mg",
+          "Iron Supplement",
+          "Calcium Carbonate 500mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2025-11-24",
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00006-20260114",
+        "visit_date": "2026-01-14 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Reduced Fetal Movements",
+        "diagnosis": "Reduced Fetal Movements — Reassuring Scan",
+        "prescriptions": [
+          "Ibuprofen 400mg",
+          "Diclofenac Gel",
+          "Muscle Relaxant (Orphenadrine)"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": "2026-02-20",
+        "notes": "Patient stable. Routine monitoring adequate."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2024-00006-20251101-1",
+        "test_date": "2025-11-01",
+        "test_name": "Abdominal Ultrasound",
+        "result": "Mild fatty liver changes noted. Recommend lifestyle review.",
+        "reference_range": "N/A — Imaging",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00006-20251101-2",
+        "test_date": "2025-11-01",
+        "test_name": "Blood Group & Rhesus",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00006-20251101-3",
+        "test_date": "2025-11-01",
+        "test_name": "Thyroid Function Test",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00006-20260114-1",
+        "test_date": "2026-01-14",
+        "test_name": "Fasting Blood Glucose",
+        "result": "7.7 mmol/L",
+        "reference_range": "3.9 – 6.1 mmol/L (Fasting)",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00006-20260114-2",
+        "test_date": "2026-01-14",
+        "test_name": "Widal Test (Typhoid)",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00006-20260114-3",
+        "test_date": "2026-01-14",
+        "test_name": "Lipid Profile",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Daniel"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-05-28 00:00",
+        "blood_pressure": "127/72 mmHg",
+        "heart_rate": "75 bpm",
+        "respiratory_rate": "17 /min",
+        "temperature": "36.1 C",
+        "oxygen_saturation": "97%",
+        "weight_kg": 52.4,
+        "height_cm": 178,
+        "bmi": 24.2,
+        "doctor_notes": "Patient cooperative. No known drug allergies. No chronic conditions.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2025-11-01 00:00",
+        "blood_pressure": "110/60 mmHg",
+        "heart_rate": "73 bpm",
+        "respiratory_rate": "12 /min",
+        "temperature": "36.2 C",
+        "oxygen_saturation": "97%",
+        "weight_kg": 61.0,
+        "height_cm": 159,
+        "bmi": 29.1,
+        "doctor_notes": "Mild distress on presentation. No known drug allergies. Known hypertensive — on medication.",
+        "allergies": [
+          "Shellfish"
+        ],
+        "chronic_conditions": [
+          "Hypertension"
+        ]
+      },
+      {
+        "recorded_at": "2025-11-12 00:00",
+        "blood_pressure": "132/99 mmHg",
+        "heart_rate": "83 bpm",
+        "respiratory_rate": "14 /min",
+        "temperature": "37.4 C",
+        "oxygen_saturation": "99%",
+        "weight_kg": 93.0,
+        "height_cm": 172,
+        "bmi": 23.0,
+        "doctor_notes": "Patient cooperative. Sulfa allergy — avoid Bactrim. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Penicillin",
+          "NSAIDs"
+        ],
+        "chronic_conditions": [
+          "Hypertension",
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2026-01-14 00:00",
+        "blood_pressure": "143/97 mmHg",
+        "heart_rate": "78 bpm",
+        "respiratory_rate": "19 /min",
+        "temperature": "37.3 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 54.5,
+        "height_cm": 177,
+        "bmi": 20.0,
+        "doctor_notes": "Mild distress on presentation. Sulfa allergy — avoid Bactrim. No chronic conditions.",
+        "allergies": [
+          "Penicillin"
+        ],
+        "chronic_conditions": [
+          "Hypertension",
+          "Type 2 Diabetes"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2024-00006-20240528",
+        "invoice_date": "2024-05-28",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 0,
+            "unit_price": 0,
+            "total": 0
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 18,
+            "total": 54
+          }
+        ],
+        "subtotal": 234,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 234,
+        "insurance_provider": "Self-Pay (Cash)",
+        "insurance_claim_amount": 0,
+        "patient_copay": 234,
+        "payment_status": "Partially Paid",
+        "payment_method": "MTN MoMo",
+        "payment_date": "2024-05-28"
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00006-20251101",
+        "invoice_date": "2025-11-01",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 100,
+            "total": 100
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 82,
+            "total": 246
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 39,
+            "total": 117
+          }
+        ],
+        "subtotal": 463,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 463,
+        "insurance_provider": "Cosmopolitan Health",
+        "insurance_claim_amount": 415,
+        "patient_copay": 48,
+        "payment_status": "Partially Paid",
+        "payment_method": "Cash (GHS)",
+        "payment_date": "2025-11-01"
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00006-20251112",
+        "invoice_date": "2025-11-12",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 200,
+            "total": 200
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 0,
+            "unit_price": 0,
+            "total": 0
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 45,
+            "total": 135
+          }
+        ],
+        "subtotal": 335,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 335,
+        "insurance_provider": "Premier Health",
+        "insurance_claim_amount": 285,
+        "patient_copay": 50,
+        "payment_status": "Paid",
+        "payment_method": "Cash (GHS)",
+        "payment_date": "2025-11-12"
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00006-20260114",
+        "invoice_date": "2026-01-14",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 120,
+            "total": 120
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 98,
+            "total": 294
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 27,
+            "total": 81
+          }
+        ],
+        "subtotal": 495,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 495,
+        "insurance_provider": "Acacia Health",
+        "insurance_claim_amount": 437,
+        "patient_copay": 58,
+        "payment_status": "Paid",
+        "payment_method": "Card",
+        "payment_date": "2026-01-14"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2025-00007",
+    "personal_identifiers": {
+      "full_name": "Francis Sarpong",
+      "date_of_birth": "1966-03-17",
+      "age": 60,
+      "gender": "Male",
+      "phone": "+233 059 896 3834",
+      "email": "francis.sarpong@email.com",
+      "address": "205 Palm Street, Ashaiman, Tema, Ghana",
+      "id_number": "GHA-2939118223-3",
+      "emergency_contact": {
+        "name": "Patricia Sarpong",
+        "relationship": "Spouse",
+        "phone": "+233 020 098 3930"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2025-00007-20250329",
+        "visit_date": "2025-03-29 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Patient presented with anaemia in pregnancy",
+        "diagnosis": "Anaemia in Pregnancy",
+        "prescriptions": [
+          "Omeprazole 20mg",
+          "Gaviscon Suspension",
+          "Hyoscine Butylbromide 10mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": null,
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2025-00007-20251103",
+        "visit_date": "2025-11-03 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Kwame Biney",
+        "chief_complaint": "Patient presented with tonsillitis",
+        "diagnosis": "Tonsillitis",
+        "prescriptions": [
+          "Ciprofloxacin 500mg",
+          "Metronidazole 400mg",
+          "Loperamide 2mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2025-11-27",
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2025-00007-20250329-1",
+        "test_date": "2025-03-29",
+        "test_name": "ECG",
+        "result": "Normal",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00007-20251103-1",
+        "test_date": "2025-11-03",
+        "test_name": "Audiometry",
+        "result": "Moderate sensorineural loss (left ear)",
+        "reference_range": "0-25 dB HL across all frequencies",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00007-20251103-2",
+        "test_date": "2025-11-03",
+        "test_name": "Full Blood Count (FBC)",
+        "result": "Hb: 10.6 g/dL, WBC: 9.6 x10^9/L, Platelets: 308 x10^9/L",
+        "reference_range": "Hb: 12-16 g/dL (F), 13-17 g/dL (M); WBC: 4-11 x10^9/L",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00007-20251103-3",
+        "test_date": "2025-11-03",
+        "test_name": "Full Blood Count (FBC)",
+        "result": "Hb: 10.6 g/dL, WBC: 5.1 x10^9/L, Platelets: 355 x10^9/L",
+        "reference_range": "Hb: 12-16 g/dL (F), 13-17 g/dL (M); WBC: 4-11 x10^9/L",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Patricia"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2025-03-29 00:00",
+        "blood_pressure": "112/73 mmHg",
+        "heart_rate": "97 bpm",
+        "respiratory_rate": "19 /min",
+        "temperature": "37.4 C",
+        "oxygen_saturation": "97%",
+        "weight_kg": 52.0,
+        "height_cm": 167,
+        "bmi": 31.8,
+        "doctor_notes": "Patient cooperative. No known drug allergies. Known hypertensive — on medication.",
+        "allergies": [
+          "Sulfa drugs"
+        ],
+        "chronic_conditions": [
+          "Hypertension"
+        ]
+      },
+      {
+        "recorded_at": "2025-11-03 00:00",
+        "blood_pressure": "152/102 mmHg",
+        "heart_rate": "61 bpm",
+        "respiratory_rate": "13 /min",
+        "temperature": "37.9 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 66.9,
+        "height_cm": 169,
+        "bmi": 23.1,
+        "doctor_notes": "Alert and oriented. No allergies documented. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Shellfish"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2025-00007-20250329",
+        "invoice_date": "2025-03-29",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 100,
+            "total": 100
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 72,
+            "total": 72
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 24,
+            "total": 72
+          }
+        ],
+        "subtotal": 244,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 244,
+        "insurance_provider": "GLICO Healthcare",
+        "insurance_claim_amount": 178,
+        "patient_copay": 66,
+        "payment_status": "Pending",
+        "payment_method": "Card",
+        "payment_date": "2025-03-29"
+      },
+      {
+        "invoice_id": "INV-BMC-2025-00007-20251103",
+        "invoice_date": "2025-11-03",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 46,
+            "total": 138
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 19,
+            "total": 57
+          }
+        ],
+        "subtotal": 275,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 275,
+        "insurance_provider": "Cosmopolitan Health",
+        "insurance_claim_amount": 244,
+        "patient_copay": 31,
+        "payment_status": "Paid",
+        "payment_method": "Cash (GHS)",
+        "payment_date": "2025-11-03"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2026-00008",
+    "personal_identifiers": {
+      "full_name": "Kofi Boateng",
+      "date_of_birth": "1957-06-10",
+      "age": 68,
+      "gender": "Male",
+      "phone": "+233 024 518 3473",
+      "email": "kofi.boateng@email.com",
+      "address": "277 Market Street, Adjei Kojo, Tema, Ghana",
+      "id_number": "GHA-7769777475-3",
+      "emergency_contact": {
+        "name": "Linda Boateng",
+        "relationship": "Child",
+        "phone": "+233 055 116 5667"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2026-00008-20250124",
+        "visit_date": "2025-01-24 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Kofi Annan",
+        "chief_complaint": "Routine Antenatal Care",
+        "diagnosis": "Routine Antenatal Care — 36 Weeks",
+        "prescriptions": [
+          "Chlorpheniramine 4mg",
+          "Saline Nasal Spray",
+          "Steam Inhalation Capsules"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2025-02-25",
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00008-20260114",
+        "visit_date": "2026-01-14 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Abena Mensah",
+        "chief_complaint": "Routine Antenatal Care",
+        "diagnosis": "Routine Antenatal Care — 28 Weeks",
+        "prescriptions": [
+          "Amoxicillin 500mg",
+          "Paracetamol 500mg",
+          "Vitamin C 1000mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2026-00008-20250124-1",
+        "test_date": "2025-01-24",
+        "test_name": "Full Blood Count (FBC)",
+        "result": "Hb: 12.3 g/dL, WBC: 4.6 x10^9/L, Platelets: 310 x10^9/L",
+        "reference_range": "Hb: 12-16 g/dL (F), 13-17 g/dL (M); WBC: 4-11 x10^9/L",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00008-20250124-2",
+        "test_date": "2025-01-24",
+        "test_name": "Chest X-Ray",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00008-20250124-3",
+        "test_date": "2025-01-24",
+        "test_name": "Full Blood Count (FBC)",
+        "result": "Hb: 15.3 g/dL, WBC: 5.4 x10^9/L, Platelets: 385 x10^9/L",
+        "reference_range": "Hb: 12-16 g/dL (F), 13-17 g/dL (M); WBC: 4-11 x10^9/L",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00008-20260114-1",
+        "test_date": "2026-01-14",
+        "test_name": "Pap Smear",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Abena Mensah",
+        "reported_by": "Lab Tech Patricia"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2025-01-24 00:00",
+        "blood_pressure": "132/75 mmHg",
+        "heart_rate": "66 bpm",
+        "respiratory_rate": "15 /min",
+        "temperature": "37.1 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 73.6,
+        "height_cm": 167,
+        "bmi": 30.3,
+        "doctor_notes": "Alert and oriented. Allergic to penicillin — noted. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Penicillin"
+        ],
+        "chronic_conditions": []
+      },
+      {
+        "recorded_at": "2026-01-14 00:00",
+        "blood_pressure": "154/104 mmHg",
+        "heart_rate": "91 bpm",
+        "respiratory_rate": "19 /min",
+        "temperature": "37.9 C",
+        "oxygen_saturation": "99%",
+        "weight_kg": 70.2,
+        "height_cm": 184,
+        "bmi": 30.4,
+        "doctor_notes": "Alert and oriented. No allergies documented. Known hypertensive — on medication.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": []
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2026-00008-20250124",
+        "invoice_date": "2025-01-24",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 54,
+            "total": 162
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 31,
+            "total": 93
+          }
+        ],
+        "subtotal": 435,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 435,
+        "insurance_provider": "Self-Pay (Mobile Money)",
+        "insurance_claim_amount": 0,
+        "patient_copay": 435,
+        "payment_status": "Paid",
+        "payment_method": "Vodafone Cash",
+        "payment_date": "2025-01-24"
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00008-20260114",
+        "invoice_date": "2026-01-14",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 150,
+            "total": 150
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 96,
+            "total": 96
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 35,
+            "total": 105
+          }
+        ],
+        "subtotal": 351,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 351,
+        "insurance_provider": "Premier Health",
+        "insurance_claim_amount": 316,
+        "patient_copay": 35,
+        "payment_status": "Partially Paid",
+        "payment_method": "Cash (GHS)",
+        "payment_date": "2026-01-14"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2024-00009",
+    "personal_identifiers": {
+      "full_name": "Kwesi Mensah",
+      "date_of_birth": "1987-07-08",
+      "age": 38,
+      "gender": "Male",
+      "phone": "+233 020 133 3872",
+      "email": "kwesi.mensah@email.com",
+      "address": "217 Market Street, Community 9, Tema, Ghana",
+      "id_number": "GHA-2986972437-1",
+      "emergency_contact": {
+        "name": "Hannah Mensah",
+        "relationship": "Spouse",
+        "phone": "+233 024 801 3267"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2024-00009-20240210",
+        "visit_date": "2024-02-10 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Patient presented with mild anaemia",
+        "diagnosis": "Mild Anaemia",
+        "prescriptions": [
+          "Chlorpheniramine 4mg",
+          "Saline Nasal Spray",
+          "Steam Inhalation Capsules"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00009-20240316",
+        "visit_date": "2024-03-16 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Patient presented with laryngitis",
+        "diagnosis": "Laryngitis",
+        "prescriptions": [
+          "Artemether-Lumefantrine 20/120mg",
+          "Paracetamol 500mg",
+          "Oral Rehydration Salts"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00009-20240815",
+        "visit_date": "2024-08-15 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Kwame Biney",
+        "chief_complaint": "Patient presented with ear wax impaction",
+        "diagnosis": "Ear Wax Impaction",
+        "prescriptions": [
+          "Ferrous Sulphate 200mg",
+          "Folic Acid 5mg",
+          "Vitamin B Complex"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00009-20251020",
+        "visit_date": "2025-10-20 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Ama Biney",
+        "chief_complaint": "Patient presented with allergic rhinitis",
+        "diagnosis": "Allergic Rhinitis",
+        "prescriptions": [
+          "Prenatal Vitamins",
+          "Ferrous Fumarate",
+          "Omega-3 Supplement"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00009-20260108",
+        "visit_date": "2026-01-08 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Patient presented with acute otitis media",
+        "diagnosis": "Acute Otitis Media",
+        "prescriptions": [
+          "Ciprofloxacin 500mg",
+          "Metronidazole 400mg",
+          "Loperamide 2mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Referred for further review."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2024-00009-20240210-1",
+        "test_date": "2024-02-10",
+        "test_name": "Sickling Test",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00009-20240210-2",
+        "test_date": "2024-02-10",
+        "test_name": "HIV Rapid Test",
+        "result": "Non-Reactive",
+        "reference_range": "Non-Reactive",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00009-20240815-1",
+        "test_date": "2024-08-15",
+        "test_name": "Sickling Test",
+        "result": "Normal",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00009-20260108-1",
+        "test_date": "2026-01-08",
+        "test_name": "Urinalysis",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00009-20260108-2",
+        "test_date": "2026-01-08",
+        "test_name": "Renal Function Test (RFT)",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00009-20260108-3",
+        "test_date": "2026-01-08",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Positive",
+        "reference_range": "Negative",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Patricia"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-02-10 00:00",
+        "blood_pressure": "140/89 mmHg",
+        "heart_rate": "84 bpm",
+        "respiratory_rate": "16 /min",
+        "temperature": "36.7 C",
+        "oxygen_saturation": "100%",
+        "weight_kg": 93.4,
+        "height_cm": 174,
+        "bmi": 30.3,
+        "doctor_notes": "Alert and oriented. No known drug allergies. Known hypertensive — on medication.",
+        "allergies": [
+          "Sulfa drugs"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2024-03-16 00:00",
+        "blood_pressure": "146/89 mmHg",
+        "heart_rate": "65 bpm",
+        "respiratory_rate": "20 /min",
+        "temperature": "37.0 C",
+        "oxygen_saturation": "99%",
+        "weight_kg": 74.9,
+        "height_cm": 180,
+        "bmi": 28.5,
+        "doctor_notes": "Patient cooperative. Sulfa allergy — avoid Bactrim. Known hypertensive — on medication.",
+        "allergies": [
+          "Sulfa drugs"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      },
+      {
+        "recorded_at": "2024-08-15 00:00",
+        "blood_pressure": "106/66 mmHg",
+        "heart_rate": "66 bpm",
+        "respiratory_rate": "17 /min",
+        "temperature": "38.0 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 51.7,
+        "height_cm": 184,
+        "bmi": 29.7,
+        "doctor_notes": "Mild distress on presentation. Sulfa allergy — avoid Bactrim. No chronic conditions.",
+        "allergies": [
+          "Shellfish"
+        ],
+        "chronic_conditions": []
+      },
+      {
+        "recorded_at": "2025-10-20 00:00",
+        "blood_pressure": "128/89 mmHg",
+        "heart_rate": "71 bpm",
+        "respiratory_rate": "15 /min",
+        "temperature": "36.9 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 58.6,
+        "height_cm": 159,
+        "bmi": 20.6,
+        "doctor_notes": "Alert and oriented. No known drug allergies. Chronic conditions: None.",
+        "allergies": [
+          "Penicillin",
+          "NSAIDs"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2026-01-08 00:00",
+        "blood_pressure": "157/121 mmHg",
+        "heart_rate": "98 bpm",
+        "respiratory_rate": "14 /min",
+        "temperature": "38.2 C",
+        "oxygen_saturation": "95%",
+        "weight_kg": 78.9,
+        "height_cm": 182,
+        "bmi": 23.5,
+        "doctor_notes": "Patient cooperative. No known drug allergies. Diabetic — glycaemic control fair.",
+        "allergies": [],
+        "chronic_conditions": [
+          "Hypertension"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2024-00009-20240210",
+        "invoice_date": "2024-02-10",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 200,
+            "total": 200
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 2,
+            "unit_price": 90,
+            "total": 180
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 19,
+            "total": 57
+          }
+        ],
+        "subtotal": 437,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 437,
+        "insurance_provider": "Corporate Retainer",
+        "insurance_claim_amount": 383,
+        "patient_copay": 54,
+        "payment_status": "Paid",
+        "payment_method": "Vodafone Cash",
+        "payment_date": null
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00009-20240316",
+        "invoice_date": "2024-03-16",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 150,
+            "total": 150
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 0,
+            "unit_price": 0,
+            "total": 0
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 19,
+            "total": 57
+          }
+        ],
+        "subtotal": 207,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 207,
+        "insurance_provider": "NHIS",
+        "insurance_claim_amount": 148,
+        "patient_copay": 59,
+        "payment_status": "Paid",
+        "payment_method": "Cash (GHS)",
+        "payment_date": "2024-03-16"
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00009-20240815",
+        "invoice_date": "2024-08-15",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 42,
+            "total": 42
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 23,
+            "total": 69
+          }
+        ],
+        "subtotal": 191,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 191,
+        "insurance_provider": "Apex Health",
+        "insurance_claim_amount": 174,
+        "patient_copay": 17,
+        "payment_status": "Partially Paid",
+        "payment_method": "Insurance Direct",
+        "payment_date": null
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00009-20251020",
+        "invoice_date": "2025-10-20",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 0,
+            "unit_price": 0,
+            "total": 0
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 34,
+            "total": 102
+          }
+        ],
+        "subtotal": 282,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 282,
+        "insurance_provider": "Acacia Health",
+        "insurance_claim_amount": 208,
+        "patient_copay": 74,
+        "payment_status": "Paid",
+        "payment_method": "Insurance Direct",
+        "payment_date": "2025-10-20"
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00009-20260108",
+        "invoice_date": "2026-01-08",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 120,
+            "total": 120
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 97,
+            "total": 291
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 43,
+            "total": 129
+          }
+        ],
+        "subtotal": 540,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 540,
+        "insurance_provider": "Self-Pay (Mobile Money)",
+        "insurance_claim_amount": 0,
+        "patient_copay": 540,
+        "payment_status": "Paid",
+        "payment_method": "Card",
+        "payment_date": "2026-01-08"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2025-00010",
+    "personal_identifiers": {
+      "full_name": "Grace Annan",
+      "date_of_birth": "1956-08-27",
+      "age": 69,
+      "gender": "Female",
+      "phone": "+233 054 606 4746",
+      "email": "grace.annan@email.com",
+      "address": "357 Industrial Area Road, Kpone, Tema, Ghana",
+      "id_number": "GHA-1664847319-4",
+      "emergency_contact": {
+        "name": "Emmanuel Annan",
+        "relationship": "Spouse",
+        "phone": "+233 026 805 0097"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2025-00010-20260305",
+        "visit_date": "2026-03-05 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Patient presented with tonsillitis",
+        "diagnosis": "Tonsillitis",
+        "prescriptions": [
+          "Amoxicillin 500mg",
+          "Paracetamol 500mg",
+          "Vitamin C 1000mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": "2026-04-07",
+        "notes": "Patient stable. Routine monitoring adequate."
+      }
+    ],
+    "laboratory_imaging_results": [],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2026-03-05 00:00",
+        "blood_pressure": "112/60 mmHg",
+        "heart_rate": "91 bpm",
+        "respiratory_rate": "20 /min",
+        "temperature": "36.1 C",
+        "oxygen_saturation": "99%",
+        "weight_kg": 75.9,
+        "height_cm": 177,
+        "bmi": 20.4,
+        "doctor_notes": "Appears well-nourished. No known drug allergies. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Penicillin"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2025-00010-20260305",
+        "invoice_date": "2026-03-05",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 150,
+            "total": 150
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 0,
+            "unit_price": 0,
+            "total": 0
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 36,
+            "total": 108
+          }
+        ],
+        "subtotal": 258,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 258,
+        "insurance_provider": "Metropolitan Health",
+        "insurance_claim_amount": 214,
+        "patient_copay": 44,
+        "payment_status": "Paid",
+        "payment_method": "Cash (GHS)",
+        "payment_date": "2026-03-05"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2026-00011",
+    "personal_identifiers": {
+      "full_name": "Kofi Kumi",
+      "date_of_birth": "1958-08-01",
+      "age": 67,
+      "gender": "Male",
+      "phone": "+233 054 191 3619",
+      "email": "kofi.kumi@email.com",
+      "address": "127 School Junction, Community 2, Tema, Ghana",
+      "id_number": "GHA-3660223333-6",
+      "emergency_contact": {
+        "name": "Janet Kumi",
+        "relationship": "Sibling",
+        "phone": "+233 059 353 4624"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2026-00011-20240207",
+        "visit_date": "2024-02-07 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Routine Antenatal Care",
+        "diagnosis": "Routine Antenatal Care — 36 Weeks",
+        "prescriptions": [
+          "Ciprofloxacin 500mg",
+          "Metronidazole 400mg",
+          "Loperamide 2mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00011-20240912",
+        "visit_date": "2024-09-12 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Ama Biney",
+        "chief_complaint": "Patient presented with uncomplicated malaria",
+        "diagnosis": "Uncomplicated Malaria",
+        "prescriptions": [
+          "Amlodipine 5mg",
+          "Hydrochlorothiazide 12.5mg",
+          "Atorvastatin 20mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": null,
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00011-20241201",
+        "visit_date": "2024-12-01 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Post-Natal Check",
+        "diagnosis": "Post-Natal Check — 6 Weeks",
+        "prescriptions": [
+          "Ibuprofen 400mg",
+          "Diclofenac Gel",
+          "Muscle Relaxant (Orphenadrine)"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2025-01-05",
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00011-20250426",
+        "visit_date": "2025-04-26 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Skin Rash",
+        "diagnosis": "Skin Rash — Allergic Dermatitis",
+        "prescriptions": [
+          "Cetirizine 10mg",
+          "Betamethasone Cream 0.1%",
+          "Calamine Lotion"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Advised on medication adherence."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2026-00011-20240912-1",
+        "test_date": "2024-09-12",
+        "test_name": "Thyroid Function Test",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00011-20240912-2",
+        "test_date": "2024-09-12",
+        "test_name": "Pelvic Ultrasound",
+        "result": "Normal findings. No abnormalities detected.",
+        "reference_range": "N/A — Imaging",
+        "status": "Final",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00011-20241201-1",
+        "test_date": "2024-12-01",
+        "test_name": "Malaria Rapid Diagnostic Test (RDT)",
+        "result": "Positive (P. vivax)",
+        "reference_range": "Negative",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00011-20241201-2",
+        "test_date": "2024-12-01",
+        "test_name": "Thyroid Function Test",
+        "result": "Normal",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00011-20241201-3",
+        "test_date": "2024-12-01",
+        "test_name": "Blood Group & Rhesus",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00011-20250426-1",
+        "test_date": "2025-04-26",
+        "test_name": "Urinalysis",
+        "result": "Normal",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00011-20250426-2",
+        "test_date": "2025-04-26",
+        "test_name": "Malaria Rapid Diagnostic Test (RDT)",
+        "result": "Positive (P. falciparum)",
+        "reference_range": "Negative",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Patricia"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-02-07 00:00",
+        "blood_pressure": "156/115 mmHg",
+        "heart_rate": "87 bpm",
+        "respiratory_rate": "18 /min",
+        "temperature": "37.9 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 65.3,
+        "height_cm": 160,
+        "bmi": 25.2,
+        "doctor_notes": "Appears well-nourished. No allergies documented. Diabetic — glycaemic control fair.",
+        "allergies": [],
+        "chronic_conditions": [
+          "Hypertension",
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2024-09-12 00:00",
+        "blood_pressure": "133/98 mmHg",
+        "heart_rate": "88 bpm",
+        "respiratory_rate": "13 /min",
+        "temperature": "38.0 C",
+        "oxygen_saturation": "97%",
+        "weight_kg": 80.1,
+        "height_cm": 177,
+        "bmi": 19.4,
+        "doctor_notes": "Alert and oriented. No allergies documented. Known hypertensive — on medication.",
+        "allergies": [
+          "Penicillin",
+          "NSAIDs"
+        ],
+        "chronic_conditions": [
+          "Hypertension"
+        ]
+      },
+      {
+        "recorded_at": "2024-12-01 00:00",
+        "blood_pressure": "159/110 mmHg",
+        "heart_rate": "88 bpm",
+        "respiratory_rate": "12 /min",
+        "temperature": "36.4 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 85.0,
+        "height_cm": 166,
+        "bmi": 23.4,
+        "doctor_notes": "Patient cooperative. Allergic to penicillin — noted. No chronic conditions.",
+        "allergies": [
+          "Sulfa drugs"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2025-04-26 00:00",
+        "blood_pressure": "158/104 mmHg",
+        "heart_rate": "89 bpm",
+        "respiratory_rate": "19 /min",
+        "temperature": "37.6 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 52.8,
+        "height_cm": 179,
+        "bmi": 31.2,
+        "doctor_notes": "Patient cooperative. No allergies documented. Known hypertensive — on medication.",
+        "allergies": [],
+        "chronic_conditions": [
+          "Hypertension"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2026-00011-20240207",
+        "invoice_date": "2024-02-07",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 0,
+            "unit_price": 0,
+            "total": 0
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 34,
+            "total": 102
+          }
+        ],
+        "subtotal": 182,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 182,
+        "insurance_provider": "Cosmopolitan Health",
+        "insurance_claim_amount": 152,
+        "patient_copay": 30,
+        "payment_status": "Paid",
+        "payment_method": "Cash (GHS)",
+        "payment_date": "2024-02-07"
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00011-20240912",
+        "invoice_date": "2024-09-12",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 120,
+            "total": 120
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 2,
+            "unit_price": 105,
+            "total": 210
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 22,
+            "total": 66
+          }
+        ],
+        "subtotal": 396,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 396,
+        "insurance_provider": "Metropolitan Health",
+        "insurance_claim_amount": 375,
+        "patient_copay": 21,
+        "payment_status": "Paid",
+        "payment_method": "MTN MoMo",
+        "payment_date": null
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00011-20241201",
+        "invoice_date": "2024-12-01",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 150,
+            "total": 150
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 49,
+            "total": 147
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 33,
+            "total": 99
+          }
+        ],
+        "subtotal": 396,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 396,
+        "insurance_provider": "Cosmopolitan Health",
+        "insurance_claim_amount": 330,
+        "patient_copay": 66,
+        "payment_status": "Pending",
+        "payment_method": "Vodafone Cash",
+        "payment_date": "2024-12-01"
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00011-20250426",
+        "invoice_date": "2025-04-26",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 2,
+            "unit_price": 80,
+            "total": 160
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 44,
+            "total": 132
+          }
+        ],
+        "subtotal": 372,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 372,
+        "insurance_provider": "Premier Health",
+        "insurance_claim_amount": 308,
+        "patient_copay": 64,
+        "payment_status": "Partially Paid",
+        "payment_method": "Card",
+        "payment_date": "2025-04-26"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2024-00012",
+    "personal_identifiers": {
+      "full_name": "Mary Osei",
+      "date_of_birth": "1952-03-25",
+      "age": 74,
+      "gender": "Female",
+      "phone": "+233 027 991 1838",
+      "email": "mary.osei@email.com",
+      "address": "136 Market Street, Lashibi, Tema, Ghana",
+      "id_number": "GHA-4783282817-3",
+      "emergency_contact": {
+        "name": "David Osei",
+        "relationship": "Sibling",
+        "phone": "+233 054 784 9808"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2024-00012-20250104",
+        "visit_date": "2025-01-04 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Normal Vaginal Delivery",
+        "diagnosis": "Normal Vaginal Delivery — Post-Partum Review",
+        "prescriptions": [
+          "Ibuprofen 400mg",
+          "Diclofenac Gel",
+          "Muscle Relaxant (Orphenadrine)"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": "2025-01-15",
+        "notes": "Patient stable. Referred for further review."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2024-00012-20250104-1",
+        "test_date": "2025-01-04",
+        "test_name": "Pelvic Ultrasound",
+        "result": "Intrauterine pregnancy, 24 weeks gestation. Fetal heart activity present.",
+        "reference_range": "N/A — Imaging",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00012-20250104-2",
+        "test_date": "2025-01-04",
+        "test_name": "Lipid Profile",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00012-20250104-3",
+        "test_date": "2025-01-04",
+        "test_name": "Abdominal Ultrasound",
+        "result": "Gallbladder normal. No stones or wall thickening.",
+        "reference_range": "N/A — Imaging",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Patricia"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2025-01-04 00:00",
+        "blood_pressure": "158/104 mmHg",
+        "heart_rate": "95 bpm",
+        "respiratory_rate": "14 /min",
+        "temperature": "37.9 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 69.5,
+        "height_cm": 184,
+        "bmi": 30.2,
+        "doctor_notes": "Patient cooperative. Allergic to penicillin — noted. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Penicillin"
+        ],
+        "chronic_conditions": [
+          "Hypertension"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2024-00012-20250104",
+        "invoice_date": "2025-01-04",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 120,
+            "total": 120
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 68,
+            "total": 204
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 26,
+            "total": 78
+          }
+        ],
+        "subtotal": 402,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 402,
+        "insurance_provider": "Self-Pay (Mobile Money)",
+        "insurance_claim_amount": 0,
+        "patient_copay": 402,
+        "payment_status": "Paid",
+        "payment_method": "Cash (GHS)",
+        "payment_date": "2025-01-04"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2025-00013",
+    "personal_identifiers": {
+      "full_name": "Akua Oduro",
+      "date_of_birth": "1975-02-14",
+      "age": 51,
+      "gender": "Female",
+      "phone": "+233 025 182 4493",
+      "email": "akua.oduro@email.com",
+      "address": "368 Palm Street, Community 7, Tema, Ghana",
+      "id_number": "GHA-8958199946-8",
+      "emergency_contact": {
+        "name": "Francis Oduro",
+        "relationship": "Sibling",
+        "phone": "+233 024 164 0052"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2025-00013-20240513",
+        "visit_date": "2024-05-13 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Kofi Annan",
+        "chief_complaint": "Patient presented with epistaxis (nosebleed)",
+        "diagnosis": "Epistaxis (Nosebleed)",
+        "prescriptions": [
+          "Amoxicillin 500mg",
+          "Paracetamol 500mg",
+          "Vitamin C 1000mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2024-06-18",
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2025-00013-20251012",
+        "visit_date": "2025-10-12 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Abena Mensah",
+        "chief_complaint": "Post-Natal Check",
+        "diagnosis": "Post-Natal Check — 6 Weeks",
+        "prescriptions": [
+          "Folic Acid 5mg",
+          "Iron Supplement",
+          "Calcium Carbonate 500mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2025-11-20",
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2025-00013-20240513-1",
+        "test_date": "2024-05-13",
+        "test_name": "Abdominal Ultrasound",
+        "result": "Mild fatty liver changes noted. Recommend lifestyle review.",
+        "reference_range": "N/A — Imaging",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00013-20240513-2",
+        "test_date": "2024-05-13",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Positive",
+        "reference_range": "Negative",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00013-20251012-1",
+        "test_date": "2025-10-12",
+        "test_name": "Nasal Endoscopy",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Abena Mensah",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00013-20251012-2",
+        "test_date": "2025-10-12",
+        "test_name": "Nasal Endoscopy",
+        "result": "Normal",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Abena Mensah",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00013-20251012-3",
+        "test_date": "2025-10-12",
+        "test_name": "Malaria Rapid Diagnostic Test (RDT)",
+        "result": "Positive (P. vivax)",
+        "reference_range": "Negative",
+        "status": "Final",
+        "ordered_by": "Dr. Abena Mensah",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00013-20251012-4",
+        "test_date": "2025-10-12",
+        "test_name": "Nasal Endoscopy",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Abena Mensah",
+        "reported_by": "Lab Tech Daniel"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-05-13 00:00",
+        "blood_pressure": "160/102 mmHg",
+        "heart_rate": "70 bpm",
+        "respiratory_rate": "17 /min",
+        "temperature": "38.3 C",
+        "oxygen_saturation": "100%",
+        "weight_kg": 64.1,
+        "height_cm": 179,
+        "bmi": 20.7,
+        "doctor_notes": "Appears well-nourished. Sulfa allergy — avoid Bactrim. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": []
+      },
+      {
+        "recorded_at": "2025-10-12 00:00",
+        "blood_pressure": "145/98 mmHg",
+        "heart_rate": "78 bpm",
+        "respiratory_rate": "16 /min",
+        "temperature": "37.3 C",
+        "oxygen_saturation": "100%",
+        "weight_kg": 68.3,
+        "height_cm": 169,
+        "bmi": 19.5,
+        "doctor_notes": "Patient cooperative. Allergic to penicillin — noted. No chronic conditions.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": [
+          "Hypertension",
+          "Type 2 Diabetes"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2025-00013-20240513",
+        "invoice_date": "2024-05-13",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 2,
+            "unit_price": 90,
+            "total": 180
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 31,
+            "total": 93
+          }
+        ],
+        "subtotal": 353,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 353,
+        "insurance_provider": "Self-Pay (Cash)",
+        "insurance_claim_amount": 0,
+        "patient_copay": 353,
+        "payment_status": "Paid",
+        "payment_method": "MTN MoMo",
+        "payment_date": "2024-05-13"
+      },
+      {
+        "invoice_id": "INV-BMC-2025-00013-20251012",
+        "invoice_date": "2025-10-12",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 150,
+            "total": 150
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 66,
+            "total": 264
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 25,
+            "total": 75
+          }
+        ],
+        "subtotal": 489,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 489,
+        "insurance_provider": "Corporate Retainer",
+        "insurance_claim_amount": 360,
+        "patient_copay": 129,
+        "payment_status": "Paid",
+        "payment_method": "Vodafone Cash",
+        "payment_date": null
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2026-00014",
+    "personal_identifiers": {
+      "full_name": "Adjoa Tetteh",
+      "date_of_birth": "2000-11-20",
+      "age": 25,
+      "gender": "Female",
+      "phone": "+233 050 801 1280",
+      "email": "adjoa.tetteh@email.com",
+      "address": "428 Palm Street, Adjei Kojo, Tema, Ghana",
+      "id_number": "GHA-3373077218-6",
+      "emergency_contact": {
+        "name": "Kojo Tetteh",
+        "relationship": "Spouse",
+        "phone": "+233 059 505 3315"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2026-00014-20240221",
+        "visit_date": "2024-02-21 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Kofi Annan",
+        "chief_complaint": "Patient presented with laryngitis",
+        "diagnosis": "Laryngitis",
+        "prescriptions": [
+          "Nifedipine 20mg",
+          "Labetalol 100mg",
+          "Magnesium Sulphate (IM)"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": null,
+        "notes": "Patient stable. Advised on medication adherence."
+      }
+    ],
+    "laboratory_imaging_results": [],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-02-21 00:00",
+        "blood_pressure": "132/98 mmHg",
+        "heart_rate": "76 bpm",
+        "respiratory_rate": "17 /min",
+        "temperature": "37.9 C",
+        "oxygen_saturation": "97%",
+        "weight_kg": 52.0,
+        "height_cm": 156,
+        "bmi": 26.2,
+        "doctor_notes": "Mild distress on presentation. No allergies documented. Diabetic — glycaemic control fair.",
+        "allergies": [],
+        "chronic_conditions": [
+          "Hypertension",
+          "Type 2 Diabetes"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2026-00014-20240221",
+        "invoice_date": "2024-02-21",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 0,
+            "unit_price": 0,
+            "total": 0
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 39,
+            "total": 117
+          }
+        ],
+        "subtotal": 297,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 297,
+        "insurance_provider": "Self-Pay (Mobile Money)",
+        "insurance_claim_amount": 0,
+        "patient_copay": 297,
+        "payment_status": "Paid",
+        "payment_method": "Insurance Direct",
+        "payment_date": "2024-02-21"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2024-00015",
+    "personal_identifiers": {
+      "full_name": "Margaret Oduro",
+      "date_of_birth": "1972-08-19",
+      "age": 53,
+      "gender": "Female",
+      "phone": "+233 054 260 2563",
+      "email": "margaret.oduro@email.com",
+      "address": "137 Market Street, Community 4, Tema, Ghana",
+      "id_number": "GHA-3021598245-3",
+      "emergency_contact": {
+        "name": "Richard Oduro",
+        "relationship": "Sibling",
+        "phone": "+233 059 330 3654"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2024-00015-20240409",
+        "visit_date": "2024-04-09 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Patient presented with ear wax impaction",
+        "diagnosis": "Ear Wax Impaction",
+        "prescriptions": [
+          "Chlorpheniramine 4mg",
+          "Saline Nasal Spray",
+          "Steam Inhalation Capsules"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2024-04-28",
+        "notes": "Patient stable. Routine monitoring adequate."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00015-20260108",
+        "visit_date": "2026-01-08 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Patient presented with routine wellness check",
+        "diagnosis": "Routine Wellness Check",
+        "prescriptions": [
+          "Amlodipine 5mg",
+          "Hydrochlorothiazide 12.5mg",
+          "Atorvastatin 20mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2026-01-30",
+        "notes": "Patient stable. Advised on medication adherence."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2024-00015-20240409-1",
+        "test_date": "2024-04-09",
+        "test_name": "Malaria Rapid Diagnostic Test (RDT)",
+        "result": "Negative",
+        "reference_range": "Negative",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00015-20240409-2",
+        "test_date": "2024-04-09",
+        "test_name": "HIV Rapid Test",
+        "result": "Reactive — Confirmatory test required",
+        "reference_range": "Non-Reactive",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00015-20240409-3",
+        "test_date": "2024-04-09",
+        "test_name": "Pap Smear",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00015-20240409-4",
+        "test_date": "2024-04-09",
+        "test_name": "Liver Function Test (LFT)",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00015-20260108-1",
+        "test_date": "2026-01-08",
+        "test_name": "Fasting Blood Glucose",
+        "result": "5.1 mmol/L",
+        "reference_range": "3.9 – 6.1 mmol/L (Fasting)",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00015-20260108-2",
+        "test_date": "2026-01-08",
+        "test_name": "Chest X-Ray",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00015-20260108-3",
+        "test_date": "2026-01-08",
+        "test_name": "Chest X-Ray",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00015-20260108-4",
+        "test_date": "2026-01-08",
+        "test_name": "ECG",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Daniel"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-04-09 00:00",
+        "blood_pressure": "137/81 mmHg",
+        "heart_rate": "92 bpm",
+        "respiratory_rate": "20 /min",
+        "temperature": "37.3 C",
+        "oxygen_saturation": "99%",
+        "weight_kg": 63.5,
+        "height_cm": 181,
+        "bmi": 18.7,
+        "doctor_notes": "Alert and oriented. No known drug allergies. No chronic conditions.",
+        "allergies": [
+          "Shellfish"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2026-01-08 00:00",
+        "blood_pressure": "138/96 mmHg",
+        "heart_rate": "80 bpm",
+        "respiratory_rate": "14 /min",
+        "temperature": "37.2 C",
+        "oxygen_saturation": "99%",
+        "weight_kg": 65.4,
+        "height_cm": 166,
+        "bmi": 27.6,
+        "doctor_notes": "Alert and oriented. Sulfa allergy — avoid Bactrim. Known hypertensive — on medication.",
+        "allergies": [
+          "Penicillin"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2024-00015-20240409",
+        "invoice_date": "2024-04-09",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 200,
+            "total": 200
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 120,
+            "total": 480
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 15,
+            "total": 45
+          }
+        ],
+        "subtotal": 725,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 725,
+        "insurance_provider": "Corporate Retainer",
+        "insurance_claim_amount": 594,
+        "patient_copay": 131,
+        "payment_status": "Partially Paid",
+        "payment_method": "Insurance Direct",
+        "payment_date": "2024-04-09"
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00015-20260108",
+        "invoice_date": "2026-01-08",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 78,
+            "total": 312
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 22,
+            "total": 66
+          }
+        ],
+        "subtotal": 558,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 558,
+        "insurance_provider": "Premier Health",
+        "insurance_claim_amount": 498,
+        "patient_copay": 60,
+        "payment_status": "Paid",
+        "payment_method": "Card",
+        "payment_date": "2026-01-08"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2025-00016",
+    "personal_identifiers": {
+      "full_name": "Joseph Agyeman",
+      "date_of_birth": "1997-02-04",
+      "age": 29,
+      "gender": "Male",
+      "phone": "+233 050 850 1429",
+      "email": "joseph.agyeman@email.com",
+      "address": "493 Independence Avenue, Community 2, Tema, Ghana",
+      "id_number": "GHA-7161404428-5",
+      "emergency_contact": {
+        "name": "Esther Agyeman",
+        "relationship": "Spouse",
+        "phone": "+233 050 934 0608"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2025-00016-20240412",
+        "visit_date": "2024-04-12 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Ama Biney",
+        "chief_complaint": "Patient presented with ear wax impaction",
+        "diagnosis": "Ear Wax Impaction",
+        "prescriptions": [
+          "Ibuprofen 400mg",
+          "Diclofenac Gel",
+          "Muscle Relaxant (Orphenadrine)"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": "2024-04-19",
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      },
+      {
+        "visit_id": "VST-BMC-2025-00016-20240517",
+        "visit_date": "2024-05-17 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Patient presented with urinary tract infection in pregnancy",
+        "diagnosis": "Urinary Tract Infection in Pregnancy",
+        "prescriptions": [
+          "Metformin 500mg",
+          "Glimepiride 2mg",
+          "Aspirin 75mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      },
+      {
+        "visit_id": "VST-BMC-2025-00016-20241110",
+        "visit_date": "2024-11-10 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Ama Biney",
+        "chief_complaint": "Skin Rash",
+        "diagnosis": "Skin Rash — Allergic Dermatitis",
+        "prescriptions": [
+          "Chlorpheniramine 4mg",
+          "Saline Nasal Spray",
+          "Steam Inhalation Capsules"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2024-12-05",
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2025-00016-20241223",
+        "visit_date": "2024-12-23 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Post-Natal Check",
+        "diagnosis": "Post-Natal Check — 6 Weeks",
+        "prescriptions": [
+          "Amoxicillin 500mg",
+          "Paracetamol 500mg",
+          "Vitamin C 1000mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": null,
+        "notes": "Patient stable. Referred for further review."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2025-00016-20240412-1",
+        "test_date": "2024-04-12",
+        "test_name": "Pelvic Ultrasound",
+        "result": "Mild fatty liver changes noted. Recommend lifestyle review.",
+        "reference_range": "N/A — Imaging",
+        "status": "Final",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00016-20240412-2",
+        "test_date": "2024-04-12",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Negative",
+        "reference_range": "Negative",
+        "status": "Final",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00016-20240412-3",
+        "test_date": "2024-04-12",
+        "test_name": "Audiometry",
+        "result": "Moderate sensorineural loss (left ear)",
+        "reference_range": "0-25 dB HL across all frequencies",
+        "status": "Final",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00016-20240517-1",
+        "test_date": "2024-05-17",
+        "test_name": "Thyroid Function Test",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00016-20240517-2",
+        "test_date": "2024-05-17",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Negative",
+        "reference_range": "Negative",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00016-20240517-3",
+        "test_date": "2024-05-17",
+        "test_name": "Chest X-Ray",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00016-20241110-1",
+        "test_date": "2024-11-10",
+        "test_name": "Urinalysis",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00016-20241110-2",
+        "test_date": "2024-11-10",
+        "test_name": "Lipid Profile",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00016-20241110-3",
+        "test_date": "2024-11-10",
+        "test_name": "Audiometry",
+        "result": "Mild conductive hearing loss (right ear)",
+        "reference_range": "0-25 dB HL across all frequencies",
+        "status": "Final",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00016-20241110-4",
+        "test_date": "2024-11-10",
+        "test_name": "Pap Smear",
+        "result": "Normal",
+        "reference_range": "Refer to lab report",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Ama Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00016-20241223-1",
+        "test_date": "2024-12-23",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Negative",
+        "reference_range": "Negative",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Grace"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-04-12 00:00",
+        "blood_pressure": "131/73 mmHg",
+        "heart_rate": "71 bpm",
+        "respiratory_rate": "12 /min",
+        "temperature": "38.5 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 85.5,
+        "height_cm": 160,
+        "bmi": 31.1,
+        "doctor_notes": "Alert and oriented. No known drug allergies. Chronic conditions: None.",
+        "allergies": [
+          "Sulfa drugs"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      },
+      {
+        "recorded_at": "2024-05-17 00:00",
+        "blood_pressure": "147/114 mmHg",
+        "heart_rate": "71 bpm",
+        "respiratory_rate": "14 /min",
+        "temperature": "37.2 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 50.3,
+        "height_cm": 167,
+        "bmi": 21.7,
+        "doctor_notes": "Alert and oriented. No allergies documented. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Shellfish"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      },
+      {
+        "recorded_at": "2024-11-10 00:00",
+        "blood_pressure": "109/60 mmHg",
+        "heart_rate": "96 bpm",
+        "respiratory_rate": "13 /min",
+        "temperature": "36.2 C",
+        "oxygen_saturation": "99%",
+        "weight_kg": 90.6,
+        "height_cm": 161,
+        "bmi": 26.2,
+        "doctor_notes": "Mild distress on presentation. Allergic to penicillin — noted. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Shellfish"
+        ],
+        "chronic_conditions": [
+          "Hypertension",
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2024-12-23 00:00",
+        "blood_pressure": "127/68 mmHg",
+        "heart_rate": "88 bpm",
+        "respiratory_rate": "16 /min",
+        "temperature": "37.9 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 59.1,
+        "height_cm": 172,
+        "bmi": 22.2,
+        "doctor_notes": "Alert and oriented. Allergic to penicillin — noted. Chronic conditions: None.",
+        "allergies": [
+          "Shellfish"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2025-00016-20240412",
+        "invoice_date": "2024-04-12",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 53,
+            "total": 159
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 44,
+            "total": 132
+          }
+        ],
+        "subtotal": 471,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 471,
+        "insurance_provider": "GLICO Healthcare",
+        "insurance_claim_amount": 363,
+        "patient_copay": 108,
+        "payment_status": "Partially Paid",
+        "payment_method": "Insurance Direct",
+        "payment_date": null
+      },
+      {
+        "invoice_id": "INV-BMC-2025-00016-20240517",
+        "invoice_date": "2024-05-17",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 73,
+            "total": 219
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 35,
+            "total": 105
+          }
+        ],
+        "subtotal": 404,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 404,
+        "insurance_provider": "GLICO Healthcare",
+        "insurance_claim_amount": 353,
+        "patient_copay": 51,
+        "payment_status": "Paid",
+        "payment_method": "Cash (GHS)",
+        "payment_date": null
+      },
+      {
+        "invoice_id": "INV-BMC-2025-00016-20241110",
+        "invoice_date": "2024-11-10",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 66,
+            "total": 264
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 37,
+            "total": 111
+          }
+        ],
+        "subtotal": 455,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 455,
+        "insurance_provider": "Corporate Retainer",
+        "insurance_claim_amount": 374,
+        "patient_copay": 81,
+        "payment_status": "Partially Paid",
+        "payment_method": "Card",
+        "payment_date": "2024-11-10"
+      },
+      {
+        "invoice_id": "INV-BMC-2025-00016-20241223",
+        "invoice_date": "2024-12-23",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 100,
+            "total": 100
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 71,
+            "total": 71
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 16,
+            "total": 48
+          }
+        ],
+        "subtotal": 219,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 219,
+        "insurance_provider": "Self-Pay (Mobile Money)",
+        "insurance_claim_amount": 0,
+        "patient_copay": 219,
+        "payment_status": "Paid",
+        "payment_method": "MTN MoMo",
+        "payment_date": "2024-12-23"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2026-00017",
+    "personal_identifiers": {
+      "full_name": "David Quaye",
+      "date_of_birth": "1957-09-02",
+      "age": 68,
+      "gender": "Male",
+      "phone": "+233 056 595 1484",
+      "email": "david.quaye@email.com",
+      "address": "342 Coconut Avenue, Sakumono, Tema, Ghana",
+      "id_number": "GHA-1546696950-6",
+      "emergency_contact": {
+        "name": "Ruth Quaye",
+        "relationship": "Parent",
+        "phone": "+233 026 946 8044"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2026-00017-20240515",
+        "visit_date": "2024-05-15 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Patient presented with anaemia in pregnancy",
+        "diagnosis": "Anaemia in Pregnancy",
+        "prescriptions": [
+          "Omeprazole 20mg",
+          "Gaviscon Suspension",
+          "Hyoscine Butylbromide 10mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Referred for further review."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00017-20240903",
+        "visit_date": "2024-09-03 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Kwame Biney",
+        "chief_complaint": "Patient presented with typhoid fever",
+        "diagnosis": "Typhoid Fever",
+        "prescriptions": [
+          "Omeprazole 20mg",
+          "Gaviscon Suspension",
+          "Hyoscine Butylbromide 10mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00017-20250404",
+        "visit_date": "2025-04-04 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Kwame Biney",
+        "chief_complaint": "Patient presented with nasal polyps",
+        "diagnosis": "Nasal Polyps",
+        "prescriptions": [
+          "Folic Acid 5mg",
+          "Iron Supplement",
+          "Calcium Carbonate 500mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00017-20251003",
+        "visit_date": "2025-10-03 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Kofi Annan",
+        "chief_complaint": "Patient presented with anaemia in pregnancy",
+        "diagnosis": "Anaemia in Pregnancy",
+        "prescriptions": [
+          "Ibuprofen 400mg",
+          "Diclofenac Gel",
+          "Muscle Relaxant (Orphenadrine)"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Routine monitoring adequate."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2026-00017-20240903-1",
+        "test_date": "2024-09-03",
+        "test_name": "Malaria Rapid Diagnostic Test (RDT)",
+        "result": "Positive (P. falciparum)",
+        "reference_range": "Negative",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00017-20250404-1",
+        "test_date": "2025-04-04",
+        "test_name": "Audiometry",
+        "result": "Mild conductive hearing loss (right ear)",
+        "reference_range": "0-25 dB HL across all frequencies",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00017-20251003-1",
+        "test_date": "2025-10-03",
+        "test_name": "HIV Rapid Test",
+        "result": "Reactive — Confirmatory test required",
+        "reference_range": "Non-Reactive",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00017-20251003-2",
+        "test_date": "2025-10-03",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Positive",
+        "reference_range": "Negative",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00017-20251003-3",
+        "test_date": "2025-10-03",
+        "test_name": "Urinalysis",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00017-20251003-4",
+        "test_date": "2025-10-03",
+        "test_name": "Abdominal Ultrasound",
+        "result": "Normal findings. No abnormalities detected.",
+        "reference_range": "N/A — Imaging",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Daniel"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-05-15 00:00",
+        "blood_pressure": "130/92 mmHg",
+        "heart_rate": "60 bpm",
+        "respiratory_rate": "15 /min",
+        "temperature": "37.5 C",
+        "oxygen_saturation": "95%",
+        "weight_kg": 69.1,
+        "height_cm": 177,
+        "bmi": 19.4,
+        "doctor_notes": "Patient cooperative. No known drug allergies. No chronic conditions.",
+        "allergies": [],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2024-09-03 00:00",
+        "blood_pressure": "139/103 mmHg",
+        "heart_rate": "63 bpm",
+        "respiratory_rate": "14 /min",
+        "temperature": "37.3 C",
+        "oxygen_saturation": "97%",
+        "weight_kg": 60.5,
+        "height_cm": 184,
+        "bmi": 28.4,
+        "doctor_notes": "Alert and oriented. No allergies documented. Known hypertensive — on medication.",
+        "allergies": [
+          "Sulfa drugs"
+        ],
+        "chronic_conditions": [
+          "Hypertension"
+        ]
+      },
+      {
+        "recorded_at": "2025-04-04 00:00",
+        "blood_pressure": "158/128 mmHg",
+        "heart_rate": "61 bpm",
+        "respiratory_rate": "16 /min",
+        "temperature": "37.2 C",
+        "oxygen_saturation": "100%",
+        "weight_kg": 74.5,
+        "height_cm": 172,
+        "bmi": 23.6,
+        "doctor_notes": "Mild distress on presentation. Allergic to penicillin — noted. No chronic conditions.",
+        "allergies": [
+          "Sulfa drugs"
+        ],
+        "chronic_conditions": [
+          "Hypertension"
+        ]
+      },
+      {
+        "recorded_at": "2025-10-03 00:00",
+        "blood_pressure": "140/94 mmHg",
+        "heart_rate": "68 bpm",
+        "respiratory_rate": "18 /min",
+        "temperature": "36.7 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 64.9,
+        "height_cm": 157,
+        "bmi": 31.0,
+        "doctor_notes": "Alert and oriented. No known drug allergies. Known hypertensive — on medication.",
+        "allergies": [],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2026-00017-20240515",
+        "invoice_date": "2024-05-15",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 150,
+            "total": 150
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 0,
+            "unit_price": 0,
+            "total": 0
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 39,
+            "total": 117
+          }
+        ],
+        "subtotal": 267,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 267,
+        "insurance_provider": "Cosmopolitan Health",
+        "insurance_claim_amount": 238,
+        "patient_copay": 29,
+        "payment_status": "Pending",
+        "payment_method": "Vodafone Cash",
+        "payment_date": null
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00017-20240903",
+        "invoice_date": "2024-09-03",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 200,
+            "total": 200
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 106,
+            "total": 106
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 22,
+            "total": 66
+          }
+        ],
+        "subtotal": 372,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 372,
+        "insurance_provider": "Acacia Health",
+        "insurance_claim_amount": 288,
+        "patient_copay": 84,
+        "payment_status": "Paid",
+        "payment_method": "Insurance Direct",
+        "payment_date": "2024-09-03"
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00017-20250404",
+        "invoice_date": "2025-04-04",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 120,
+            "total": 120
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 64,
+            "total": 64
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 44,
+            "total": 132
+          }
+        ],
+        "subtotal": 316,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 316,
+        "insurance_provider": "Metropolitan Health",
+        "insurance_claim_amount": 224,
+        "patient_copay": 92,
+        "payment_status": "Pending",
+        "payment_method": "Insurance Direct",
+        "payment_date": "2025-04-04"
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00017-20251003",
+        "invoice_date": "2025-10-03",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 150,
+            "total": 150
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 117,
+            "total": 468
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 34,
+            "total": 102
+          }
+        ],
+        "subtotal": 720,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 720,
+        "insurance_provider": "NHIS",
+        "insurance_claim_amount": 589,
+        "patient_copay": 131,
+        "payment_status": "Paid",
+        "payment_method": "Insurance Direct",
+        "payment_date": "2025-10-03"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2024-00018",
+    "personal_identifiers": {
+      "full_name": "Stephen Amoah",
+      "date_of_birth": "2005-10-27",
+      "age": 20,
+      "gender": "Male",
+      "phone": "+233 056 577 7387",
+      "email": "stephen.amoah@email.com",
+      "address": "407 Market Street, Community 3, Tema, Ghana",
+      "id_number": "GHA-7954672204-1",
+      "emergency_contact": {
+        "name": "Patricia Amoah",
+        "relationship": "Sibling",
+        "phone": "+233 055 320 0379"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2024-00018-20240801",
+        "visit_date": "2024-08-01 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Kwame Biney",
+        "chief_complaint": "Patient presented with hearing loss (conductive)",
+        "diagnosis": "Hearing Loss (Conductive)",
+        "prescriptions": [
+          "Metformin 500mg",
+          "Glimepiride 2mg",
+          "Aspirin 75mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": "2024-09-07",
+        "notes": "Patient stable. Counselled on lifestyle modifications."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00018-20250628",
+        "visit_date": "2025-06-28 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Kwame Biney",
+        "chief_complaint": "Patient presented with anaemia in pregnancy",
+        "diagnosis": "Anaemia in Pregnancy",
+        "prescriptions": [
+          "Artemether-Lumefantrine 20/120mg",
+          "Paracetamol 500mg",
+          "Oral Rehydration Salts"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": null,
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00018-20251022",
+        "visit_date": "2025-10-22 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Kwame Biney",
+        "chief_complaint": "Patient presented with tinnitus",
+        "diagnosis": "Tinnitus",
+        "prescriptions": [
+          "Nifedipine 20mg",
+          "Labetalol 100mg",
+          "Magnesium Sulphate (IM)"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": "2025-11-11",
+        "notes": "Patient stable. Routine monitoring adequate."
+      },
+      {
+        "visit_id": "VST-BMC-2024-00018-20260110",
+        "visit_date": "2026-01-10 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Patient presented with urinary tract infection in pregnancy",
+        "diagnosis": "Urinary Tract Infection in Pregnancy",
+        "prescriptions": [
+          "Amlodipine 5mg",
+          "Hydrochlorothiazide 12.5mg",
+          "Atorvastatin 20mg"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2026-01-25",
+        "notes": "Patient stable. Routine monitoring adequate."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2024-00018-20240801-1",
+        "test_date": "2024-08-01",
+        "test_name": "Renal Function Test (RFT)",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00018-20240801-2",
+        "test_date": "2024-08-01",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Positive",
+        "reference_range": "Negative",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00018-20240801-3",
+        "test_date": "2024-08-01",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Negative",
+        "reference_range": "Negative",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00018-20240801-4",
+        "test_date": "2024-08-01",
+        "test_name": "Abdominal Ultrasound",
+        "result": "Intrauterine pregnancy, 11 weeks gestation. Fetal heart activity present.",
+        "reference_range": "N/A — Imaging",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00018-20250628-1",
+        "test_date": "2025-06-28",
+        "test_name": "Chest X-Ray",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00018-20250628-2",
+        "test_date": "2025-06-28",
+        "test_name": "ECG",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00018-20250628-3",
+        "test_date": "2025-06-28",
+        "test_name": "Pap Smear",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00018-20250628-4",
+        "test_date": "2025-06-28",
+        "test_name": "Sickling Test",
+        "result": "Normal",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00018-20251022-1",
+        "test_date": "2025-10-22",
+        "test_name": "Malaria Rapid Diagnostic Test (RDT)",
+        "result": "Negative",
+        "reference_range": "Negative",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00018-20251022-2",
+        "test_date": "2025-10-22",
+        "test_name": "Liver Function Test (LFT)",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Patricia"
+      },
+      {
+        "test_id": "LAB-BMC-2024-00018-20260110-1",
+        "test_date": "2026-01-10",
+        "test_name": "Audiometry",
+        "result": "Moderate sensorineural loss (left ear)",
+        "reference_range": "0-25 dB HL across all frequencies",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Grace"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-08-01 00:00",
+        "blood_pressure": "128/88 mmHg",
+        "heart_rate": "86 bpm",
+        "respiratory_rate": "12 /min",
+        "temperature": "37.5 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 83.4,
+        "height_cm": 155,
+        "bmi": 22.0,
+        "doctor_notes": "Appears well-nourished. No allergies documented. Known hypertensive — on medication.",
+        "allergies": [
+          "Penicillin"
+        ],
+        "chronic_conditions": [
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2025-06-28 00:00",
+        "blood_pressure": "134/86 mmHg",
+        "heart_rate": "75 bpm",
+        "respiratory_rate": "15 /min",
+        "temperature": "36.8 C",
+        "oxygen_saturation": "95%",
+        "weight_kg": 79.4,
+        "height_cm": 182,
+        "bmi": 27.3,
+        "doctor_notes": "Patient cooperative. No known drug allergies. No chronic conditions.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": [
+          "Hypertension",
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2025-10-22 00:00",
+        "blood_pressure": "142/108 mmHg",
+        "heart_rate": "85 bpm",
+        "respiratory_rate": "13 /min",
+        "temperature": "36.8 C",
+        "oxygen_saturation": "99%",
+        "weight_kg": 60.8,
+        "height_cm": 181,
+        "bmi": 30.0,
+        "doctor_notes": "Alert and oriented. Sulfa allergy — avoid Bactrim. Known hypertensive — on medication.",
+        "allergies": [
+          "Penicillin",
+          "NSAIDs"
+        ],
+        "chronic_conditions": []
+      },
+      {
+        "recorded_at": "2026-01-10 00:00",
+        "blood_pressure": "158/101 mmHg",
+        "heart_rate": "64 bpm",
+        "respiratory_rate": "12 /min",
+        "temperature": "37.9 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 56.2,
+        "height_cm": 175,
+        "bmi": 21.6,
+        "doctor_notes": "Mild distress on presentation. No known drug allergies. Known hypertensive — on medication.",
+        "allergies": [
+          "Shellfish"
+        ],
+        "chronic_conditions": [
+          "Hypertension",
+          "Type 2 Diabetes"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2024-00018-20240801",
+        "invoice_date": "2024-08-01",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 100,
+            "total": 100
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 88,
+            "total": 352
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 33,
+            "total": 99
+          }
+        ],
+        "subtotal": 551,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 551,
+        "insurance_provider": "Apex Health",
+        "insurance_claim_amount": 454,
+        "patient_copay": 97,
+        "payment_status": "Paid",
+        "payment_method": "Vodafone Cash",
+        "payment_date": null
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00018-20250628",
+        "invoice_date": "2025-06-28",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 4,
+            "unit_price": 100,
+            "total": 400
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 16,
+            "total": 48
+          }
+        ],
+        "subtotal": 628,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 628,
+        "insurance_provider": "NHIS",
+        "insurance_claim_amount": 487,
+        "patient_copay": 141,
+        "payment_status": "Paid",
+        "payment_method": "Card",
+        "payment_date": null
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00018-20251022",
+        "invoice_date": "2025-10-22",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 2,
+            "unit_price": 84,
+            "total": 168
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 16,
+            "total": 48
+          }
+        ],
+        "subtotal": 396,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 396,
+        "insurance_provider": "Metropolitan Health",
+        "insurance_claim_amount": 320,
+        "patient_copay": 76,
+        "payment_status": "Paid",
+        "payment_method": "Vodafone Cash",
+        "payment_date": null
+      },
+      {
+        "invoice_id": "INV-BMC-2024-00018-20260110",
+        "invoice_date": "2026-01-10",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 120,
+            "total": 120
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 47,
+            "total": 47
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 34,
+            "total": 102
+          }
+        ],
+        "subtotal": 269,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 269,
+        "insurance_provider": "Corporate Retainer",
+        "insurance_claim_amount": 250,
+        "patient_copay": 19,
+        "payment_status": "Pending",
+        "payment_method": "Cash (GHS)",
+        "payment_date": "2026-01-10"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2025-00019",
+    "personal_identifiers": {
+      "full_name": "Richard Quaye",
+      "date_of_birth": "2007-11-23",
+      "age": 18,
+      "gender": "Male",
+      "phone": "+233 026 367 6320",
+      "email": "richard.quaye@email.com",
+      "address": "458 Hospital Road, Tema New Town, Tema, Ghana",
+      "id_number": "GHA-1939915527-8",
+      "emergency_contact": {
+        "name": "Hannah Quaye",
+        "relationship": "Spouse",
+        "phone": "+233 057 317 2788"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2025-00019-20240131",
+        "visit_date": "2024-01-31 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Post-Natal Check",
+        "diagnosis": "Post-Natal Check — 6 Weeks",
+        "prescriptions": [
+          "Ibuprofen 400mg",
+          "Diclofenac Gel",
+          "Muscle Relaxant (Orphenadrine)"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Routine monitoring adequate."
+      },
+      {
+        "visit_id": "VST-BMC-2025-00019-20240909",
+        "visit_date": "2024-09-09 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Kofi Annan",
+        "chief_complaint": "Patient presented with urinary tract infection in pregnancy",
+        "diagnosis": "Urinary Tract Infection in Pregnancy",
+        "prescriptions": [
+          "Omeprazole 20mg",
+          "Gaviscon Suspension",
+          "Hyoscine Butylbromide 10mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": null,
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2025-00019-20250903",
+        "visit_date": "2025-09-03 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Efua Asare",
+        "chief_complaint": "Patient presented with gestational diabetes screening",
+        "diagnosis": "Gestational Diabetes Screening",
+        "prescriptions": [
+          "Artemether-Lumefantrine 20/120mg",
+          "Paracetamol 500mg",
+          "Oral Rehydration Salts"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": null,
+        "notes": "Patient stable. Routine monitoring adequate."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2025-00019-20240131-1",
+        "test_date": "2024-01-31",
+        "test_name": "Liver Function Test (LFT)",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00019-20240131-2",
+        "test_date": "2024-01-31",
+        "test_name": "Urinalysis",
+        "result": "Normal",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00019-20240131-3",
+        "test_date": "2024-01-31",
+        "test_name": "Lipid Profile",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Efua Asare",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2025-00019-20240909-1",
+        "test_date": "2024-09-09",
+        "test_name": "Hepatitis B Surface Antigen",
+        "result": "Negative",
+        "reference_range": "Negative",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Kofi Annan",
+        "reported_by": "Lab Tech Emmanuel"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-01-31 00:00",
+        "blood_pressure": "125/84 mmHg",
+        "heart_rate": "66 bpm",
+        "respiratory_rate": "13 /min",
+        "temperature": "36.1 C",
+        "oxygen_saturation": "97%",
+        "weight_kg": 70.0,
+        "height_cm": 179,
+        "bmi": 22.1,
+        "doctor_notes": "Mild distress on presentation. No known drug allergies. Known hypertensive — on medication.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": [
+          "Hypertension",
+          "Type 2 Diabetes"
+        ]
+      },
+      {
+        "recorded_at": "2024-09-09 00:00",
+        "blood_pressure": "158/109 mmHg",
+        "heart_rate": "84 bpm",
+        "respiratory_rate": "17 /min",
+        "temperature": "37.2 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 86.7,
+        "height_cm": 182,
+        "bmi": 27.3,
+        "doctor_notes": "Mild distress on presentation. No allergies documented. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Shellfish"
+        ],
+        "chronic_conditions": [
+          "Hypertension"
+        ]
+      },
+      {
+        "recorded_at": "2025-09-03 00:00",
+        "blood_pressure": "151/93 mmHg",
+        "heart_rate": "95 bpm",
+        "respiratory_rate": "15 /min",
+        "temperature": "37.5 C",
+        "oxygen_saturation": "96%",
+        "weight_kg": 80.8,
+        "height_cm": 160,
+        "bmi": 20.4,
+        "doctor_notes": "Alert and oriented. No allergies documented. No chronic conditions.",
+        "allergies": [
+          "Penicillin"
+        ],
+        "chronic_conditions": []
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2025-00019-20240131",
+        "invoice_date": "2024-01-31",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 111,
+            "total": 333
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 31,
+            "total": 93
+          }
+        ],
+        "subtotal": 606,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 606,
+        "insurance_provider": "Acacia Health",
+        "insurance_claim_amount": 440,
+        "patient_copay": 166,
+        "payment_status": "Paid",
+        "payment_method": "Vodafone Cash",
+        "payment_date": "2024-01-31"
+      },
+      {
+        "invoice_id": "INV-BMC-2025-00019-20240909",
+        "invoice_date": "2024-09-09",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 150,
+            "total": 150
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 80,
+            "total": 80
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 20,
+            "total": 60
+          }
+        ],
+        "subtotal": 290,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 290,
+        "insurance_provider": "Acacia Health",
+        "insurance_claim_amount": 273,
+        "patient_copay": 17,
+        "payment_status": "Paid",
+        "payment_method": "Card",
+        "payment_date": "2024-09-09"
+      },
+      {
+        "invoice_id": "INV-BMC-2025-00019-20250903",
+        "invoice_date": "2025-09-03",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 100,
+            "total": 100
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 0,
+            "unit_price": 0,
+            "total": 0
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 23,
+            "total": 69
+          }
+        ],
+        "subtotal": 169,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 169,
+        "insurance_provider": "Acacia Health",
+        "insurance_claim_amount": 131,
+        "patient_copay": 38,
+        "payment_status": "Paid",
+        "payment_method": "Vodafone Cash",
+        "payment_date": "2025-09-03"
+      }
+    ]
+  },
+  {
+    "patient_id": "BMC-2026-00020",
+    "personal_identifiers": {
+      "full_name": "Hannah Nyarko",
+      "date_of_birth": "1996-09-05",
+      "age": 29,
+      "gender": "Female",
+      "phone": "+233 050 872 7743",
+      "email": "hannah.nyarko@email.com",
+      "address": "431 Independence Avenue, Dawhenya, Tema, Ghana",
+      "id_number": "GHA-6322520473-7",
+      "emergency_contact": {
+        "name": "Yaw Nyarko",
+        "relationship": "Sibling",
+        "phone": "+233 055 455 8122"
+      }
+    },
+    "visit_history": [
+      {
+        "visit_id": "VST-BMC-2026-00020-20241122",
+        "visit_date": "2024-11-22 00:00",
+        "department": "General Medicine",
+        "doctor": "Dr. Kwame Biney",
+        "chief_complaint": "Patient presented with type 2 diabetes mellitus",
+        "diagnosis": "Type 2 Diabetes Mellitus",
+        "prescriptions": [
+          "Amoxicillin-Clavulanate 625mg",
+          "Paracetamol 500mg",
+          "Throat Lozenges"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": "2024-12-20",
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00020-20250120",
+        "visit_date": "2025-01-20 00:00",
+        "department": "ENT",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Patient presented with nasal polyps",
+        "diagnosis": "Nasal Polyps",
+        "prescriptions": [
+          "Amoxicillin 500mg",
+          "Paracetamol 500mg",
+          "Vitamin C 1000mg"
+        ],
+        "follow_up_required": true,
+        "follow_up_date": "2025-03-03",
+        "notes": "Patient stable. Advised on medication adherence."
+      },
+      {
+        "visit_id": "VST-BMC-2026-00020-20250730",
+        "visit_date": "2025-07-30 00:00",
+        "department": "Maternity",
+        "doctor": "Dr. Yaw Osei",
+        "chief_complaint": "Patient presented with anaemia in pregnancy",
+        "diagnosis": "Anaemia in Pregnancy",
+        "prescriptions": [
+          "Amoxicillin-Clavulanate 625mg",
+          "Paracetamol 500mg",
+          "Throat Lozenges"
+        ],
+        "follow_up_required": false,
+        "follow_up_date": "2025-08-06",
+        "notes": "Patient stable. Advised on medication adherence."
+      }
+    ],
+    "laboratory_imaging_results": [
+      {
+        "test_id": "LAB-BMC-2026-00020-20241122-1",
+        "test_date": "2024-11-22",
+        "test_name": "Urinalysis",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Kwame Biney",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00020-20250120-1",
+        "test_date": "2025-01-20",
+        "test_name": "Renal Function Test (RFT)",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Grace"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00020-20250120-2",
+        "test_date": "2025-01-20",
+        "test_name": "Chest X-Ray",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00020-20250120-3",
+        "test_date": "2025-01-20",
+        "test_name": "Urinalysis",
+        "result": "Mildly elevated",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Daniel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00020-20250730-1",
+        "test_date": "2025-07-30",
+        "test_name": "Urinalysis",
+        "result": "Within normal limits",
+        "reference_range": "Refer to lab report",
+        "status": "Preliminary",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Emmanuel"
+      },
+      {
+        "test_id": "LAB-BMC-2026-00020-20250730-2",
+        "test_date": "2025-07-30",
+        "test_name": "Sickling Test",
+        "result": "Borderline — repeat in 3 months",
+        "reference_range": "Refer to lab report",
+        "status": "Final",
+        "ordered_by": "Dr. Yaw Osei",
+        "reported_by": "Lab Tech Emmanuel"
+      }
+    ],
+    "vital_signs_clinical_notes": [
+      {
+        "recorded_at": "2024-11-22 00:00",
+        "blood_pressure": "140/97 mmHg",
+        "heart_rate": "89 bpm",
+        "respiratory_rate": "15 /min",
+        "temperature": "38.0 C",
+        "oxygen_saturation": "100%",
+        "weight_kg": 58.3,
+        "height_cm": 175,
+        "bmi": 27.4,
+        "doctor_notes": "Appears well-nourished. No known drug allergies. Known hypertensive — on medication.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      },
+      {
+        "recorded_at": "2025-01-20 00:00",
+        "blood_pressure": "155/113 mmHg",
+        "heart_rate": "64 bpm",
+        "respiratory_rate": "19 /min",
+        "temperature": "38.5 C",
+        "oxygen_saturation": "98%",
+        "weight_kg": 76.2,
+        "height_cm": 172,
+        "bmi": 25.3,
+        "doctor_notes": "Appears well-nourished. No known drug allergies. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Penicillin",
+          "NSAIDs"
+        ],
+        "chronic_conditions": [
+          "Asthma"
+        ]
+      },
+      {
+        "recorded_at": "2025-07-30 00:00",
+        "blood_pressure": "106/61 mmHg",
+        "heart_rate": "66 bpm",
+        "respiratory_rate": "16 /min",
+        "temperature": "37.1 C",
+        "oxygen_saturation": "95%",
+        "weight_kg": 55.2,
+        "height_cm": 185,
+        "bmi": 28.4,
+        "doctor_notes": "Alert and oriented. No allergies documented. Diabetic — glycaemic control fair.",
+        "allergies": [
+          "Dust/Pollen"
+        ],
+        "chronic_conditions": [
+          "Hypertension"
+        ]
+      }
+    ],
+    "billing_insurance_history": [
+      {
+        "invoice_id": "INV-BMC-2026-00020-20241122",
+        "invoice_date": "2024-11-22",
+        "department": "General Medicine",
+        "line_items": [
+          {
+            "item": "General Medicine Consultation",
+            "qty": 1,
+            "unit_price": 150,
+            "total": 150
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 1,
+            "unit_price": 89,
+            "total": 89
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 15,
+            "total": 45
+          }
+        ],
+        "subtotal": 284,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 284,
+        "insurance_provider": "Apex Health",
+        "insurance_claim_amount": 213,
+        "patient_copay": 71,
+        "payment_status": "Paid",
+        "payment_method": "Insurance Direct",
+        "payment_date": "2024-11-22"
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00020-20250120",
+        "invoice_date": "2025-01-20",
+        "department": "ENT",
+        "line_items": [
+          {
+            "item": "ENT Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 3,
+            "unit_price": 50,
+            "total": 150
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 18,
+            "total": 54
+          }
+        ],
+        "subtotal": 384,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 384,
+        "insurance_provider": "Apex Health",
+        "insurance_claim_amount": 332,
+        "patient_copay": 52,
+        "payment_status": "Paid",
+        "payment_method": "MTN MoMo",
+        "payment_date": "2025-01-20"
+      },
+      {
+        "invoice_id": "INV-BMC-2026-00020-20250730",
+        "invoice_date": "2025-07-30",
+        "department": "Maternity",
+        "line_items": [
+          {
+            "item": "Maternity Consultation",
+            "qty": 1,
+            "unit_price": 180,
+            "total": 180
+          },
+          {
+            "item": "Laboratory & Imaging",
+            "qty": 2,
+            "unit_price": 101,
+            "total": 202
+          },
+          {
+            "item": "Medication / Pharmacy",
+            "qty": 3,
+            "unit_price": 26,
+            "total": 78
+          }
+        ],
+        "subtotal": 460,
+        "discount": 0,
+        "tax": 0,
+        "total_amount_due": 460,
+        "insurance_provider": "Self-Pay (Cash)",
+        "insurance_claim_amount": 0,
+        "patient_copay": 460,
+        "payment_status": "Paid",
+        "payment_method": "Card",
+        "payment_date": null
+      }
+    ]
+  }
+]

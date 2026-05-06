@@ -11,6 +11,21 @@ import Insurance from './pages/Insurance';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import { ChevronDown } from 'lucide-react';
+import { ChatBot } from './components/chatbot/ChatBot';
+import { MobileAppLayout } from './components/layout/MobileAppLayout';
+
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return isMobile;
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -50,19 +65,33 @@ function AnimatedRoutes({ onBookClick }: { onBookClick: () => void }) {
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   return (
     <Router>
       <ScrollToTop />
       <div className="min-h-screen bg-transparent font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col">
-        <Navbar onBookClick={() => setIsBookingOpen(true)} />
-        <main className="flex-grow flex flex-col overflow-hidden">
-          <AnimatedRoutes onBookClick={() => setIsBookingOpen(true)} />
-        </main>
-        <Footer />
+        {isMobile ? (
+          <MobileAppLayout>
+            <main className="flex-grow flex flex-col">
+              <AnimatedRoutes onBookClick={() => setIsBookingOpen(true)} />
+              <Footer />
+            </main>
+          </MobileAppLayout>
+        ) : (
+          <>
+            <Navbar onBookClick={() => setIsBookingOpen(true)} />
+            <main className="flex-grow flex flex-col overflow-hidden">
+              <AnimatedRoutes onBookClick={() => setIsBookingOpen(true)} />
+            </main>
+            <Footer />
+          </>
+        )}
         
         <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+        <ChatBot />
       </div>
     </Router>
   );
 }
+

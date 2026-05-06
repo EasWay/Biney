@@ -172,27 +172,16 @@
   }
 }
 
-/* Aggressive Spline Watermark Hiding */
+/* Refined Spline Watermark Hiding */
 #spline-watermark, 
 [class*="spline-watermark"],
 [class*="spline-logo"],
-[class*="logo-container"],
-canvas + a,
 .spline-logo,
-a[href*="spline.design"],
-#spline-logo-container,
-div[style*="z-index: 10000"],
-div[style*="position: absolute; bottom: 10px; right: 10px"],
-div[style*="position: fixed; bottom: 10px; right: 10px"],
-div[style*="position: absolute; bottom: 16px; right: 16px"],
-div[style*="bottom: 10px"][style*="right: 10px"],
-div[style*="bottom: 16px"][style*="right: 16px"] {
+a[href*="spline.design"] {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
-  width: 0 !important;
-  height: 0 !important;
 }
 
 canvas {
@@ -233,4 +222,3 @@ canvas {
     transform: none !important;
   }
 }
-

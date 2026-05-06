@@ -7,8 +7,15 @@ import { DottedMap } from '../components/ui/DottedMap';
 const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [showMaps, setShowMaps] = useState(false);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setShowMaps(true), 400);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
+
     e.preventDefault();
     setIsSubmitting(true);
     await new Promise((resolve) => setTimeout(resolve, 1200));
@@ -155,20 +162,24 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
           viewport={{ once: true }}
           className="relative mt-8 h-[300px] overflow-hidden rounded-2xl border border-white/60 bg-white/45 p-4 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:mt-16 sm:h-[450px] sm:rounded-[3rem] sm:p-8"
         >
-          <DottedMap
-            width={180}
-            height={90}
-            mapSamples={16000}
-            dotRadius={0.19}
-            dotColor="rgba(15, 23, 42, 0.65)"
-            markerColor="#0f172a"
-            pulse
-            markers={[
-              { lat: 5.6667, lng: -0.0167, size: 0.9, pulse: true },
-            ]}
-            className="absolute inset-0 size-full"
-            aria-label={`${BINEY.name} location map`}
-          />
+          {showMaps ? (
+            <DottedMap
+              width={180}
+              height={90}
+              mapSamples={typeof window !== 'undefined' && window.innerWidth < 768 ? 4000 : 8000}
+              dotRadius={0.19}
+              dotColor="rgba(15, 23, 42, 0.65)"
+              markerColor="#0f172a"
+              pulse
+              markers={[
+                { lat: 5.6667, lng: -0.0167, size: 0.9, pulse: true },
+              ]}
+              className="absolute inset-0 size-full"
+              aria-label={`${BINEY.name} location map`}
+            />
+          ) : (
+            <div className="absolute inset-0 bg-slate-50 animate-pulse rounded-2xl" />
+          )}
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/60 to-transparent" />
         </motion.div>
 
@@ -179,18 +190,23 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
           viewport={{ once: true }}
           className="relative mt-8 h-[400px] overflow-hidden rounded-2xl border border-white/60 bg-white/45 p-2 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:mt-16 sm:h-[500px] sm:rounded-[3rem] sm:p-4"
         >
-          <iframe
-            title="Biney Medical Centre Location"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.665971434316!2d-0.0192!3d5.6667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1020790000000001%3A0x0!2zNcKwNDAnMDAuMSJOIDDCsDAxJzA5LjEiVw!5e0!3m2!1sen!2sgh!4v1714750000000!5m2!1sen!2sgh"
-            className="rounded-xl grayscale-[0.2] transition-all hover:grayscale-0 sm:rounded-[2rem]"
-          />
+          {showMaps ? (
+            <iframe
+              title="Biney Medical Centre Location"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.665971434316!2d-0.0192!3d5.6667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1020790000000001%3A0x0!2zNcKwNDAnMDAuMSJOIDDCsDAxJzA5LjEiVw!5e0!3m2!1sen!2sgh!4v1714750000000!5m2!1sen!2sgh"
+              className="rounded-xl grayscale-[0.2] transition-all hover:grayscale-0 sm:rounded-[2rem]"
+            />
+          ) : (
+            <div className="h-full w-full bg-slate-50 animate-pulse rounded-xl" />
+          )}
         </motion.div>
+
       </div>
     </section>
   );
