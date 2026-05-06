@@ -93,7 +93,8 @@ export const ChatBot: React.FC = () => {
     setCurrentMood("idle");
 
     try {
-      const response = await fetch("http://localhost:3001/api/chat", {
+      const apiUrl = window.location.hostname === "localhost" ? "http://localhost:3001/api/chat" : "/api/chat";
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input, history: messages }),

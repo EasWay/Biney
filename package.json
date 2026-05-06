@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
-    "server": "tsx server.ts"
+    "server": "tsx server.ts",
+    "start": "tsx server.ts"
   },
   "dependencies": {
     "@splinetool/react-spline": "^4.1.0",

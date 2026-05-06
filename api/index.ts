@@ -1,13 +1,11 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import path from "path";
-import { KiloService } from "./src/services/kiloService";
+import { KiloService } from "../src/services/kiloService";
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
@@ -63,17 +61,5 @@ app.post("/api/testimonial-polish", async (req, res) => {
   }
 });
 
-// Serve static files from the frontend dist folder
-app.use(express.static(path.join(process.cwd(), "dist")));
-
-// Handle client-side routing: serve index.html for all non-API routes
-app.get("*", (req, res) => {
-  if (req.path.startsWith("/api")) {
-    return res.status(404).json({ error: "API endpoint not found" });
-  }
-  res.sendFile(path.join(process.cwd(), "dist", "index.html"));
-});
-
-app.listen(PORT, () => {
-  console.log(`Biney Medical Backend running on http://localhost:${PORT}`);
-});
+// Export for Vercel
+export default app;
