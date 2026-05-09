@@ -15,7 +15,6 @@
   "dependencies": {
     "@splinetool/react-spline": "^4.1.0",
     "@tailwindcss/vite": "^4.1.14",
-    "@types/sqlite3": "^3.1.11",
     "@vitejs/plugin-react": "^5.0.4",
     "clsx": "^2.1.1",
     "cobe": "^2.0.1",
@@ -30,7 +29,6 @@
     "react-dom": "^19.0.1",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.14.2",
-    "sqlite3": "^6.0.1",
     "svg-dotted-map": "^2.0.1",
     "tailwind-merge": "^3.5.0",
     "vite": "^6.2.3",

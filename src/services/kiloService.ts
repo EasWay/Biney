@@ -3,81 +3,25 @@ import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import { z } from "zod";
-import sqlite3 from "sqlite3";
-
-let db: any;
-try {
-  db = new sqlite3.Database(path.join(process.cwd(), 'biney_medical.db'));
-  
-  db.serialize(() => {
-    db.run(`CREATE TABLE IF NOT EXISTS doctors (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      first_name TEXT,
-      last_name TEXT,
-      specialization TEXT,
-      years_experience INTEGER,
-      clinic_branch TEXT
-    )`);
-
-    db.run(`CREATE TABLE IF NOT EXISTS treatments (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      treatment_type TEXT,
-      cost INTEGER,
-      description TEXT
-    )`);
-
-    db.run(`CREATE TABLE IF NOT EXISTS sessions (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      session_id TEXT NOT NULL,
-      role TEXT NOT NULL,
-      content TEXT NOT NULL,
-      timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-    )`);
-
-    db.run(`CREATE INDEX IF NOT EXISTS idx_sessions_session_timestamp ON sessions (session_id, timestamp)`);
-  });
-} catch (err) {
-  console.error("Failed to initialize SQLite database. Database features will be unavailable.", err);
-  db = null;
-}
 
 const APP_TIME_ZONE = "Africa/Accra";
 
-// --- DATABASE HELPER (Phase 6) ---
-const queryDb = (sql: string, params: any[] = []): Promise<any[]> => {
-  return new Promise((resolve, reject) => {
-    if (!db) {
-      console.warn("Database not available for query:", sql);
-      return resolve([]);
-    }
-    db.all(sql, params, (err: any, rows: any) => {
-      if (err) reject(err);
-      else resolve(rows);
-    });
-  });
-};
+// --- IN-MEMORY SESSION STORE (serverless-compatible) ---
+const sessionStore = new Map<string, { role: string; content: string }[]>();
 
-const runDb = (sql: string, params: any[] = []): Promise<void> => {
-  return new Promise((resolve, reject) => {
-    if (!db) {
-      console.warn("Database not available for run:", sql);
-      return resolve();
-    }
-    db.run(sql, params, (err: any) => {
-      if (err) reject(err);
-      else resolve();
-    });
-  });
-};
+const queryDb = async (_sql: string, _params: any[] = []): Promise<any[]> => [];
+const runDb = async (_sql: string, _params: any[] = []): Promise<void> => {};
 
-
-// --- SESSION MANAGEMENT (Phase 7) ---
+// --- SESSION MANAGEMENT ---
 const saveToSession = async (sessionId: string, role: string, content: string) => {
-  await runDb("INSERT INTO sessions (session_id, role, content) VALUES (?, ?, ?)", [sessionId, role, content]);
+  if (!sessionStore.has(sessionId)) {
+    sessionStore.set(sessionId, []);
+  }
+  sessionStore.get(sessionId)!.push({ role, content });
 };
 
 const getHistory = async (sessionId: string) => {
-  const rows = await queryDb("SELECT role, content FROM sessions WHERE session_id = ? ORDER BY timestamp ASC", [sessionId]);
+  const rows = sessionStore.get(sessionId) || [];
   return sanitizeChatHistory(rows);
 };
 
