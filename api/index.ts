@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { KiloService } from "../src/services/kiloService";
+import { KiloService } from "../src/services/kiloService.js";
 
 dotenv.config();
 
