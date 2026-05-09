@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
 import morgan from "morgan";
-import { KiloService } from "./src/services/kiloService.js";
+import { KiloService } from "./src/services/kiloService.ts";
 
 dotenv.config();
 

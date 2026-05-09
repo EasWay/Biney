@@ -5,41 +5,52 @@ import dotenv from "dotenv";
 import { z } from "zod";
 import sqlite3 from "sqlite3";
 
-const db = new sqlite3.Database(path.join(process.cwd(), 'biney_medical.db'));
+let db: any;
+try {
+  db = new sqlite3.Database(path.join(process.cwd(), 'biney_medical.db'));
+  
+  db.serialize(() => {
+    db.run(`CREATE TABLE IF NOT EXISTS doctors (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      first_name TEXT,
+      last_name TEXT,
+      specialization TEXT,
+      years_experience INTEGER,
+      clinic_branch TEXT
+    )`);
+
+    db.run(`CREATE TABLE IF NOT EXISTS treatments (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      treatment_type TEXT,
+      cost INTEGER,
+      description TEXT
+    )`);
+
+    db.run(`CREATE TABLE IF NOT EXISTS sessions (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      session_id TEXT NOT NULL,
+      role TEXT NOT NULL,
+      content TEXT NOT NULL,
+      timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+    )`);
+
+    db.run(`CREATE INDEX IF NOT EXISTS idx_sessions_session_timestamp ON sessions (session_id, timestamp)`);
+  });
+} catch (err) {
+  console.error("Failed to initialize SQLite database. Database features will be unavailable.", err);
+  db = null;
+}
+
 const APP_TIME_ZONE = "Africa/Accra";
-
-db.serialize(() => {
-  db.run(`CREATE TABLE IF NOT EXISTS doctors (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    first_name TEXT,
-    last_name TEXT,
-    specialization TEXT,
-    years_experience INTEGER,
-    clinic_branch TEXT
-  )`);
-
-  db.run(`CREATE TABLE IF NOT EXISTS treatments (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    treatment_type TEXT,
-    cost INTEGER,
-    description TEXT
-  )`);
-
-  db.run(`CREATE TABLE IF NOT EXISTS sessions (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    session_id TEXT NOT NULL,
-    role TEXT NOT NULL,
-    content TEXT NOT NULL,
-    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-  )`);
-
-  db.run(`CREATE INDEX IF NOT EXISTS idx_sessions_session_timestamp ON sessions (session_id, timestamp)`);
-});
 
 // --- DATABASE HELPER (Phase 6) ---
 const queryDb = (sql: string, params: any[] = []): Promise<any[]> => {
   return new Promise((resolve, reject) => {
-    db.all(sql, params, (err, rows) => {
+    if (!db) {
+      console.warn("Database not available for query:", sql);
+      return resolve([]);
+    }
+    db.all(sql, params, (err: any, rows: any) => {
       if (err) reject(err);
       else resolve(rows);
     });
@@ -48,12 +59,17 @@ const queryDb = (sql: string, params: any[] = []): Promise<any[]> => {
 
 const runDb = (sql: string, params: any[] = []): Promise<void> => {
   return new Promise((resolve, reject) => {
-    db.run(sql, params, (err) => {
+    if (!db) {
+      console.warn("Database not available for run:", sql);
+      return resolve();
+    }
+    db.run(sql, params, (err: any) => {
       if (err) reject(err);
       else resolve();
     });
   });
 };
+
 
 // --- SESSION MANAGEMENT (Phase 7) ---
 const saveToSession = async (sessionId: string, role: string, content: string) => {
