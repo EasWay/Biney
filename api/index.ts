@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { KiloService } from "../src/services/kiloService";
+import { KiloService } from "../src/services/kiloService.js";
 
 dotenv.config();
 
@@ -76,5 +76,23 @@ app.post("/api/testimonial-polish", async (req, res) => {
   }
 });
 
+/**
+ * Endpoint 5: Health Education Search
+ */
+app.post("/api/health-search", async (req, res) => {
+  try {
+    const { query } = req.body;
+    if (!query) {
+      return res.status(400).json({ error: "Search query is required" });
+    }
+    const result = await KiloService.searchHealth(query);
+    res.json(result);
+  } catch (error: any) {
+    console.error("Health Search Error:", error);
+    res.status(500).json({ error: error.message || "Internal Server Error" });
+  }
+});
+
 // Export for Vercel
 export default app;
+

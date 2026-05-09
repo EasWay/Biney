@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import { z } from "zod";
 import sqlite3 from "sqlite3";
 
-const db = new sqlite3.Database('biney_medical.db');
+const db = new sqlite3.Database(path.join(process.cwd(), 'biney_medical.db'));
 const APP_TIME_ZONE = "Africa/Accra";
 
 db.serialize(() => {
@@ -742,19 +742,29 @@ Keep it short and simple. Return ONLY the summary.
 
     let simplified = "";
     try {
+      if (!KILO_API_KEY || KILO_API_KEY.includes("replace_me") || KILO_API_KEY === "missing_key") {
+        throw new Error("KILO_API_KEY is missing or invalid");
+      }
+
       const response = await openai.chat.completions.create({
         model: "kilo-auto/free",
         messages: [
           { role: "system", content: simplificationPrompt },
           { role: "user", content: `Please simplify these guidelines for query: "${query}"` },
         ],
-        temperature: 0.3, // Lower temperature for more consistent summaries
+        temperature: 0.3,
       });
-      simplified = response.choices[0].message.content || "";
+      
+      simplified = response.choices[0]?.message?.content?.trim() || "";
+      
+      if (!simplified) {
+        throw new Error("AI returned empty summary");
+      }
     } catch (err: any) {
       console.error(`[HEALTH_SEARCH_ERROR] AI Simplification failed:`, err.message);
+      
       // Fallback message so the user isn't stuck with an empty "Simple Breakdown"
-      simplified = `# Summary Unavailable\nWe found several matching sections in the official Ministry of Health guidelines for "${query}", but our AI assistant is currently unable to provide a simplified summary.\n\n**Please check the "Clinical Guidelines" tab above** for the full technical details from the MoH Standard Treatment Guidelines (2017).`;
+      simplified = `# Summary Unavailable\n\nWe found matching sections in the official guidelines for **"${query}"**, but we couldn't generate a simplified summary right now.\n\n### What to do:\n- Please click the **"Clinical Guidelines"** tab above to read the full technical details.\n- Visit our clinic or call us if you have urgent concerns.\n\n*Our AI assistant is currently experiencing high demand or configuration issues.*`;
     }
 
     // Always log these in dev/test
@@ -767,6 +777,7 @@ Keep it short and simple. Return ONLY the summary.
       source: "Ministry of Health (MoH) - Ghana Standard Treatment Guidelines (2017) & Essential Health Services Package (2022)"
     };
   }
+
 
   /**
    * 3. Live AI-Generated Patient Testimonials
