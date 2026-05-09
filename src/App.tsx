@@ -1,19 +1,25 @@
-import { useState, useEffect } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import BookingModal from './components/layout/BookingModal';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Insurance from './pages/Insurance';
-import FAQ from './pages/FAQ';
-import Contact from './pages/Contact';
-import { ChevronDown } from 'lucide-react';
-import { ChatBot } from './components/chatbot/ChatBot';
 import { MobileAppLayout } from './components/layout/MobileAppLayout';
 
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const Insurance = lazy(() => import('./pages/Insurance'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Resources = lazy(() => import('./pages/Resources'));
+const ChatBot = lazy(() => import('./components/chatbot/ChatBot').then((module) => ({ default: module.ChatBot })));
+
+const RouteFallback = () => (
+  <div className="flex min-h-[60vh] items-center justify-center bg-slate-50">
+    <div className="size-8 animate-pulse rounded-full bg-primary/20" />
+  </div>
+);
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -28,11 +34,18 @@ function useIsMobile() {
 }
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    if (hash) {
+      window.setTimeout(() => {
+        document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 80);
+      return;
+    }
+
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 }
@@ -54,6 +67,7 @@ function AnimatedRoutes({ onBookClick }: { onBookClick: () => void }) {
           <Route path="/" element={<Home onBookClick={onBookClick} />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/insurance" element={<Insurance />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact onBookClick={onBookClick} />} />
@@ -74,7 +88,9 @@ export default function App() {
         {isMobile ? (
           <MobileAppLayout>
             <main className="flex-grow flex flex-col">
-              <AnimatedRoutes onBookClick={() => setIsBookingOpen(true)} />
+              <Suspense fallback={<RouteFallback />}>
+                <AnimatedRoutes onBookClick={() => setIsBookingOpen(true)} />
+              </Suspense>
               <Footer />
             </main>
           </MobileAppLayout>
@@ -82,14 +98,18 @@ export default function App() {
           <>
             <Navbar onBookClick={() => setIsBookingOpen(true)} />
             <main className="flex-grow flex flex-col overflow-hidden">
-              <AnimatedRoutes onBookClick={() => setIsBookingOpen(true)} />
+              <Suspense fallback={<RouteFallback />}>
+                <AnimatedRoutes onBookClick={() => setIsBookingOpen(true)} />
+              </Suspense>
             </main>
             <Footer />
           </>
         )}
         
         <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
-        <ChatBot />
+        <Suspense fallback={null}>
+          <ChatBot />
+        </Suspense>
       </div>
     </Router>
   );

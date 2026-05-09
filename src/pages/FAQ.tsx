@@ -34,7 +34,7 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-transparent px-10 py-24 pt-32">
+    <section id="common-questions" className="bg-transparent px-10 py-24 pt-32">
       <div className="mx-auto max-w-3xl">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-primary">Common Questions</h2>

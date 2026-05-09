@@ -4,7 +4,7 @@ import { BINEY } from '../data/biney';
 
 const Insurance = () => {
   return (
-    <section className="bg-transparent px-4 py-14 pt-28 sm:px-10 sm:py-24 sm:pt-32">
+    <section id="insurance-overview" className="bg-transparent px-4 py-14 pt-28 sm:px-10 sm:py-24 sm:pt-32">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -52,13 +52,13 @@ const Insurance = () => {
         </motion.div>
 
         <div className="mt-10 grid gap-4 sm:mt-20 sm:gap-8 md:grid-cols-2">
-          <div className="rounded-2xl border border-white/60 bg-white/40 p-5 shadow-sm backdrop-blur-xl sm:rounded-[2rem] sm:p-10">
+          <div id="before-your-visit" className="rounded-2xl border border-white/60 bg-white/40 p-5 shadow-sm backdrop-blur-xl sm:rounded-[2rem] sm:p-10">
             <h4 className="mb-3 text-lg font-bold text-slate-900 sm:mb-4 sm:text-2xl">Before your visit</h4>
             <p className="text-xs leading-relaxed text-slate-500 sm:text-base">
               Bring your insurance card and call ahead if you need confirmation for a specific visit type. Our team can guide you before you come in.
             </p>
           </div>
-          <div className="rounded-2xl border border-white/60 bg-white/40 p-5 shadow-sm backdrop-blur-xl sm:rounded-[2rem] sm:p-10">
+          <div id="insurance-contact" className="rounded-2xl border border-white/60 bg-white/40 p-5 shadow-sm backdrop-blur-xl sm:rounded-[2rem] sm:p-10">
             <h4 className="mb-3 text-lg font-bold text-slate-900 sm:mb-4 sm:text-2xl">Contact</h4>
             <div className="space-y-2 sm:space-y-3">
               {BINEY.phoneNumbers.map((phone) => (

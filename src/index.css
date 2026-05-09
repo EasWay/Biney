@@ -48,6 +48,20 @@
     @apply antialiased text-on-background bg-[#e5e5e5] min-h-screen font-sans;
     background-color: #e5e5e5;
   }
+
+  section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 900px;
+  }
+
+  section:first-of-type,
+  #book-visit,
+  #contact,
+  #services-overview,
+  #health-resources {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
+  }
 }
 
 @layer components {
@@ -221,4 +235,51 @@ canvas {
   .group:hover * {
     transform: none !important;
   }
+}
+
+/* Chat Markdown Styling */
+.markdown-content {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.markdown-content p {
+  margin-bottom: 0.75rem;
+}
+
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-content strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+.markdown-content a {
+  color: #008f7a;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.markdown-content a:hover {
+  color: #006b5c;
+}
+
+.markdown-content ul, .markdown-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25rem;
+  list-style-type: disc;
+}
+
+.markdown-content h1, .markdown-content h2, .markdown-content h3 {
+  font-weight: 800;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #1a1c1e;
 }

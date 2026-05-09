@@ -1,6 +1,5 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { motion } from 'motion/react';
-import Spline from '@splinetool/react-spline';
 import {
   ArrowRight,
   Baby,
@@ -23,6 +22,7 @@ import { FlickeringGrid } from '../components/ui/FlickeringGrid';
 import { BINEY, serviceHighlights } from '../data/biney';
 
 const serviceIcons = [Stethoscope, Ear, Baby];
+const Spline = lazy(() => import('@splinetool/react-spline'));
 
 const Home = ({ onBookClick }: { onBookClick: () => void }) => {
   useEffect(() => {
@@ -34,7 +34,7 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
 
   return (
     <div className="flex flex-col bg-transparent font-manrope">
-      <section className="relative min-h-[92svh] overflow-hidden bg-transparent sm:min-h-screen">
+      <section id="book-visit" className="relative min-h-[92svh] overflow-hidden bg-transparent sm:min-h-screen">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <ErrorBoundary
             fallback={
@@ -79,7 +79,7 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
         </div>
       </section>
 
-      <section className="-mt-8 bg-transparent px-4 pb-14 pt-12 edge-wavy-bottom sm:-mt-16 sm:px-10 sm:pb-28 sm:pt-24">
+      <section id="quick-facts" className="-mt-8 bg-transparent px-4 pb-14 pt-12 edge-wavy-bottom sm:-mt-16 sm:px-10 sm:pb-28 sm:pt-24">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 sm:gap-6 md:grid-cols-4">
           {[
             { icon: MapPin, label: 'Location', value: BINEY.shortAddress },
@@ -103,7 +103,7 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
         </div>
       </section>
 
-      <section className="relative overflow-hidden px-4 py-14 sm:px-10 sm:py-28">
+      <section id="care-highlights" className="relative overflow-hidden px-4 py-14 sm:px-10 sm:py-28">
         <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
           <FlickeringGrid squareSize={3} gridGap={5} flickerChance={0.5} color="#575e61" maxOpacity={0.2} className="size-full" />
         </div>
@@ -154,7 +154,7 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
         description="The best healthcare websites do more than list services. They reduce anxiety, explain the next step, and make patients feel that someone is ready to receive them."
       />
 
-      <section className="px-4 py-14 edge-wavy-top sm:px-10 sm:py-28">
+      <section id="patient-journey" className="px-4 py-14 edge-wavy-top sm:px-10 sm:py-28">
         <div className="mx-auto grid max-w-7xl gap-8 sm:gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="text-left">
             <p className="mb-2 text-[8px] font-bold uppercase tracking-[0.22em] text-primary sm:mb-3 sm:text-[10px] sm:tracking-[0.3em]">Patient Journey</p>
@@ -203,7 +203,7 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
         description="This prototype can grow into a custom digital system for appointments, care information, insurance guidance, staff profiles, facility media, and patient communication."
       />
 
-      <section className="px-4 py-14 sm:px-10 sm:py-28">
+      <section id="insurance-access" className="px-4 py-14 sm:px-10 sm:py-28">
         <div className="mx-auto max-w-7xl rounded-2xl bg-primary p-5 text-white shadow-2xl shadow-primary/20 sm:rounded-[3rem] sm:p-10 md:p-14">
           <div className="grid gap-6 sm:gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
             <div className="text-left">
@@ -225,7 +225,7 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
         </div>
       </section>
 
-      <section className="px-4 pb-16 sm:px-10 sm:pb-32">
+      <section id="contact-overview" className="px-4 pb-16 sm:px-10 sm:pb-32">
         <div className="mx-auto grid max-w-7xl gap-6 sm:gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-center">
           <div className="text-left">
             <p className="mb-2 text-[8px] font-bold uppercase tracking-[0.22em] text-primary sm:mb-3 sm:text-[10px] sm:tracking-[0.3em]">Contact</p>

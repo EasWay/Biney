@@ -32,14 +32,29 @@ app.post("/api/triage", async (req, res) => {
  */
 app.post("/api/chat", async (req, res) => {
   try {
-    const { message, history } = req.body;
+    const { message, history, sessionId } = req.body;
     if (!message) {
       return res.status(400).json({ error: "Message is required" });
     }
-    const response = await KiloService.chat(message, history || []);
+    const response = await KiloService.chat(message, history || [], sessionId);
     res.json({ response });
   } catch (error: any) {
     console.error("Chat Error:", error);
+    res.status(500).json({ error: error.message || "Internal Server Error" });
+  }
+});
+
+/**
+ * Endpoint 4: Fetch Session History
+ */
+app.get("/api/history/:sessionId", async (req, res) => {
+  try {
+    const { sessionId } = req.params;
+    const history = await KiloService.getSessionHistory(sessionId);
+    res.set("Cache-Control", "no-store");
+    res.json(history);
+  } catch (error: any) {
+    console.error("History Error:", error);
     res.status(500).json({ error: error.message || "Internal Server Error" });
   }
 });

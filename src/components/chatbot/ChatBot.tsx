@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, X, Bot, Search, MoreHorizontal, Trash2, Download, LogOut, RotateCcw, ChevronLeft } from "lucide-react";
+import Markdown from "react-markdown";
+import { useNavigate } from "react-router-dom";
+import ErrorBoundary from "../ErrorBoundary";
 import { ChatLauncher } from "./ChatLauncher";
 
 interface Message {
@@ -57,14 +60,54 @@ const BoboAvatar: React.FC<{ expression: string; size?: string; color?: string }
 );
 
 export const ChatBot: React.FC = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isEndModalOpen, setIsEndModalOpen] = useState(false);
+  const [sessionId] = useState(() => {
+    let id = localStorage.getItem("bobo_session_id");
+    if (!id) {
+      id = Math.random().toString(36).substring(2, 15);
+      localStorage.setItem("bobo_session_id", id);
+    }
+    return id;
+  });
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [currentMood, setCurrentMood] = useState<"idle" | "happy" | "sad" | "confused" | "dead">("happy");
   const [consecutiveErrors, setConsecutiveErrors] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const hasFetchedHistoryRef = useRef(false);
+
+  // Fetch History from Backend (Phase 7)
+  useEffect(() => {
+    if (!isOpen || hasFetchedHistoryRef.current) return;
+    hasFetchedHistoryRef.current = true;
+
+    const fetchHistory = async () => {
+      try {
+        const cached = sessionStorage.getItem(`bobo_chat_history_${sessionId}`);
+        if (cached) {
+          const parsed = JSON.parse(cached);
+          if (Array.isArray(parsed)) setMessages(parsed);
+        }
+
+        const apiUrl = window.location.hostname === "localhost" ? `http://localhost:3001/api/history/${sessionId}` : `/api/history/${sessionId}`;
+        const response = await fetch(apiUrl, { cache: "no-store" });
+        if (response.ok) {
+          const data = await response.json();
+          if (data.length > 0) {
+            const nextMessages = data.map((m: any) => ({ role: m.role, content: m.content }));
+            setMessages(nextMessages);
+            sessionStorage.setItem(`bobo_chat_history_${sessionId}`, JSON.stringify(nextMessages));
+          }
+        }
+      } catch (e) {
+        console.error("Failed to fetch session history:", e);
+      }
+    };
+    fetchHistory();
+  }, [isOpen, sessionId]);
 
   const BOBO_TEAL = "#00d1b2";
 
@@ -78,8 +121,8 @@ export const ChatBot: React.FC = () => {
 
   const inferMood = (text: string): "happy" | "sad" | "idle" => {
     const lower = text.toLowerCase();
-    if (lower.includes("sorry") || lower.includes("sad") || lower.includes("died") || lower.includes("wrong")) return "sad";
-    if (lower.includes("hello") || lower.includes("happy") || lower.includes("cheer") || lower.includes("welcome")) return "happy";
+    if (lower.includes("died") || lower.includes("fatally") || lower.includes("emergency")) return "sad";
+    if (lower.includes("hello") || lower.includes("happy") || lower.includes("welcome")) return "happy";
     return "idle";
   };
 
@@ -87,58 +130,75 @@ export const ChatBot: React.FC = () => {
     if (!input.trim()) return;
 
     const userMessage: Message = { role: "user", content: input };
-    setMessages((prev) => [...prev, userMessage]);
+    setMessages((prev) => {
+      const nextMessages = [...prev, userMessage];
+      sessionStorage.setItem(`bobo_chat_history_${sessionId}`, JSON.stringify(nextMessages));
+      return nextMessages;
+    });
     setInput("");
     setIsLoading(true);
     setCurrentMood("idle");
+    const startedAt = Date.now();
 
     try {
       const apiUrl = window.location.hostname === "localhost" ? "http://localhost:3001/api/chat" : "/api/chat";
+      
+      const apiHistory = messages
+        .slice(-12)
+        .map(({ role, content }) => ({ role, content }));
+      
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input, history: messages }),
+        body: JSON.stringify({ message: input, history: apiHistory, sessionId }),
       });
 
       if (!response.ok) {
-        throw new Error(response.status.toString());
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || response.status.toString());
+      }
+  
+      const data = await response.json();
+      const minDelay = 850 + Math.min(input.trim().length * 18, 900);
+      const elapsed = Date.now() - startedAt;
+      if (elapsed < minDelay) {
+        await new Promise((resolve) => setTimeout(resolve, minDelay - elapsed));
       }
 
-      const data = await response.json();
-      setConsecutiveErrors(0); // Reset errors on success
+      setConsecutiveErrors(0);
       const mood = inferMood(data.response);
       setCurrentMood(mood);
-
+  
       const assistantMessage: Message = {
         role: "assistant",
         content: data.response,
         expression: mood
       };
-      setMessages((prev) => [...prev, assistantMessage]);
+      setMessages((prev) => {
+        const nextMessages = [...prev, assistantMessage];
+        sessionStorage.setItem(`bobo_chat_history_${sessionId}`, JSON.stringify(nextMessages));
+        return nextMessages;
+      });
     } catch (error: any) {
-      setCurrentMood("sad");
+      setCurrentMood("idle");
       const newErrorCount = consecutiveErrors + 1;
       setConsecutiveErrors(newErrorCount);
-
+  
       let errorMessage = "";
-
-      if (error.message === "404") {
-        errorMessage = "I'm still learning, and it seems I don't have access to that information yet. I've flagged this for our doctors so they can help me learn more. In the meantime, could I help with our services or location?";
-      } else if (error.message === "403") {
-        errorMessage = "It seems I don't have the right permissions to see that for you. I've asked our admin team to check my access. For now, is there anything else I can assist with?";
+  
+      if (error.message.includes("404")) {
+        errorMessage = "I couldn't find that specific information in my medical records yet. I've flagged this for our doctors. Can I help you with our services or location instead?";
+      } else if (error.message.includes("403")) {
+        errorMessage = "It seems I don't have permission to access that right now. I've notified the admin team. Is there something else I can help you with?";
+      } else if (error.message.includes("credits") || error.message.includes("402")) {
+        errorMessage = "I'm having a bit of a service interruption with my AI core. Our technical team has been notified. Please try again in a few minutes!";
       } else {
-        // Progressive Internal/Network Error
-        if (newErrorCount === 1) {
-          errorMessage = "I’ve hit a small snag on my end. I’ve just sent a report to the clinic’s technical team so they can look into it. Please give us a little time and try again later!";
-        } else {
-          errorMessage = "The team is already on it! A report was sent just a moment ago, and they are working to get everything back on track. Thank you for your patience.";
-        }
-
+        errorMessage = error.message.length < 150 ? `Something went wrong: ${error.message}` : "I've hit a small snag. Our technical team is looking into it!";
       }
-
+  
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: errorMessage, expression: "sad" },
+        { role: "assistant", content: errorMessage, expression: "idle" },
       ]);
     } finally {
       setIsLoading(false);
@@ -150,6 +210,14 @@ export const ChatBot: React.FC = () => {
 
   const handleCloseAttempt = () => {
     setIsEndModalOpen(true);
+  };
+
+  const handleMarkdownLinkClick = (event: React.MouseEvent<HTMLAnchorElement>, href?: string) => {
+    if (!href) return;
+    if (href.startsWith("tel:") || href.startsWith("mailto:") || href.startsWith("http")) return;
+
+    event.preventDefault();
+    navigate(href);
   };
 
   return (
@@ -216,12 +284,6 @@ export const ChatBot: React.FC = () => {
 
               {messages.map((msg, idx) => (
                 <div key={idx} className="space-y-4">
-                  {msg.role === "assistant" && msg.expression === "sad" && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="py-2">
-                      <BoboAvatar expression="sad" size="w-16 h-16" color={BOBO_TEAL} />
-                    </motion.div>
-                  )}
-
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -233,7 +295,25 @@ export const ChatBot: React.FC = () => {
                           : "bg-slate-100 text-slate-800 rounded-tl-none"
                         }`}
                     >
-                      {msg.content}
+                      {msg.role === "assistant" ? (
+                        <ErrorBoundary fallback={<div className="bg-red-50 text-red-600 p-2 rounded-lg text-sm italic">Message rendering error</div>}>
+                          <div className="markdown-content">
+                            <Markdown
+                              components={{
+                                a: ({ href, children }) => (
+                                  <a href={href} onClick={(event) => handleMarkdownLinkClick(event, href)}>
+                                    {children}
+                                  </a>
+                                ),
+                              }}
+                            >
+                              {msg.content || ""}
+                            </Markdown>
+                          </div>
+                        </ErrorBoundary>
+                      ) : (
+                        msg.content
+                      )}
                     </div>
                   </motion.div>
                 </div>
@@ -301,6 +381,8 @@ export const ChatBot: React.FC = () => {
                       <button
                         onClick={() => {
                           setMessages([]);
+                          localStorage.removeItem("bobo_chat_history");
+                          sessionStorage.removeItem(`bobo_chat_history_${sessionId}`);
                           setIsEndModalOpen(false);
                           setIsOpen(false);
                         }}

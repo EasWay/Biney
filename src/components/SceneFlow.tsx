@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 
 interface SceneFlowProps {
   bgImage: string;
+  bgImageWebp?: string;
   midImage?: string;
   fgImage?: string;
   title: string;
@@ -12,6 +13,7 @@ interface SceneFlowProps {
 
 const SceneFlow: React.FC<SceneFlowProps> = ({
   bgImage,
+  bgImageWebp,
   midImage,
   fgImage,
   title,
@@ -53,7 +55,16 @@ const SceneFlow: React.FC<SceneFlowProps> = ({
         style={{ scale: bgScale, opacity: bgOpacity }}
         className="absolute inset-0 z-0"
       >
-        <img src={bgImage} alt="Background" className="w-full h-full object-cover filter brightness-75" />
+        <picture className="block h-full w-full">
+          {bgImageWebp && <source srcSet={bgImageWebp} type="image/webp" />}
+          <img
+            src={bgImage}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover filter brightness-75"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-transparent to-slate-900/60" />
       </motion.div>
 

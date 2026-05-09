@@ -23,7 +23,7 @@ const SERVICES = [
 
 const Services = () => {
   return (
-    <section className="bg-transparent px-4 py-14 pt-28 sm:px-10 sm:py-24 sm:pt-32">
+    <section id="services-overview" className="bg-transparent px-4 py-14 pt-28 sm:px-10 sm:py-24 sm:pt-32">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 text-center sm:mb-16">
           <h2 className="mb-2 text-[8px] font-bold uppercase tracking-[0.22em] text-primary sm:mb-4 sm:text-sm sm:tracking-widest">Our Services</h2>
@@ -37,6 +37,7 @@ const Services = () => {
           {SERVICES.map((service, index) => (
             <motion.div
               key={service.title}
+              id={service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
@@ -54,7 +55,7 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-white/60 bg-white/40 p-5 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:mt-20 sm:rounded-[2rem] sm:p-10">
+        <div id="primary-hospital" className="mt-10 rounded-2xl border border-white/60 bg-white/40 p-5 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:mt-20 sm:rounded-[2rem] sm:p-10">
           <h4 className="mb-3 text-lg font-bold text-slate-900 sm:mb-4 sm:text-2xl">A primary hospital for the community</h4>
           <p className="mb-4 text-xs leading-relaxed text-slate-500 sm:mb-6 sm:text-base">
             Biney Medical Centre is positioned as a private primary hospital in Tema. A full custom platform can expand these care areas into department pages, doctor profiles, patient education, insurance guidance, and direct appointment workflows.

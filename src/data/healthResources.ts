@@ -1,0 +1,67 @@
+export const healthResources = [
+  {
+    slug: "malaria",
+    title: "Malaria",
+    summary: "Fever, chills, headache, body pain, tiredness, sweating, vomiting, or loss of appetite can happen with malaria.",
+    whatToDo: [
+      "Come in for a test before taking malaria medicine.",
+      "Drink water often, especially if you are sweating or vomiting.",
+      "Use paracetamol for fever only as directed on the packet or by a clinician.",
+      "Sleep under a treated mosquito net and clear standing water around the home.",
+    ],
+    urgent: "Seek care quickly if there is confusion, repeated vomiting, fits, severe weakness, pregnancy, a baby with fever, or fever that is not improving.",
+    link: "/services#general-services",
+  },
+  {
+    slug: "hypertension",
+    title: "High Blood Pressure",
+    summary: "High blood pressure often has no clear warning sign. Some people may feel headache, dizziness, chest discomfort, or shortness of breath.",
+    whatToDo: [
+      "Check your blood pressure regularly, even when you feel fine.",
+      "Reduce salty foods, processed foods, and heavy alcohol use.",
+      "Walk or move your body often if your clinician says it is safe.",
+      "Do not stop prescribed medicine because you feel better.",
+    ],
+    urgent: "Seek care the same day for chest pain, weakness on one side, severe headache, trouble breathing, or very high readings.",
+    link: "/services#general-services",
+  },
+  {
+    slug: "diabetes",
+    title: "Diabetes",
+    summary: "Common signs include frequent urination, unusual thirst, weight loss, tiredness, blurry vision, and wounds that heal slowly.",
+    whatToDo: [
+      "Check your blood sugar as advised.",
+      "Eat regular meals with more vegetables, beans, and whole foods.",
+      "Limit sugary drinks, sweets, and large portions of refined carbohydrates.",
+      "Keep follow-up visits, even when you feel well.",
+    ],
+    urgent: "Seek care quickly for confusion, deep weakness, repeated vomiting, fainting, or a wound that is getting worse.",
+    link: "/services#general-services",
+  },
+  {
+    slug: "sore-throat",
+    title: "Sore Throat",
+    summary: "A sore throat may come with cough, fever, blocked nose, swollen glands, pain when swallowing, or hoarse voice.",
+    whatToDo: [
+      "Drink warm fluids and rest your voice.",
+      "Avoid smoke, dust, and very cold drinks if they make it worse.",
+      "Do not use antibiotics unless a clinician prescribes them.",
+      "Come in if symptoms last, keep returning, or affect breathing or swallowing.",
+    ],
+    urgent: "Seek care quickly for trouble breathing, drooling, neck swelling, severe pain, or fever with a rash.",
+    link: "/services#ent-problems",
+  },
+  {
+    slug: "pregnancy",
+    title: "Pregnancy Warning Signs",
+    summary: "Most pregnancy changes are normal, but some signs need quick attention.",
+    whatToDo: [
+      "Attend antenatal visits and bring your records to each visit.",
+      "Report bleeding, severe headache, fever, or reduced baby movement.",
+      "Eat regular meals, drink water, and take prescribed supplements.",
+      "Ask before taking any medicine during pregnancy.",
+    ],
+    urgent: "Seek care urgently for bleeding, severe belly pain, fits, fainting, severe headache, swollen face, or reduced baby movement.",
+    link: "/services#pregnancy",
+  },
+] as const;

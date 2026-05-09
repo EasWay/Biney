@@ -25,10 +25,11 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
   };
 
   return (
-    <section className="bg-transparent px-4 py-14 pt-28 sm:px-10 sm:py-24 sm:pt-32">
+    <section id="contact" className="bg-transparent px-4 py-14 pt-28 sm:px-10 sm:py-24 sm:pt-32">
       <div className="mx-auto max-w-7xl">
         <div className="grid items-start gap-8 sm:gap-16 lg:grid-cols-2">
           <motion.div
+            id="contact-details"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -91,6 +92,7 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
           </motion.div>
 
           <motion.div
+            id="appointment-request"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -157,6 +159,7 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
 
         {/* Dotted Map Section */}
         <motion.div
+          id="location-map"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -185,6 +188,7 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
 
         {/* Real Map Section */}
         <motion.div
+          id="google-map"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
-import { Home, HandHeart, UserRound, Phone } from "lucide-react";
+import { Home, HandHeart, BookOpen, Phone } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 interface Tab {
@@ -13,7 +13,7 @@ interface Tab {
 const TABS: Tab[] = [
   { id: "home", label: "Home", path: "/", icon: Home },
   { id: "services", label: "Services", path: "/services", icon: HandHeart },
-  { id: "about", label: "About", path: "/about", icon: UserRound },
+  { id: "resources", label: "Resources", path: "/resources", icon: BookOpen },
   { id: "contact", label: "Contact", path: "/contact", icon: Phone },
 ];
 
@@ -126,5 +126,4 @@ export const MobileAppLayout: React.FC<{ children: React.ReactNode }> = ({ child
     </div>
   );
 };
-
 

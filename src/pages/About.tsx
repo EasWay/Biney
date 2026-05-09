@@ -27,7 +27,7 @@ const DoctorAvatar = ({ index }: { index: number }) => {
 const About = () => {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-manrope selection:bg-primary/10">
-      <section className="relative flex flex-col items-center justify-center overflow-hidden px-4 pb-16 pt-32 text-center sm:px-10 sm:pb-32 sm:pt-60">
+      <section id="overview" className="relative flex flex-col items-center justify-center overflow-hidden px-4 pb-16 pt-32 text-center sm:px-10 sm:pb-32 sm:pt-60">
         <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]">
           <FlickeringGrid
             squareSize={4}
@@ -80,7 +80,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="border-t border-slate-100 px-4 py-16 sm:px-10 sm:py-32">
+      <section id="care-areas" className="border-t border-slate-100 px-4 py-16 sm:px-10 sm:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 max-w-3xl sm:mb-16">
           <span className="mb-3 block text-[8px] font-bold uppercase tracking-[0.28em] text-primary sm:mb-6 sm:text-[10px] sm:tracking-[0.4em]">Our Care</span>
@@ -113,7 +113,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="bg-slate-50/50 px-4 py-16 sm:px-10 sm:py-32">
+      <section id="team" className="bg-slate-50/50 px-4 py-16 sm:px-10 sm:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-20">
             <span className="mb-3 block text-[8px] font-bold uppercase tracking-[0.28em] text-primary sm:mb-6 sm:text-[10px] sm:tracking-[0.4em]">Our Team</span>
@@ -144,7 +144,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="border-t border-slate-100 px-4 py-16 sm:px-10 sm:py-32">
+      <section id="location-summary" className="border-t border-slate-100 px-4 py-16 sm:px-10 sm:py-32">
         <div className="mx-auto max-w-4xl text-center">
           <Users className="mx-auto mb-5 size-8 text-primary opacity-50 sm:mb-10 sm:size-12" />
           <h2 className="mb-4 font-display text-2xl font-bold tracking-tight text-slate-900 sm:mb-8 sm:text-4xl md:text-6xl">{BINEY.shortAddress}</h2>

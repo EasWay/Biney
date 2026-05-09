@@ -67,3 +67,13 @@ export const fetchHealthTips = async (): Promise<HealthTip[]> => {
 export const fetchHealthNews = async (): Promise<HealthNews[]> => {
   return FACILITY_NOTES;
 };
+export const searchHealth = async (query: string): Promise<{ results: string; simpleResults: string | null; source: string }> => {
+  const apiUrl = window.location.hostname === "localhost" ? "http://localhost:3001/api/health-search" : "/api/health-search";
+  const response = await fetch(apiUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query }),
+  });
+  if (!response.ok) throw new Error("Search failed");
+  return response.json();
+};
