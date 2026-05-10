@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+/* Google Fonts are now loaded non-blockingly from index.html — do NOT add @import here */
 @import "tailwindcss";
 
 @theme {
@@ -6,9 +6,9 @@
   --font-display: "Outfit", sans-serif;
   --font-manrope: "Manrope", sans-serif;
   
-  --color-primary: #575e61;
-  --color-secondary: #575f6a;
-  --color-tertiary: #5c5d5e;
+  --color-primary: #111111;
+  --color-secondary: #2a2a2a;
+  --color-tertiary: #333333;
   --color-background: #f8f9fb;
   --color-on-background: #191c1e;
   --color-surface: #f8f9fb;
@@ -16,8 +16,8 @@
   --color-on-surface-variant: #434749;
   --color-outline: #747879;
   --color-outline-variant: rgba(0, 0, 0, 0.1);
-  
-  --color-primary-container: #70777a;
+
+  --color-primary-container: #2a2a2a;
   --color-on-primary-container: #ffffff;
   --color-secondary-container: #dbe3f0;
   --color-on-secondary-container: #5d6570;
@@ -225,6 +225,11 @@ canvas {
     padding-bottom: 32px;
   }
 }
+
+/* ── Safe-area utilities for notched phones (iOS Dynamic Island, Android chin) ── */
+.pb-safe   { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.pt-safe   { padding-top:    env(safe-area-inset-top,    0px); }
+.mb-safe   { margin-bottom:  env(safe-area-inset-bottom, 0px); }
 
 @media (hover: none) and (pointer: coarse) {
   a:hover,

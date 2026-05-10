@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "motion/react";
 import { Home, HandHeart, BookOpen, Phone } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -27,7 +27,7 @@ export const MobileAppLayout: React.FC<{ children: React.ReactNode }> = ({ child
   const location = useLocation();
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const ACTIVE_COLOR = "#1a1c1e";
+  const ACTIVE_COLOR = "#111111";
 
 
   useEffect(() => {
@@ -40,53 +40,55 @@ export const MobileAppLayout: React.FC<{ children: React.ReactNode }> = ({ child
     navigate(TABS[index].path);
   };
 
-  const handleDragEnd = (event: any, info: any) => {
-    const swipeThreshold = 50;
-    if (info.offset.x > swipeThreshold && activeIndex > 0) {
-      handleTabChange(activeIndex - 1);
-    } else if (info.offset.x < -swipeThreshold && activeIndex < TABS.length - 1) {
-      handleTabChange(activeIndex + 1);
-    }
-  };
-
   return (
     <div className="fixed inset-0 bg-white flex flex-col md:hidden z-[1000]">
-      {/* Top Title Bar */}
-      <div className="h-16 px-6 flex items-center bg-white border-b border-slate-100 sticky top-0 z-50">
+      {/* Top Title Bar — grows into iOS status-bar area when in standalone/PWA mode */}
+      <div
+        className="shrink-0 px-6 flex items-end bg-white border-b border-slate-100 z-50"
+        style={{
+          paddingTop: 'max(1rem, env(safe-area-inset-top, 1rem))',
+          paddingBottom: '0.75rem',
+        }}
+      >
         <h1 className="text-xl font-bold text-slate-900 tracking-tight">
           {TABS[activeIndex].label}
         </h1>
       </div>
 
-      {/* Swipeable Content Area */}
+      {/* Scrollable Content Area — no horizontal drag so vertical scroll is never hijacked */}
       <div className="flex-1 relative overflow-hidden bg-slate-50">
         <motion.div
           key={location.pathname}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          onDragEnd={handleDragEnd}
-          initial={{ x: 300, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: -300, opacity: 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="h-full overflow-y-auto"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+          className="h-full overflow-y-auto overscroll-y-contain"
         >
           {children}
         </motion.div>
       </div>
 
-      {/* Modern Pill Dock (Reverting to previous style) */}
-      <div className="h-20 bg-white border-t border-slate-100 flex items-center justify-around px-4 pb-safe">
+      {/* Bottom Dock — expands into home-indicator safe area on notched phones */}
+      <div
+        className="shrink-0 bg-white border-t border-slate-100 flex items-center justify-around px-4"
+        style={{
+          paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+          minHeight: 'calc(5rem + env(safe-area-inset-bottom, 0px))',
+        }}
+      >
         <LayoutGroup>
           {TABS.map((tab, idx) => {
             const Icon = tab.icon;
             const isActive = activeIndex === idx;
 
+            // Fitts's Law: min 48x48px tappable area for each tab
             return (
               <button
                 key={tab.id}
                 onClick={() => handleTabChange(idx)}
-                className="relative flex items-center justify-center transition-all duration-300"
+                className="relative flex min-h-[48px] min-w-[48px] items-center justify-center transition-all duration-300"
+                aria-label={tab.label}
+                aria-current={isActive ? 'page' : undefined}
               >
                 <AnimatePresence mode="wait">
                   {isActive ? (

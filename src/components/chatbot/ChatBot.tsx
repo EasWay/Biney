@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { Send, X, Bot, Search, MoreHorizontal, Trash2, Download, LogOut, RotateCcw, ChevronLeft } from "lucide-react";
 import Markdown from "react-markdown";
 import { useNavigate } from "react-router-dom";

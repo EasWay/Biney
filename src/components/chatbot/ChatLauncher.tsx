@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 export const ChatLauncher: React.FC<{ onClick: () => void; isOpen: boolean }> = ({ onClick, isOpen }) => {
   const [expression, setExpression] = useState<"idle" | "hover" | "love" | "blink">("idle");
@@ -31,7 +31,7 @@ export const ChatLauncher: React.FC<{ onClick: () => void; isOpen: boolean }> = 
       onMouseLeave={() => setExpression("idle")}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      className="fixed bottom-6 right-6 z-[9999] group"
+      className="fixed bottom-24 right-4 z-[9999] group md:bottom-6 md:right-6"
     >
       {/* Floating Bubbles around Bobo (from images) */}
       <AnimatePresence>
@@ -62,7 +62,7 @@ export const ChatLauncher: React.FC<{ onClick: () => void; isOpen: boolean }> = 
       <motion.div
         animate={{ y: [0, -5, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-        className="relative w-20 h-20 drop-shadow-2xl"
+        className="relative w-14 h-14 drop-shadow-2xl md:w-20 md:h-20"
       >
         <svg viewBox="0 0 200 200" className="w-full h-full">
           {/* Outer Body / Helmet */}

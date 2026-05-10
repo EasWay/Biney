@@ -2,12 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0284c7" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#1a1c1e" />
+    <meta name="description" content="Biney Medical Centre — Private primary hospital in Italian Flats, Community 2, Tema, Ghana. General care, ENT, and pregnancy services." />
     <link rel="manifest" href="/manifest.json" />
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2850/2850367.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@300;500&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Critical origin connections — eliminates cold TCP/TLS handshakes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://prod.spline.design" />
+    <link rel="dns-prefetch" href="https://prod.spline.design" />
+    <link rel="dns-prefetch" href="https://cdn-icons-png.flaticon.com" />
+
+    <!--
+      Fonts: non-blocking load pattern (same technique used by Google PageSpeed)
+      media="print" forces the browser NOT to block rendering.
+      onload switches it to media="all" after the stylesheet is fetched.
+      The <noscript> fallback handles JS-disabled environments.
+    -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&family=Pacifico&family=Syne:wght@700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&family=Pacifico&family=Syne:wght@700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&family=Pacifico&family=Syne:wght@700;800&display=swap"
+      />
+    </noscript>
+
     <title>Biney Medical Centre | Tema, Ghana</title>
   </head>
   <body>
@@ -15,4 +46,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

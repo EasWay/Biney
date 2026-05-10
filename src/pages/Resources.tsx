@@ -73,11 +73,11 @@ const Resources = () => {
       <div className="mx-auto max-w-7xl">
         
         {/* Header Section */}
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center sm:mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary"
+            className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-primary"
           >
             <BookOpen className="size-4" />
             Health Education Hub
@@ -86,23 +86,22 @@ const Resources = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mb-6 font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl"
+            className="mb-6 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
           >
-            Find reliable health answers.
+            Health answers you can understand.
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mx-auto max-w-2xl text-slate-500 sm:text-lg"
+            className="mx-auto max-w-xl text-sm text-slate-500 sm:text-base"
           >
-            Search common symptoms, conditions, and MoH Ghana guidelines. 
-            Empowering you with knowledge for a healthier life in Tema.
+            Search symptoms, conditions, or medications. We pull from Ministry of Health guidelines and break them down into plain language — so you know what to do next.
           </motion.p>
         </div>
 
         {/* Search Bar Section */}
-        <div className="relative mx-auto mb-16 max-w-3xl">
+        <div className="relative mx-auto mb-10 max-w-2xl">
           <form onSubmit={handleSearch} className="relative group">
             <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none">
               {isSearching ? (
@@ -116,7 +115,7 @@ const Resources = () => {
               placeholder="Search symptoms (e.g., 'fever', 'sore throat', 'hypertension')..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-2xl border border-slate-200 bg-white py-5 pl-14 pr-32 text-lg shadow-xl shadow-slate-200/50 outline-none ring-primary/20 transition-all focus:border-primary focus:ring-4"
+              className="w-full rounded-2xl border border-slate-200 bg-white py-4 pl-12 pr-28 text-sm shadow-lg shadow-slate-200/40 outline-none ring-primary/20 transition-all focus:border-primary focus:ring-4"
             />
             <button
               type="submit"
@@ -341,9 +340,9 @@ const Resources = () => {
             {/* Urgent Care CTA */}
             <div className="rounded-3xl bg-slate-900 p-8 text-white shadow-xl shadow-slate-900/20">
               <ShieldPlus className="mb-6 size-10 text-primary" />
-              <h3 className="mb-4 font-display text-2xl font-bold">When to visit urgently</h3>
-              <p className="mb-8 text-sm leading-relaxed text-slate-400">
-                If you experience breathing trouble, sudden weakness, chest pain, heavy bleeding, or severe belly pain during pregnancy, visit Biney Medical Centre immediately.
+              <h3 className="mb-3 font-display text-xl font-bold">When to come in urgently</h3>
+              <p className="mb-6 text-sm leading-relaxed text-slate-400">
+                Breathing difficulty, chest pain, sudden weakness, heavy bleeding, or severe pain during pregnancy — don't wait. Come straight to Biney Medical Centre or call us immediately.
               </p>
               <Link
                 to="/contact#appointment-request"
@@ -381,9 +380,9 @@ const Resources = () => {
               <div className="mb-4 flex size-12 items-center justify-center rounded-2xl bg-white shadow-sm">
                 <Loader2 className="size-6 text-primary" />
               </div>
-              <h3 className="mb-2 font-display text-lg font-bold text-slate-900">Need direct help?</h3>
+              <h3 className="mb-2 font-display text-lg font-bold text-slate-900">Have a quick question?</h3>
               <p className="text-sm text-slate-500 leading-relaxed">
-                Our AI assistant is available 24/7 in the bottom corner of your screen to help with quick questions and bookings.
+                Use the chat button in the corner to ask about symptoms, our hours, directions, or to book a visit — available around the clock.
               </p>
             </div>
           </div>

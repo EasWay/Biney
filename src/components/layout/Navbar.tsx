@@ -64,18 +64,19 @@ const Navbar = ({ onBookClick }: { onBookClick: () => void }) => {
         <div className="hidden md:flex items-center gap-4">
           <button
             onClick={onBookClick}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white hover:bg-slate-800 transition-all duration-300 shadow-lg shadow-primary/20 active:scale-95"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white hover:bg-black transition-all duration-300 shadow-lg shadow-black/20 active:scale-95"
           >
             <span className="text-xs font-bold uppercase tracking-wider">Book Appointment</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Mobile Toggle */}
-        <button 
-          onClick={() => setIsOpen(!isOpen)} 
-          className="p-1.5 text-on-surface md:hidden"
+        {/* Mobile Toggle — Fitts's Law: min 44×44px touch target */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl text-on-surface transition-colors active:bg-slate-100 md:hidden"
           aria-label="Toggle navigation"
+          aria-expanded={isOpen}
         >
           {isOpen ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>

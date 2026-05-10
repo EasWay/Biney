@@ -101,13 +101,19 @@ const SceneFlow: React.FC<SceneFlowProps> = ({
         style={{ y: textY, opacity: textOpacity }}
         className="relative z-20 max-w-4xl px-4 text-center sm:px-6"
       >
-        <span className="mb-4 inline-block rounded-full border border-white/20 bg-primary/20 px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.22em] text-white backdrop-blur-md sm:mb-6 sm:px-4 sm:py-2 sm:text-[10px] sm:tracking-[0.3em]">
+        <motion.span
+          initial={{ opacity: 0, letterSpacing: '0.6em' }}
+          whileInView={{ opacity: 1, letterSpacing: '0.28em' }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-4 inline-block rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[8px] font-bold uppercase text-white backdrop-blur-md sm:mb-6 sm:px-4 sm:py-2 sm:text-[10px]"
+        >
           {subtitle}
-        </span>
+        </motion.span>
         <h2 className="mb-4 font-display text-3xl font-semibold italic tracking-tight text-white sm:mb-8 sm:text-5xl md:text-7xl">
           {title}
         </h2>
-        <p className="mx-auto max-w-xl text-xs leading-relaxed text-white/80 sm:max-w-2xl sm:text-xl">
+        <p className="mx-auto max-w-xl text-xs leading-relaxed text-white/80 sm:max-w-2xl sm:text-lg">
           {description}
         </p>
       </motion.div>

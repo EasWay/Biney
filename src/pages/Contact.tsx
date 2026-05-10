@@ -4,10 +4,13 @@ import { CheckCircle2, ChevronRight, Clock, MapPin, Phone } from 'lucide-react';
 import { BINEY } from '../data/biney';
 import { DottedMap } from '../components/ui/DottedMap';
 
+const CARE_AREAS = BINEY.listedServices as unknown as string[];
+
 const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [showMaps, setShowMaps] = useState(false);
+  const [careArea, setCareArea] = useState('');
 
   React.useEffect(() => {
     const timer = setTimeout(() => setShowMaps(true), 400);
@@ -36,9 +39,9 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="mb-2 text-[8px] font-bold uppercase tracking-[0.22em] text-primary sm:mb-4 sm:text-sm sm:tracking-widest">Contact</h2>
-            <h3 className="mb-4 text-2xl font-bold italic tracking-tight text-slate-900 sm:mb-8 sm:text-4xl">{BINEY.name}</h3>
-            <p className="mb-5 text-xs leading-relaxed text-slate-500 sm:mb-8 sm:text-lg">
-              We are located in Tema and ready to help patients find the right next step before they arrive.
+            <h3 className="mb-3 text-2xl font-bold italic tracking-tight text-slate-900 sm:mb-5 sm:text-3xl">{BINEY.name}</h3>
+            <p className="mb-5 text-xs leading-relaxed text-slate-500 sm:mb-8 sm:text-sm">
+              Tell us who you are and when you'd like to come in. We'll confirm your appointment and have everything ready when you arrive.
             </p>
 
             <motion.button
@@ -99,11 +102,17 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
             transition={{ duration: 0.8 }}
             className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/40 p-4 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:rounded-[3rem] sm:p-8 md:p-12"
           >
-            <h4 className="mb-2 text-xl font-extrabold italic text-slate-900 sm:text-3xl">Appointment Request</h4>
-            <p className="mb-5 text-xs leading-relaxed text-slate-500 sm:mb-10 sm:text-sm">
-              Send a request and call our front desk to confirm availability for your preferred visit time.
+            <h4 className="mb-2 text-lg font-extrabold italic text-slate-900 sm:text-2xl">Request an Appointment</h4>
+            <p className="mb-5 text-xs leading-relaxed text-slate-500 sm:mb-8 sm:text-sm">
+              Fill in your details below, then call us to confirm. We're open every day from 08:00 to 20:00.
             </p>
 
+            {/* UX Laws applied:
+                 • Miller's Law: fields grouped into "Patient details" + "Appointment"
+                 • Display all options for 2-3 values: care area uses toggle chips
+                 • Don't use placeholders as labels: labels are always visible
+                 • Single column on mobile (Don't stack two columns)
+                 • Fitts's Law: full-width submit with generous height */}
             <form className="space-y-6" onSubmit={handleSubmit}>
               {submitted ? (
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="space-y-4 py-10 text-center sm:space-y-6 sm:py-16">
@@ -111,44 +120,73 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
                     <CheckCircle2 className="size-8 sm:size-12" />
                   </div>
                   <div>
-                    <h4 className="mb-2 text-xl font-black italic text-slate-900 sm:text-3xl">Request Noted</h4>
-                    <p className="text-xs text-slate-500 sm:text-base">Please call {BINEY.phoneNumbers[0].label} to confirm your visit.</p>
+                    <h4 className="mb-2 text-xl font-black italic text-slate-900 sm:text-2xl">Request received</h4>
+                    <p className="text-xs text-slate-500 sm:text-sm">Please call {BINEY.phoneNumbers[0].label} to confirm your appointment time.</p>
                   </div>
                 </motion.div>
               ) : (
                 <>
-                  <div className="grid gap-4 md:grid-cols-2">
+                  {/* Section 1: Patient details */}
+                  <fieldset className="space-y-3">
+                    <legend className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Patient details</legend>
                     <div>
-                      <label className="mb-1.5 block text-[8px] font-bold uppercase tracking-[0.16em] text-slate-400 sm:text-[10px] sm:tracking-[0.2em]">Patient Full Name</label>
-                      <input required type="text" className="w-full rounded-xl border border-slate-200 bg-white/60 px-3.5 py-3 text-xs text-slate-900 outline-none transition-all focus:border-primary sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm" placeholder="Patient name" />
+                      <label className="mb-1 block text-xs font-semibold text-slate-600">Full name</label>
+                      <input required type="text" autoComplete="name"
+                        className="w-full rounded-xl border border-slate-200 bg-white/70 px-4 py-3 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/10 sm:rounded-2xl"
+                        placeholder="e.g. Kwame Mensah" />
                     </div>
                     <div>
-                      <label className="mb-1.5 block text-[8px] font-bold uppercase tracking-[0.16em] text-slate-400 sm:text-[10px] sm:tracking-[0.2em]">Phone</label>
-                      <input required type="tel" className="w-full rounded-xl border border-slate-200 bg-white/60 px-3.5 py-3 text-xs text-slate-900 outline-none transition-all focus:border-primary sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm" placeholder="+233..." />
+                      <label className="mb-1 block text-xs font-semibold text-slate-600">Phone number</label>
+                      <input required type="tel" autoComplete="tel" inputMode="tel"
+                        className="w-full rounded-xl border border-slate-200 bg-white/70 px-4 py-3 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/10 sm:rounded-2xl"
+                        placeholder="+233 ..." />
                     </div>
-                  </div>
+                  </fieldset>
 
-                  <div className="grid gap-4 md:grid-cols-2">
+                  {/* Section 2: Appointment details */}
+                  <fieldset className="space-y-3">
+                    <legend className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Appointment</legend>
+
+                    {/* Care area — toggle chips (Display all options for 2-3 values) */}
                     <div>
-                      <label className="mb-1.5 block text-[8px] font-bold uppercase tracking-[0.16em] text-slate-400 sm:text-[10px] sm:tracking-[0.2em]">Preferred Date</label>
-                      <input required type="date" className="w-full rounded-xl border border-slate-200 bg-white/60 px-3.5 py-3 text-xs text-slate-600 outline-none transition-all focus:border-primary sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm" />
-                    </div>
-                    <div>
-                      <label className="mb-1.5 block text-[8px] font-bold uppercase tracking-[0.16em] text-slate-400 sm:text-[10px] sm:tracking-[0.2em]">Listed Care Area</label>
-                      <select required className="w-full rounded-xl border border-slate-200 bg-white/60 px-3.5 py-3 text-xs text-slate-600 outline-none transition-all focus:border-primary sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm">
-                        <option value="">Select</option>
-                        {BINEY.listedServices.map((service) => (
-                          <option key={service}>{service}</option>
+                      <label className="mb-2 block text-xs font-semibold text-slate-600">Care area</label>
+                      <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Care area">
+                        {CARE_AREAS.map((area) => (
+                          <button key={area} type="button" role="radio" aria-checked={careArea === area}
+                            onClick={() => setCareArea(area)}
+                            className={`rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-200 ${
+                              careArea === area
+                                ? 'border-primary bg-primary text-white shadow-md shadow-primary/20'
+                                : 'border-slate-200 bg-white/70 text-slate-600 hover:border-primary/40 hover:text-primary'
+                            }`}
+                          >{area}</button>
                         ))}
-                      </select>
+                      </div>
+                      <input type="text" required readOnly value={careArea} className="sr-only" aria-hidden="true" tabIndex={-1} />
                     </div>
-                  </div>
 
+                    {/* Date — single column on mobile, 2-col on sm */}
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      <div>
+                        <label className="mb-1 block text-xs font-semibold text-slate-600">Preferred date</label>
+                        <input required type="date"
+                          className="w-full rounded-xl border border-slate-200 bg-white/70 px-4 py-3 text-sm text-slate-600 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10 sm:rounded-2xl" />
+                      </div>
+                      <div>
+                        <label className="mb-1 block text-xs font-semibold text-slate-600">Preferred time</label>
+                        <input required type="time"
+                          className="w-full rounded-xl border border-slate-200 bg-white/70 px-4 py-3 text-sm text-slate-600 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10 sm:rounded-2xl" />
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  {/* CTA — Fitts's Law: full-width, generous height */}
                   <button
-                    disabled={isSubmitting || submitted}
-                    className={`flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow-xl shadow-primary/10 transition-all sm:gap-3 sm:rounded-2xl sm:py-5 sm:text-sm sm:tracking-widest ${isSubmitting || submitted ? 'cursor-not-allowed opacity-70' : 'md:hover:-translate-y-0.5'}`}
+                    type="submit"
+                    disabled={isSubmitting || submitted || !careArea}
+                    className={`flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-primary/10 transition-all sm:rounded-2xl sm:py-5 ${isSubmitting || submitted || !careArea ? 'cursor-not-allowed opacity-60' : 'md:hover:-translate-y-0.5'}`}
                   >
-                    {isSubmitting ? 'Recording Request...' : 'Record Request'}
+                    {isSubmitting ? 'Sending…' : 'Request Appointment'}
                     {!isSubmitting && <ChevronRight className="size-4" />}
                   </button>
                 </>

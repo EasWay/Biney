@@ -5,6 +5,11 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import BookingModal from './components/layout/BookingModal';
 import { MobileAppLayout } from './components/layout/MobileAppLayout';
+import LoadingScreen from './components/LoadingScreen';
+
+// Module-level flag: show the loading screen on every hard page load,
+// but skip it during SPA navigations (the component stays mounted).
+let _hasBooted = false;
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -13,6 +18,7 @@ const Insurance = lazy(() => import('./pages/Insurance'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Resources = lazy(() => import('./pages/Resources'));
+import NotFound from './pages/NotFound';
 const ChatBot = lazy(() => import('./components/chatbot/ChatBot').then((module) => ({ default: module.ChatBot })));
 
 const RouteFallback = () => (
@@ -63,7 +69,7 @@ function AnimatedRoutes({ onBookClick }: { onBookClick: () => void }) {
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         className="flex-grow flex flex-col"
       >
-        <Routes location={location}>
+        <Routes>
           <Route path="/" element={<Home onBookClick={onBookClick} />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
@@ -71,6 +77,7 @@ function AnimatedRoutes({ onBookClick }: { onBookClick: () => void }) {
           <Route path="/insurance" element={<Insurance />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact onBookClick={onBookClick} />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
@@ -79,10 +86,25 @@ function AnimatedRoutes({ onBookClick }: { onBookClick: () => void }) {
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(!_hasBooted);
   const isMobile = useIsMobile();
 
   return (
     <Router>
+      {/* Loading screen sits outside the page layout so it overlays everything.
+          AnimatePresence drives the exit animation when isLoading → false. */}
+      <AnimatePresence>
+        {isLoading && (
+          <LoadingScreen
+            key="loading-screen"
+            onComplete={() => {
+              _hasBooted = true;
+              setIsLoading(false);
+            }}
+          />
+        )}
+      </AnimatePresence>
+
       <ScrollToTop />
       <div className="min-h-screen bg-transparent font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col">
         {isMobile ? (
