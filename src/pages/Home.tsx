@@ -14,7 +14,6 @@ import {
 } from 'lucide-react';
 import ErrorBoundary from '../components/ErrorBoundary';
 import ParallaxSection from '../components/ParallaxSection';
-import SceneFlow from '../components/SceneFlow';
 import { FlickeringGrid } from '../components/ui/FlickeringGrid';
 import { TextReveal } from '../components/ui/TextReveal';
 import { BINEY, serviceHighlights } from '../data/biney';
@@ -212,14 +211,6 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
         </div>
       </section>
 
-      <SceneFlow
-        bgImage="/context_care_1.png"
-        bgImageWebp="/context_care_1.webp"
-        title="You deserve to feel heard"
-        subtitle="Our Promise"
-        description="When you walk through our door, you'll be seen as a person — not a number. Tell us what's on your mind, and we'll help you figure out the right next step together."
-      />
-
       {/* ── Patient journey ── */}
       <section id="patient-journey" className="px-4 py-12 edge-wavy-top sm:px-10 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-8 sm:gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
@@ -287,14 +278,6 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
           </div>
         </div>
       </section>
-
-      <SceneFlow
-        bgImage="/context_lab_work.png"
-        bgImageWebp="/context_lab_work.webp"
-        title="Tested, trusted, ready for you"
-        subtitle="Our commitment"
-        description="Every appointment, every consultation, every follow-up — we handle it with care. From your first call to your last question, Biney Medical Centre is here for the Tema community."
-      />
 
       {/* ── Insurance ── */}
       <section id="insurance-access" className="px-4 py-12 sm:px-10 sm:py-20">
