@@ -3,25 +3,13 @@ import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import { z } from "zod";
+import { queryDb, runDb, saveToSession, getSessionHistory } from "./db.js";
+import { CLINIC_CONFIG } from "../config/clinic.config.js";
 
-const APP_TIME_ZONE = "Africa/Accra";
-
-// --- IN-MEMORY SESSION STORE (serverless-compatible) ---
-const sessionStore = new Map<string, { role: string; content: string }[]>();
-
-const queryDb = async (_sql: string, _params: any[] = []): Promise<any[]> => [];
-const runDb = async (_sql: string, _params: any[] = []): Promise<void> => {};
-
-// --- SESSION MANAGEMENT ---
-const saveToSession = async (sessionId: string, role: string, content: string) => {
-  if (!sessionStore.has(sessionId)) {
-    sessionStore.set(sessionId, []);
-  }
-  sessionStore.get(sessionId)!.push({ role, content });
-};
+const APP_TIME_ZONE = CLINIC_CONFIG.timezone;
 
 const getHistory = async (sessionId: string) => {
-  const rows = sessionStore.get(sessionId) || [];
+  const rows = await getSessionHistory(sessionId);
   return sanitizeChatHistory(rows);
 };
 
@@ -118,7 +106,7 @@ const resolveRequestedSlotDate = (message: string, requestedDate: string) => {
 const WEBSITE_CONTEXT = `
 Website routes and sections. Use these exact Markdown links when directing users:
 - [Home](/): full landing page. Sections: [Book Visit](/#book-visit), [Quick Facts](/#quick-facts), [Care Highlights](/#care-highlights), [Patient Journey](/#patient-journey), [Insurance Access](/#insurance-access), [Contact Overview](/#contact-overview).
-- [About](/about): Biney Medical Centre overview. Sections: [Overview](/about#overview), [Care Areas](/about#care-areas), [Team](/about#team), [Location Summary](/about#location-summary).
+- [About](/about): ${CLINIC_CONFIG.name} overview. Sections: [Overview](/about#overview), [Care Areas](/about#care-areas), [Team](/about#team), [Location Summary](/about#location-summary).
 - [Services](/services): care page. Sections: [Services Overview](/services#services-overview), [General Services](/services#general-services), [ENT Problems](/services#ent-problems), [Pregnancy](/services#pregnancy), [Primary Hospital](/services#primary-hospital).
 - [Insurance](/insurance): accepted schemes and visit prep. Sections: [Insurance Overview](/insurance#insurance-overview), [Before Your Visit](/insurance#before-your-visit), [Insurance Contact](/insurance#insurance-contact).
 - [Health Resources](/resources): simple local health notes. Sections: [Malaria](/resources#malaria), [High Blood Pressure](/resources#hypertension), [Diabetes](/resources#diabetes), [Sore Throat](/resources#sore-throat), [Pregnancy Warning Signs](/resources#pregnancy).
@@ -126,15 +114,15 @@ Website routes and sections. Use these exact Markdown links when directing users
 - [Contact](/contact): contact and booking page. Sections: [Contact Details](/contact#contact-details), [Appointment Request](/contact#appointment-request), [Location Map](/contact#location-map), [Google Map](/contact#google-map).
 
 Persistent site facts:
-- Name: Biney Medical Centre. Alternate spelling: Biney Medical Center.
-- Address: Italian Flats Comm. 2, Community 2, Tema, Ghana.
-- Short address: Italian Flats, Community 2, Tema.
-- Region: Greater Accra Region. District/locality: Tema Municipal.
-- Phone: [0302 202546](tel:+233302202546) and [0303 208579](tel:+233303208579).
-- Facility type: Private primary hospital.
-- Listed care areas: General care, ENT care, Pregnancy care.
-- Accepted insurance: NHIS and Nationwide Medical Insurance.
-- Listed hours: Monday to Sunday, 08:00 - 20:00.
+- Name: ${CLINIC_CONFIG.name}. Alternate spelling: ${CLINIC_CONFIG.alternateName}.
+- Address: ${CLINIC_CONFIG.address}.
+- Short address: ${CLINIC_CONFIG.shortAddress}.
+- Region: ${CLINIC_CONFIG.region}. District/locality: ${CLINIC_CONFIG.district}.
+- Phone: ${CLINIC_CONFIG.phones.map(p => `[${p.label}](tel:${p.tel})`).join(" and ")}.
+- Facility type: ${CLINIC_CONFIG.facilityType}.
+- Listed care areas: ${CLINIC_CONFIG.departments.join(", ")}.
+- Accepted insurance: ${CLINIC_CONFIG.acceptedInsurance.join(" and ")}.
+- Listed hours: ${CLINIC_CONFIG.hours}.
 
 Linking rules:
 - When a user asks for more detail, include one or two relevant links, not every route.
@@ -182,8 +170,8 @@ const RED_FLAGS = [
 
 const EMERGENCY_RESPONSE = `
 🚨 **EMERGENCY DETECTED** 🚨
-Based on your message, you may be experiencing a medical emergency. 
-**Please stop using this chat and call our emergency line at +233-XX-XXXX-XXX immediately or visit the nearest Emergency Room.**
+Based on your message, you may be experiencing a medical emergency.
+**Please stop using this chat and call ${CLINIC_CONFIG.name} immediately on [${CLINIC_CONFIG.emergencyPhone}](tel:${CLINIC_CONFIG.emergencyPhone}), or call the Ghana National Ambulance on **${CLINIC_CONFIG.nationalEmergency}**, or go directly to the nearest Emergency Room.**
 
 Your safety is our priority. This chat cannot handle life-threatening situations.
 `;

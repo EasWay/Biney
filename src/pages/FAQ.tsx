@@ -10,7 +10,7 @@ const FAQS = [
   },
   {
     question: 'How can patients call us?',
-    answer: BINEY.phoneNumbers.map((phone) => phone.label).join(' / '),
+    answer: BINEY.phones.map((phone) => phone.label).join(' / '),
   },
   {
     question: 'What kind of facility are we?',
@@ -18,7 +18,7 @@ const FAQS = [
   },
   {
     question: 'What care areas do we highlight?',
-    answer: BINEY.listedServices.join(', '),
+    answer: BINEY.departments.join(', '),
   },
   {
     question: 'What insurance do we support?',

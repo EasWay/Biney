@@ -85,10 +85,10 @@ const Footer = () => {
                 <MapPin className="mt-0.5 size-4 shrink-0 text-white/40" />
                 <span className="text-sm leading-relaxed text-white/55">{BINEY.address}</span>
               </li>
-              {BINEY.phoneNumbers.map((phone) => (
+              {BINEY.phones.map((phone) => (
                 <li key={phone.label} className="flex items-center gap-3">
                   <Phone className="size-4 shrink-0 text-white/40" />
-                  <a href={phone.href} className="text-sm text-white/55 transition-colors hover:text-white">
+                  <a href={phone.tel} className="text-sm text-white/55 transition-colors hover:text-white">
                     {phone.label}
                   </a>
                 </li>
@@ -125,9 +125,9 @@ const Footer = () => {
             <div>
               <h4 className="mb-3 text-[9px] font-bold uppercase tracking-[0.2em] text-white/40">Contact</h4>
               <ul className="space-y-2.5">
-                {BINEY.phoneNumbers.map((phone) => (
+                {BINEY.phones.map((phone) => (
                   <li key={phone.label}>
-                    <a href={phone.href} className="flex items-center gap-2 text-xs text-white/55 hover:text-white">
+                    <a href={phone.tel} className="flex items-center gap-2 text-xs text-white/55 hover:text-white">
                       <Phone className="size-3 text-white/35" />
                       {phone.label}
                     </a>

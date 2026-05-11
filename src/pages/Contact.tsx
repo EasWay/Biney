@@ -4,7 +4,7 @@ import { CheckCircle2, ChevronRight, Clock, MapPin, Phone } from 'lucide-react';
 import { BINEY } from '../data/biney';
 import { DottedMap } from '../components/ui/DottedMap';
 
-const CARE_AREAS = BINEY.listedServices as unknown as string[];
+const CARE_AREAS = BINEY.departments as unknown as string[];
 
 const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -63,9 +63,9 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
                   title: 'Phone Numbers',
                   content: (
                     <>
-                      {BINEY.phoneNumbers.map((phone) => (
+                      {BINEY.phones.map((phone) => (
                         <React.Fragment key={phone.label}>
-                          <a href={phone.href} className="transition-colors hover:text-primary">{phone.label}</a>
+                          <a href={phone.tel} className="transition-colors hover:text-primary">{phone.label}</a>
                           <br />
                         </React.Fragment>
                       ))}
@@ -121,7 +121,7 @@ const Contact = ({ onBookClick }: { onBookClick: () => void }) => {
                   </div>
                   <div>
                     <h4 className="mb-2 text-xl font-black italic text-slate-900 sm:text-2xl">Request received</h4>
-                    <p className="text-xs text-slate-500 sm:text-sm">Please call {BINEY.phoneNumbers[0].label} to confirm your appointment time.</p>
+                    <p className="text-xs text-slate-500 sm:text-sm">Please call {BINEY.phones[0].label} to confirm your appointment time.</p>
                   </div>
                 </motion.div>
               ) : (

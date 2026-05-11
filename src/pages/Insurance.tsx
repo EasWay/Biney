@@ -61,8 +61,8 @@ const Insurance = () => {
           <div id="insurance-contact" className="rounded-2xl border border-white/60 bg-white/40 p-5 shadow-sm backdrop-blur-xl sm:rounded-[2rem] sm:p-10">
             <h4 className="mb-3 text-lg font-bold text-slate-900 sm:mb-4 sm:text-2xl">Contact</h4>
             <div className="space-y-2 sm:space-y-3">
-              {BINEY.phoneNumbers.map((phone) => (
-                <a key={phone.label} href={phone.href} className="block text-xs font-bold text-primary md:hover:underline sm:text-sm">
+              {BINEY.phones.map((phone) => (
+                <a key={phone.label} href={phone.tel} className="block text-xs font-bold text-primary md:hover:underline sm:text-sm">
                   {phone.label}
                 </a>
               ))}

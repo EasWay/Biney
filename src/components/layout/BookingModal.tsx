@@ -14,7 +14,7 @@ import { BINEY } from '../../data/biney';
  *  • Von Restorff: primary CTA stands out with brand fill
  */
 
-const CARE_AREAS = BINEY.listedServices as unknown as string[];
+const CARE_AREAS = BINEY.departments as unknown as string[];
 
 const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -74,7 +74,7 @@ const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
               <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.26em] text-primary">Biney Medical Centre</p>
               <h3 className="font-display text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">Book a visit</h3>
               <p className="mt-1 text-xs text-slate-500 leading-relaxed">
-                Fill in your details, then call {BINEY.phoneNumbers[0].label} to confirm.
+                Fill in your details, then call {BINEY.phones[0].label} to confirm.
               </p>
             </div>
 
@@ -87,7 +87,7 @@ const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                   </div>
                   <h4 className="font-display text-xl font-semibold text-slate-900">Request received</h4>
                   <p className="text-xs text-slate-500 leading-relaxed">
-                    Please call {BINEY.phoneNumbers[0].label} to confirm your appointment.
+                    Please call {BINEY.phones[0].label} to confirm your appointment.
                   </p>
                 </div>
               ) : (

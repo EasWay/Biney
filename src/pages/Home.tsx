@@ -261,7 +261,7 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
 
           <div className="grid gap-3 md:grid-cols-2 sm:gap-4">
             {[
-              { title: 'Call or walk in', desc: `Call ${BINEY.phoneNumbers[0].label}, walk in, or request your visit here — whichever is easiest for you.` },
+              { title: 'Call or walk in', desc: `Call ${BINEY.phones[0].label}, walk in, or request your visit here — whichever is easiest for you.` },
               { title: 'Tell us your concern', desc: "Let us know if you're coming for general care, an ENT issue, or pregnancy-related support. We'll be ready." },
               { title: 'Arrive prepared', desc: 'Our address, opening hours, and insurance details are always visible. No surprises when you get here.' },
               { title: "We're still here after", desc: "Have questions after your visit? Call us anytime. Your care doesn't stop when you leave." },
@@ -385,10 +385,10 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
               className="flex flex-wrap gap-2 text-[10px] font-bold text-slate-700 sm:gap-3 sm:text-sm"
             >
               <span className="rounded-full bg-white/60 px-3 py-2 sm:px-4">{BINEY.address}</span>
-              {BINEY.phoneNumbers.map((phone) => (
+              {BINEY.phones.map((phone) => (
                 <motion.a
                   key={phone.label}
-                  href={phone.href}
+                  href={phone.tel}
                   whileHover={{ scale: 1.04, y: -1, transition: cardSpring }}
                   className="rounded-full bg-white/60 px-3 py-2 md:hover:text-primary sm:px-4"
                 >

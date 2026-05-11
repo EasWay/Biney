@@ -28,7 +28,7 @@ const FACILITY_FACTS: HealthTip[] = [
   },
   {
     title: "Focused services",
-    description: `Our care focus includes ${BINEY.listedServices.join(", ")} for individuals and families in Tema.`,
+    description: `Our care focus includes ${BINEY.departments.join(", ")} for individuals and families in Tema.`,
     benefit: "Patient care",
   },
 ];
@@ -44,8 +44,8 @@ const FACILITY_NOTES: HealthNews[] = [
   },
   {
     title: "Call before your visit",
-    summary: BINEY.phoneNumbers.map((phone) => phone.label).join(" / "),
-    content: `For appointments, directions, or insurance questions, patients can reach us on ${BINEY.phoneNumbers.map((phone) => phone.label).join(" or ")}.`,
+    summary: BINEY.phones.map((phone) => phone.label).join(" / "),
+    content: `For appointments, directions, or insurance questions, patients can reach us on ${BINEY.phones.map((phone) => phone.label).join(" or ")}.`,
     date: "Contact",
     category: "Contact",
     imageKeyword: "phone",
