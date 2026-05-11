@@ -29,7 +29,7 @@ const Navbar = ({ onBookClick }: { onBookClick: () => void }) => {
 
   return (
     <nav 
-      className={`fixed left-1/2 top-3 z-50 w-[94%] max-w-6xl -translate-x-1/2 rounded-2xl font-manrope text-xs font-medium tracking-tight transition-all duration-500 sm:top-6 sm:rounded-full sm:text-sm ${
+      className={`fixed left-1/2 top-3 z-50 w-[94%] max-w-6xl -translate-x-1/2 rounded-2xl font-manrope text-xs font-medium tracking-tight transition-colors duration-300 sm:top-6 sm:rounded-full sm:text-sm ${
         scrolled 
           ? 'border border-white/50 bg-white/85 px-3 py-2 shadow-[0_12px_32px_rgba(0,0,0,0.05)] backdrop-blur-[20px] sm:px-8 sm:py-3' 
           : 'border border-white/20 bg-white/50 px-3 py-2.5 backdrop-blur-[10px] sm:px-10 sm:py-4'
@@ -49,7 +49,7 @@ const Navbar = ({ onBookClick }: { onBookClick: () => void }) => {
             <Link
               key={link.name}
               to={link.href}
-              className={`transition-all duration-300 hover:text-primary ${
+              className={`transition-colors duration-200 hover:text-primary ${
                 isActive(link.href) 
                   ? 'text-primary font-bold' 
                   : 'text-on-surface-variant'
@@ -64,7 +64,7 @@ const Navbar = ({ onBookClick }: { onBookClick: () => void }) => {
         <div className="hidden md:flex items-center gap-4">
           <button
             onClick={onBookClick}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white hover:bg-black transition-all duration-300 shadow-lg shadow-black/20 active:scale-95"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white hover:bg-black transition-colors duration-200 shadow-lg shadow-black/20 active:scale-95"
           >
             <span className="text-xs font-bold uppercase tracking-wider">Book Appointment</span>
             <ArrowRight className="w-4 h-4" />
@@ -109,7 +109,7 @@ const Navbar = ({ onBookClick }: { onBookClick: () => void }) => {
                   setIsOpen(false);
                   onBookClick();
                 }}
-                className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-xs font-bold text-white shadow-xl shadow-primary/20 transition-all active:scale-95"
+                className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-xs font-bold text-white shadow-xl shadow-primary/20 transition-colors active:scale-95"
               >
                 <span>Book Appointment</span>
                 <ArrowRight className="w-4 h-4" />

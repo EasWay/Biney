@@ -115,11 +115,11 @@ const Resources = () => {
               placeholder="Search symptoms (e.g., 'fever', 'sore throat', 'hypertension')..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-2xl border border-slate-200 bg-white py-4 pl-12 pr-28 text-sm shadow-lg shadow-slate-200/40 outline-none ring-primary/20 transition-all focus:border-primary focus:ring-4"
+              className="w-full rounded-2xl border border-slate-200 bg-white py-4 pl-12 pr-28 text-sm shadow-lg shadow-slate-200/40 outline-none ring-primary/20 transition-colors focus:border-primary focus:ring-4"
             />
             <button
               type="submit"
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-xl bg-primary px-6 py-2.5 text-sm font-bold text-white transition-all hover:bg-primary/90 hover:scale-105 active:scale-95"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-xl bg-primary px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-primary/90 hover:scale-105 active:scale-95"
             >
               Search
             </button>
@@ -131,7 +131,7 @@ const Resources = () => {
               <button
                 key={cat.name}
                 onClick={() => quickSearch(cat.name)}
-                className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-600 transition-all hover:border-primary hover:bg-primary/5 hover:text-primary"
+                className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-600 transition-colors hover:border-primary hover:bg-primary/5 hover:text-primary"
               >
                 <cat.icon className="size-3.5" />
                 {cat.name}
@@ -164,13 +164,13 @@ const Resources = () => {
                       <div className="flex items-center rounded-lg bg-slate-100 p-1">
                         <button 
                           onClick={() => setShowClinical(false)}
-                          className={`rounded-md px-3 py-1.5 text-xs font-bold transition-all ${!showClinical ? 'bg-white text-primary shadow-sm' : 'text-slate-500'}`}
+                          className={`rounded-md px-3 py-1.5 text-xs font-bold transition-colors ${!showClinical ? 'bg-white text-primary shadow-sm' : 'text-slate-500'}`}
                         >
                           Simple Breakdown
                         </button>
                         <button 
                           onClick={() => setShowClinical(true)}
-                          className={`rounded-md px-3 py-1.5 text-xs font-bold transition-all ${showClinical ? 'bg-white text-primary shadow-sm' : 'text-slate-500'}`}
+                          className={`rounded-md px-3 py-1.5 text-xs font-bold transition-colors ${showClinical ? 'bg-white text-primary shadow-sm' : 'text-slate-500'}`}
                         >
                           Clinical Guidelines
                         </button>
@@ -197,7 +197,7 @@ const Resources = () => {
                       {showClinical ? (
                         // Technical Clinical View
                         searchResults.results.split('---').map((section, idx) => (
-                          <div key={idx} className="group relative border-l-2 border-primary/20 pl-6 transition-all hover:border-primary">
+                          <div key={idx} className="group relative border-l-2 border-primary/20 pl-6 transition-colors hover:border-primary">
                             <div className="whitespace-pre-wrap text-sm leading-relaxed text-slate-600 font-mono bg-slate-50/50 p-4 rounded-xl">
                               {section.trim()}
                             </div>
@@ -288,7 +288,7 @@ const Resources = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:border-primary/30 hover:shadow-lg"
+                        className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition-colors hover:border-primary/30 hover:shadow-lg"
                       >
                         <div className="p-6 sm:p-8">
                           <div className="mb-4 flex items-start justify-between gap-4">
@@ -299,7 +299,7 @@ const Resources = () => {
                               </div>
                               <h3 className="font-display text-2xl font-bold text-slate-900">{item.title}</h3>
                             </div>
-                            <Link to={item.link} className="flex size-10 items-center justify-center rounded-full bg-slate-50 text-slate-400 transition-all group-hover:bg-primary group-hover:text-white">
+                            <Link to={item.link} className="flex size-10 items-center justify-center rounded-full bg-slate-50 text-slate-400 transition-colors group-hover:bg-primary group-hover:text-white">
                               <ChevronRight className="size-5" />
                             </Link>
                           </div>
@@ -346,7 +346,7 @@ const Resources = () => {
               </p>
               <Link
                 to="/contact#appointment-request"
-                className="group flex items-center justify-center gap-2 rounded-xl bg-primary py-4 text-sm font-bold text-white transition-all hover:bg-primary/90"
+                className="group flex items-center justify-center gap-2 rounded-xl bg-primary py-4 text-sm font-bold text-white transition-colors hover:bg-primary/90"
               >
                 Request Appointment
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
@@ -366,7 +366,7 @@ const Resources = () => {
                   <Link
                     key={service.name}
                     to={service.link}
-                    className="flex items-center justify-between rounded-xl border border-slate-100 p-4 transition-all hover:border-primary/20 hover:bg-slate-50 group"
+                    className="flex items-center justify-between rounded-xl border border-slate-100 p-4 transition-colors hover:border-primary/20 hover:bg-slate-50 group"
                   >
                     <span className="text-sm font-medium text-slate-600 group-hover:text-slate-900">{service.name}</span>
                     <ExternalLink className="size-4 text-slate-300 group-hover:text-primary" />

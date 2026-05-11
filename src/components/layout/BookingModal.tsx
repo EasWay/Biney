@@ -107,7 +107,7 @@ const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                         required
                         type="text"
                         autoComplete="name"
-                        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/10"
+                        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/10"
                         placeholder="e.g. Kwame Mensah"
                       />
                     </div>
@@ -122,7 +122,7 @@ const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                         type="tel"
                         autoComplete="tel"
                         inputMode="tel"
-                        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/10"
+                        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/10"
                         placeholder="+233 ..."
                       />
                     </div>
@@ -147,7 +147,7 @@ const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                             role="radio"
                             aria-checked={careArea === area}
                             onClick={() => setCareArea(area)}
-                            className={`rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-200 ${
+                            className={`rounded-full border px-4 py-2 text-xs font-semibold transition-colors duration-150 ${
                               careArea === area
                                 ? 'border-primary bg-primary text-white shadow-md shadow-primary/20'
                                 : 'border-slate-200 bg-white text-slate-600 hover:border-primary/40 hover:text-primary'
@@ -178,7 +178,7 @@ const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                         <input
                           required
                           type="date"
-                          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10"
+                          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/10"
                         />
                       </div>
                       <div>
@@ -188,7 +188,7 @@ const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                         <input
                           required
                           type="time"
-                          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10"
+                          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/10"
                         />
                       </div>
                     </div>
@@ -198,7 +198,7 @@ const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                   <button
                     type="submit"
                     disabled={isSubmitting || !careArea}
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-60"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white shadow-lg shadow-primary/20 transition-colors hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-60"
                   >
                     {isSubmitting ? (
                       <>

@@ -18,18 +18,21 @@ import SceneFlow from '../components/SceneFlow';
 import { FlickeringGrid } from '../components/ui/FlickeringGrid';
 import { TextReveal } from '../components/ui/TextReveal';
 import { BINEY, serviceHighlights } from '../data/biney';
+import { useIsMobile } from '../lib/useIsMobile';
 
 const serviceIcons = [Stethoscope, Ear, Baby];
 
+// Spline is ~1MB+ of 3D assets — only load on desktop
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
 /* ─── spring config for card hovers ─── */
 const cardSpring = { type: 'spring' as const, stiffness: 380, damping: 28 };
 
 const Home = ({ onBookClick }: { onBookClick: () => void }) => {
+  const isMobile = useIsMobile();
   const [splineReady, setSplineReady] = useState(false);
 
-  /* hero parallax: text drifts up as user scrolls down */
+  /* hero parallax: text drifts up as user scrolls down — desktop only */
   const heroRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
   const heroTextY = useTransform(scrollY, [0, 500], [0, -55]);
@@ -40,6 +43,8 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
   }, [onBookClick]);
 
   useEffect(() => {
+    // Never load Spline on mobile — saves ~1MB network + GPU work
+    if (isMobile) return;
     const activate = () => setSplineReady(true);
     if ('requestIdleCallback' in window) {
       const id = (window as any).requestIdleCallback(activate, { timeout: 3000 });
@@ -47,7 +52,7 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
     }
     const id = setTimeout(activate, 600);
     return () => clearTimeout(id);
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="flex flex-col bg-transparent font-manrope">
@@ -59,32 +64,38 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
         className="relative min-h-[92svh] overflow-hidden bg-transparent sm:min-h-screen"
       >
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <ErrorBoundary
-            fallback={
-              <div className="flex size-full items-center justify-center bg-[#e5e5e5]">
-                <Hospital className="size-14 text-primary/20" />
-              </div>
-            }
-          >
-            {splineReady ? (
-              <Suspense fallback={<div className="size-full bg-gradient-to-br from-[#e5e5e5] via-[#eceef0] to-[#e0e2e4]" />}>
-                <ParallaxSection zoom offset={100} className="size-full">
-                  <div className="relative size-full cursor-grab active:cursor-grabbing">
-                    <div className="absolute inset-0">
-                      <Spline key="home-spline" scene="https://prod.spline.design/MPahsWaY76fSaIYP/scene.splinecode" />
+          {/* Desktop only: Spline 3D scene. Mobile gets a lightweight gradient. */}
+          {!isMobile ? (
+            <ErrorBoundary
+              fallback={
+                <div className="flex size-full items-center justify-center bg-[#e5e5e5]">
+                  <Hospital className="size-14 text-primary/20" />
+                </div>
+              }
+            >
+              {splineReady ? (
+                <Suspense fallback={<div className="size-full bg-gradient-to-br from-[#e5e5e5] via-[#eceef0] to-[#e0e2e4]" />}>
+                  <ParallaxSection zoom offset={100} className="size-full">
+                    <div className="relative size-full cursor-grab active:cursor-grabbing">
+                      <div className="absolute inset-0">
+                        <Spline key="home-spline" scene="https://prod.spline.design/MPahsWaY76fSaIYP/scene.splinecode" />
+                      </div>
                     </div>
-                  </div>
-                </ParallaxSection>
-              </Suspense>
-            ) : (
-              <div className="size-full bg-gradient-to-br from-[#e5e5e5] via-[#eceef0] to-[#e0e2e4]" />
+                  </ParallaxSection>
+                </Suspense>
+              ) : (
+                <div className="size-full bg-gradient-to-br from-[#e5e5e5] via-[#eceef0] to-[#e0e2e4]" />
             )}
           </ErrorBoundary>
+          ) : (
+            // Mobile: pure CSS gradient, zero JS/WebGL overhead
+            <div className="size-full bg-gradient-to-br from-[#e5e5e5] via-[#eceef0] to-[#dde0e3]" />
+          )}
         </div>
 
-        {/* Hero text — scroll-linked parallax */}
+        {/* Hero text — scroll-linked parallax on desktop only */}
         <motion.div
-          style={{ y: heroTextY }}
+          style={{ y: isMobile ? 0 : heroTextY }}
           className="pointer-events-none relative z-10 mx-auto flex min-h-[92svh] max-w-7xl items-end px-4 pb-5 pt-28 sm:min-h-screen sm:px-10 sm:pb-10 sm:pt-44"
         >
           <motion.div
@@ -211,6 +222,7 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
 
       <SceneFlow
         bgImage="/context_care_1.png"
+        bgImageWebp="/context_care_1.webp"
         title="You deserve to feel heard"
         subtitle="Our Promise"
         description="When you walk through our door, you'll be seen as a person — not a number. Tell us what's on your mind, and we'll help you figure out the right next step together."
@@ -286,6 +298,7 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
 
       <SceneFlow
         bgImage="/context_lab_work.png"
+        bgImageWebp="/context_lab_work.webp"
         title="Tested, trusted, ready for you"
         subtitle="Our commitment"
         description="Every appointment, every consultation, every follow-up — we handle it with care. From your first call to your last question, Biney Medical Centre is here for the Tema community."

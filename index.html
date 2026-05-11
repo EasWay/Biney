@@ -11,33 +11,41 @@
     <!-- Critical origin connections — eliminates cold TCP/TLS handshakes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://prod.spline.design" />
+    <!-- Only preconnect to Spline on desktop — mobile never loads it -->
     <link rel="dns-prefetch" href="https://prod.spline.design" />
-    <link rel="dns-prefetch" href="https://cdn-icons-png.flaticon.com" />
 
     <!--
-      Fonts: non-blocking load pattern (same technique used by Google PageSpeed)
-      media="print" forces the browser NOT to block rendering.
-      onload switches it to media="all" after the stylesheet is fetched.
-      The <noscript> fallback handles JS-disabled environments.
+      CRITICAL FONTS: Inter + Outfit — used everywhere.
+      Non-blocking load: media="print" trick prevents render-blocking.
     -->
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&family=Pacifico&family=Syne:wght@700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&family=Pacifico&family=Syne:wght@700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&family=Pacifico&family=Syne:wght@700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
       />
     </noscript>
+
+    <!--
+      DEFERRED FONTS: Pacifico (loading screen title only) + Manrope (body text).
+      Loaded after page is interactive — display=optional prevents layout shift.
+    -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Manrope:wght@400;600;700;800&display=optional"
+      media="print"
+      onload="this.media='all'"
+    />
 
     <title>Biney Medical Centre | Tema, Ghana</title>
   </head>

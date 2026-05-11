@@ -26,7 +26,7 @@ export default function LoadingScreen({ onComplete }: Props) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const DURATION = 2800;
+    const DURATION = 1000;
     const start    = performance.now();
     let raf: number;
 

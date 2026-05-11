@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { cn } from "../../lib/utils"
+import { useIsMobile } from "../../lib/useIsMobile"
 
 interface FlickeringGridProps extends React.HTMLAttributes<HTMLDivElement> {
   squareSize?: number
@@ -23,6 +24,9 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   maxOpacity = 0.3,
   ...props
 }) => {
+  // Canvas animation is expensive on mobile — skip it entirely
+  const isMobile = useIsMobile()
+  if (isMobile) return null
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [isInView, setIsInView] = useState(false)

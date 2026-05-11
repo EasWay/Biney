@@ -36,7 +36,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link to="/" className="mb-6 flex items-center gap-3 group">
-              <div className="flex size-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-all duration-500 group-hover:bg-white group-hover:text-black">
+              <div className="flex size-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-colors duration-300 group-hover:bg-white group-hover:text-black">
                 <Activity className="size-5" />
               </div>
               <span className="text-base font-bold uppercase tracking-tight text-white">{BINEY.name}</span>
