@@ -15,6 +15,7 @@ import {
 import ErrorBoundary from '../components/ErrorBoundary';
 import ParallaxSection from '../components/ParallaxSection';
 import { FlickeringGrid } from '../components/ui/FlickeringGrid';
+import ImageStatement from '../components/ImageStatement';
 import { TextReveal } from '../components/ui/TextReveal';
 import { BINEY, serviceHighlights } from '../data/biney';
 import { useIsMobile } from '../lib/useIsMobile';
@@ -211,6 +212,14 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
         </div>
       </section>
 
+      <ImageStatement
+        imageSrc="/context_care_1.webp"
+        imageFallback="/context_care_1.webp"
+        eyebrow="Our Promise"
+        headline="You deserve to feel heard"
+        body="When you walk through our door, you'll be seen as a person — not a number. Tell us what's on your mind, and we'll help you find the right next step together."
+      />
+
       {/* ── Patient journey ── */}
       <section id="patient-journey" className="px-4 py-12 edge-wavy-top sm:px-10 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-8 sm:gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
@@ -278,6 +287,15 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
           </div>
         </div>
       </section>
+
+      <ImageStatement
+        imageSrc="/context_lab_work.webp"
+        imageFallback="/context_lab_work.webp"
+        eyebrow="Our Commitment"
+        headline="Tested, trusted, ready for you"
+        body="Every appointment, every consultation, every follow-up — handled with care. From your first call to your last question, Biney Medical Centre is here for Tema."
+        reverse
+      />
 
       {/* ── Insurance ── */}
       <section id="insurance-access" className="px-4 py-12 sm:px-10 sm:py-20">

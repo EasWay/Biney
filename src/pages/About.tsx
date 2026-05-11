@@ -4,6 +4,7 @@ import { Globe } from '../components/ui/Globe';
 import { FlickeringGrid } from '../components/ui/FlickeringGrid';
 import { TextReveal } from '../components/ui/TextReveal';
 import { BINEY, serviceHighlights, staffPlaceholders } from '../data/biney';
+import ImageStatement from '../components/ImageStatement';
 
 const cardSpring = { type: 'spring' as const, stiffness: 380, damping: 28 };
 
@@ -202,6 +203,14 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <ImageStatement
+        imageSrc="/context_lab_banner.webp"
+        imageFallback="/context_lab_banner.webp"
+        eyebrow="Our Facility"
+        headline="Built for your wellbeing"
+        body="A clean, equipped, private primary hospital serving Tema — General care, ENT, and Maternity services in one place. Community 2, Italian Flats."
+      />
 
       {/* ── Location ── */}
       <section id="location-summary" className="border-t border-slate-100 px-4 py-12 sm:px-10 sm:py-20">
