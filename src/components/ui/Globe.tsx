@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useRef } from "react"
 import createGlobe, { type COBEOptions } from "cobe"
 import { useMotionValue, useSpring } from "motion/react"
-import { useIsMobile } from "../../lib/useIsMobile"
 import { cn } from "../../lib/utils"
 
 const MOVEMENT_DAMPING = 650
@@ -80,9 +79,6 @@ export function Globe({
   className?: string
   config?: COBEOptions
 }) {
-  // WebGL globe is GPU-intensive — skip on mobile
-  const isMobile = useIsMobile()
-
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const phiRef = useRef(0)
   const widthRef = useRef(0)
@@ -184,22 +180,6 @@ export function Globe({
       globe.destroy()
     }
   }, [rs, config])
-
-  if (isMobile) {
-    return (
-      <div className={cn("absolute inset-0 mx-auto flex items-center justify-center", className)}>
-        <div className="flex flex-col items-center gap-2 text-slate-400">
-          <div className="h-16 w-16 rounded-full border-2 border-slate-200 flex items-center justify-center">
-            <svg viewBox="0 0 24 24" className="h-8 w-8 fill-none stroke-current stroke-2">
-              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
-          </div>
-          <p className="text-xs font-medium">Tema, Ghana</p>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <div
