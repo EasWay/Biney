@@ -81,6 +81,8 @@ const Home = ({ onBookClick }: { onBookClick: () => void }) => {
               </Suspense>
             ) : (
               <div className="size-full bg-gradient-to-br from-[#e5e5e5] via-[#eceef0] to-[#e0e2e4]" />
+            )}
+          </ErrorBoundary>
         </div>
 
         {/* Hero text — scroll-linked parallax */}
